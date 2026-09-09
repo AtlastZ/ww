@@ -593,6 +593,9 @@
     </a>
   </nav>
 
+  <!-- Hidden YouTube Background Music Player (คู่ชีวิต - COCKTAIL) -->
+  <div id="youtubePlayer" style="position: fixed; bottom: -9999px; right: -9999px; width: 1px; height: 1px; opacity: 0.01; pointer-events: none;" aria-hidden="true"></div>
+
   <!-- Interactive Scripts & Google Sheets Integration -->
   <script>
     /**
@@ -610,7 +613,10 @@
       WEDDING_DATE: '2027-01-17T07:19:00+07:00',
       BRIDE_NAME: 'สิริลักษณ์ แตงกระโทก',
       GROOM_NAME: 'พีรพัฒน์ สุขเกษม',
-      VENUE_NAME: 'ครัวครบรส บุรีรมย์ การ์เด้น'
+      VENUE_NAME: 'ครัวครบรส บุรีรมย์ การ์เด้น',
+
+      // เพลงประกอบ (Background Music: คู่ชีวิต - COCKTAIL)
+      YOUTUBE_VIDEO_ID: 'ULQVcDUJjvM'
     };
 
     // แสดงแจ้งเตือนกรณีที่ยังไม่ได้ใส่ Google Apps Script URL
@@ -700,6 +706,7 @@ END:VCALENDAR`;
     if (sealBtn) {
       sealBtn.addEventListener('click', () => {
         sealBtn.classList.add('scale-90');
+        playMusic();
         setTimeout(() => {
           sealBtn.classList.remove('scale-90');
           const invitationSection = document.getElementById('invitationDetails');
@@ -905,62 +912,100 @@ END:VCALENDAR`;
     });
 
     // -------------------------------------------------------------
-    // 7. Ambient Romantic Sound Toggle (Web Audio API Chime)
+    // 7. Background Music: คู่ชีวิต - COCKTAIL (YouTube IFrame API)
     // -------------------------------------------------------------
+    let ytPlayer = null;
+    let isYtReady = false;
+    let isMusicPlaying = false;
     const musicBtn = document.getElementById('musicToggle');
     const musicIcon = document.getElementById('musicIcon');
     const musicWaves = document.getElementById('musicWaves');
-    let isPlaying = false;
-    let audioCtx = null;
-    let musicInterval = null;
 
-    // สร้างเมโลดี้หวานละมุนอ่อนโยนด้วย Web Audio API เพื่อให้เล่นได้ทุกเครื่องโดยไม่ต้องพึ่งไฟล์เสียงภายนอก
-    function playRomanticChime() {
-      if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    // โหลด YouTube IFrame API แบบ Asynchronous
+    const ytScriptTag = document.createElement('script');
+    ytScriptTag.src = 'https://www.youtube.com/iframe_api';
+    const firstScript = document.getElementsByTagName('script')[0];
+    firstScript.parentNode.insertBefore(ytScriptTag, firstScript);
+
+    window.onYouTubeIframeAPIReady = function() {
+      ytPlayer = new YT.Player('youtubePlayer', {
+        height: '1',
+        width: '1',
+        videoId: CONFIG.YOUTUBE_VIDEO_ID,
+        playerVars: {
+          autoplay: 0,
+          controls: 0,
+          disablekb: 1,
+          fs: 0,
+          loop: 1,
+          playlist: CONFIG.YOUTUBE_VIDEO_ID,
+          modestbranding: 1,
+          playsinline: 1,
+          rel: 0
+        },
+        events: {
+          onReady: function() {
+            isYtReady = true;
+          },
+          onStateChange: function(event) {
+            if (event.data === YT.PlayerState.PLAYING) {
+              setMusicPlayingState(true);
+            } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+              setMusicPlayingState(false);
+            }
+          }
+        }
+      });
+    };
+
+    function setMusicPlayingState(playing) {
+      isMusicPlaying = playing;
+      if (!musicBtn) return;
+      if (playing) {
+        musicIcon.classList.add('hidden');
+        musicWaves.classList.remove('hidden');
+        musicWaves.classList.add('flex');
+        musicBtn.classList.add('bg-brand-terracotta/10', 'border-brand-terracotta');
+        musicBtn.setAttribute('title', 'แตะเพื่อหยุดเพลง "คู่ชีวิต"');
+      } else {
+        musicIcon.classList.remove('hidden');
+        musicWaves.classList.add('hidden');
+        musicWaves.classList.remove('flex');
+        musicBtn.classList.remove('bg-brand-terracotta/10', 'border-brand-terracotta');
+        musicBtn.setAttribute('title', 'แตะเพื่อเปิดเพลง "คู่ชีวิต - COCKTAIL"');
       }
-      if (audioCtx.state === 'suspended') {
-        audioCtx.resume();
+    }
+
+    function playMusic() {
+      if (ytPlayer && isYtReady && typeof ytPlayer.playVideo === 'function') {
+        try {
+          ytPlayer.playVideo();
+        } catch (err) {
+          console.warn('YouTube play error:', err);
+        }
       }
+    }
 
-      const notes = [261.63, 329.63, 392.00, 523.25, 659.25]; // C major pentatonic
-      const note = notes[Math.floor(Math.random() * notes.length)];
+    function pauseMusic() {
+      if (ytPlayer && isYtReady && typeof ytPlayer.pauseVideo === 'function') {
+        try {
+          ytPlayer.pauseVideo();
+        } catch (err) {
+          console.warn('YouTube pause error:', err);
+        }
+      }
+    }
 
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(note, audioCtx.currentTime);
-
-      gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.08, audioCtx.currentTime + 0.1);
-      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 2.5);
-
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-
-      osc.start();
-      osc.stop(audioCtx.currentTime + 2.6);
+    function toggleMusic() {
+      if (isMusicPlaying) {
+        pauseMusic();
+      } else {
+        playMusic();
+      }
     }
 
     if (musicBtn) {
-      musicBtn.addEventListener('click', () => {
-        isPlaying = !isPlaying;
-        if (isPlaying) {
-          musicIcon.classList.add('hidden');
-          musicWaves.classList.remove('hidden');
-          musicWaves.classList.add('flex');
-          musicBtn.classList.add('bg-brand-terracotta/10', 'border-brand-terracotta');
-          playRomanticChime();
-          musicInterval = setInterval(playRomanticChime, 2800);
-        } else {
-          musicIcon.classList.remove('hidden');
-          musicWaves.classList.add('hidden');
-          musicWaves.classList.remove('flex');
-          musicBtn.classList.remove('bg-brand-terracotta/10', 'border-brand-terracotta');
-          if (musicInterval) clearInterval(musicInterval);
-        }
-      });
+      musicBtn.addEventListener('click', toggleMusic);
     }
   </script>
 </body>
