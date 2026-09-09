@@ -380,13 +380,19 @@
       </div>
 
       <form class="space-y-4 pt-1" id="rsvpForm">
+        <!-- Anti-Spam Honeypot Field (ซ่อนจากผู้ใช้จริง ป้องกัน Spam Bot) -->
+        <div class="hidden" aria-hidden="true" style="display:none !important;">
+          <label for="rsvpWebsite">Leave empty</label>
+          <input type="text" name="website" id="rsvpWebsite" tabindex="-1" autocomplete="off">
+        </div>
+
         <!-- Guest Name -->
         <div class="space-y-1">
           <label class="text-xs font-medium text-brand-earth flex items-center gap-1" for="guestName">
             <span>ชื่อ-นามสกุล</span>
             <span class="text-brand-terracotta">*</span>
           </label>
-          <input class="w-full text-sm px-3.5 py-2.5 rounded-xl bg-brand-cream/70 border border-brand-sand/70 text-brand-earth focus:outline-none focus:border-brand-terracotta transition-colors placeholder:text-brand-muted/50" id="guestName" name="name" placeholder="กรุณาระบุชื่อ-นามสกุลของคุณ" required type="text">
+          <input class="w-full text-sm px-3.5 py-2.5 rounded-xl bg-brand-cream/70 border border-brand-sand/70 text-brand-earth focus:outline-none focus:border-brand-terracotta transition-colors placeholder:text-brand-muted/50" id="guestName" name="name" placeholder="กรุณาระบุชื่อ-นามสกุลของคุณ" required maxlength="100" type="text">
         </div>
 
         <!-- Guest Phone -->
@@ -395,7 +401,7 @@
             <span>เบอร์โทรศัพท์ติดต่อ</span>
             <span class="text-[10px] text-brand-muted">(ไม่บังคับ)</span>
           </label>
-          <input class="w-full text-sm px-3.5 py-2.5 rounded-xl bg-brand-cream/70 border border-brand-sand/70 text-brand-earth focus:outline-none focus:border-brand-terracotta transition-colors placeholder:text-brand-muted/50" id="guestPhone" name="phone" placeholder="08x-xxx-xxxx" type="tel">
+          <input class="w-full text-sm px-3.5 py-2.5 rounded-xl bg-brand-cream/70 border border-brand-sand/70 text-brand-earth focus:outline-none focus:border-brand-terracotta transition-colors placeholder:text-brand-muted/50" id="guestPhone" name="phone" placeholder="08x-xxx-xxxx" maxlength="30" type="tel">
         </div>
 
         <!-- Guest Side: Tailored for Sirilak & Peerapat -->
@@ -445,7 +451,7 @@
             <span>ข้อความเพิ่มเติม / แพ้อาหาร</span>
             <span class="text-[10px] text-brand-muted">(ไม่บังคับ)</span>
           </label>
-          <input class="w-full text-sm px-3.5 py-2.5 rounded-xl bg-brand-cream/70 border border-brand-sand/70 text-brand-earth focus:outline-none focus:border-brand-terracotta transition-colors placeholder:text-brand-muted/50" id="rsvpNote" name="note" placeholder="เช่น ทานมังสวิรัติ, แพ้อาหารทะเล" type="text">
+          <input class="w-full text-sm px-3.5 py-2.5 rounded-xl bg-brand-cream/70 border border-brand-sand/70 text-brand-earth focus:outline-none focus:border-brand-terracotta transition-colors placeholder:text-brand-muted/50" id="rsvpNote" name="note" placeholder="เช่น ทานมังสวิรัติ, แพ้อาหารทะเล" maxlength="500" type="text">
         </div>
 
         <!-- Submit Button -->
@@ -477,12 +483,17 @@
 
       <!-- Blessing Input -->
       <form class="space-y-2.5 bg-brand-cream/50 p-4 rounded-xl border border-brand-sand/60" id="wishForm">
+        <!-- Anti-Spam Honeypot Field -->
+        <div class="hidden" aria-hidden="true" style="display:none !important;">
+          <input type="text" name="website" id="wishWebsite" tabindex="-1" autocomplete="off">
+        </div>
+
         <label class="text-xs font-medium text-brand-earth flex items-center gap-1">
           <span class="material-symbols-outlined text-sm text-brand-terracotta">edit</span>
           <span>เขียนคำอวยพรถึง คุณสิริลักษณ์ & คุณพีรพัฒน์</span>
         </label>
-        <input class="w-full text-xs px-3 py-2 rounded-lg bg-white border border-brand-sand/70 text-brand-earth focus:outline-none focus:border-brand-terracotta placeholder:text-brand-muted/50" id="wishName" placeholder="ชื่อผู้ส่งคำอวยพร" required type="text">
-        <textarea class="w-full text-xs p-3 rounded-lg bg-white border border-brand-sand/70 text-brand-earth focus:outline-none focus:border-brand-terracotta placeholder:text-brand-muted/50" id="wishMessage" placeholder="พิมพ์ข้อความอวยพรบ่าวสาวที่นี่..." required rows="3"></textarea>
+        <input class="w-full text-xs px-3 py-2 rounded-lg bg-white border border-brand-sand/70 text-brand-earth focus:outline-none focus:border-brand-terracotta placeholder:text-brand-muted/50" id="wishName" placeholder="ชื่อผู้ส่งคำอวยพร" required maxlength="100" type="text">
+        <textarea class="w-full text-xs p-3 rounded-lg bg-white border border-brand-sand/70 text-brand-earth focus:outline-none focus:border-brand-terracotta placeholder:text-brand-muted/50" id="wishMessage" placeholder="พิมพ์ข้อความอวยพรบ่าวสาวที่นี่..." required maxlength="500" rows="3"></textarea>
         <button class="w-full py-2.5 rounded-lg text-brand-ivory text-xs font-medium transition-all shadow-sm flex items-center justify-center gap-1.5 active:scale-95 disabled:opacity-50" id="submitWishBtn" type="submit" style="background: linear-gradient(135deg, rgb(207, 121, 85) 0%, rgb(184, 103, 69) 100%); box-shadow: rgba(184, 103, 69, 0.25) 0px 4px 12px -2px;">
           <span>ส่งคำอวยพร 💌</span>
         </button>
@@ -592,8 +603,8 @@
      * ตัวอย่าง: 'https://script.google.com/macros/s/AKfycbx.../exec'
      */
     const CONFIG = {
-      // 📌 Web App URL ของ Google Apps Script ที่สร้างและ Deploy เรียบร้อยแล้ว:
-      GOOGLE_SHEETS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycby-j6q1oUwAQI7HOhsbcgUjZT05E-RAuAgCgSGwVrdXUYK4q9ZtyJRflroF_dXRA2e6/exec',
+      // 📌 Web App URL ของ Google Apps Script ที่สร้างและ Deploy เรียบร้อยแล้ว (Security Hardened):
+      GOOGLE_SHEETS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbyxokCp6LUfHgMEAcDgvBqmn24wAEem0gWGatz_YL9Z-mMyTBg9xg2g5DXI9iqtEDDa/exec',
 
       // ข้อมูลวันแต่งงาน
       WEDDING_DATE: '2027-01-17T07:19:00+07:00',
@@ -778,7 +789,8 @@ END:VCALENDAR`;
         phone: guestPhone,
         side: guestSide,
         notes: combinedNotes,
-        note: rawNote || '-'
+        note: rawNote || '-',
+        website: (document.getElementById('rsvpWebsite') && document.getElementById('rsvpWebsite').value) || ''
       };
 
       if (!payload.name) {
@@ -866,7 +878,8 @@ END:VCALENDAR`;
           phone: '-',
           notes: message,
           note: message,
-          message: message
+          message: message,
+          website: (document.getElementById('wishWebsite') && document.getElementById('wishWebsite').value) || ''
         };
 
         if (CONFIG.GOOGLE_SHEETS_SCRIPT_URL) {

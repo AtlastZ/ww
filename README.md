@@ -20,7 +20,7 @@
 - 📊 **Google Sheet:** [คลิกเปิด Google Sheet "RSVP Wedding"](https://docs.google.com/spreadsheets/d/1ez4NB4q0Yv7mr4-SBOCT1OR18Opw7c7l_f_HnL6Glc0/edit)
 - 🔗 **Google Apps Script Web App URL:**
   ```
-  https://script.google.com/macros/s/AKfycby-j6q1oUwAQI7HOhsbcgUjZT05E-RAuAgCgSGwVrdXUYK4q9ZtyJRflroF_dXRA2e6/exec
+  https://script.google.com/macros/s/AKfycbyxokCp6LUfHgMEAcDgvBqmn24wAEem0gWGatz_YL9Z-mMyTBg9xg2g5DXI9iqtEDDa/exec
   ```
 - ✅ URL นี้ได้ถูกนำไปใส่ใน `CONFIG.GOOGLE_SHEETS_SCRIPT_URL` ใน `index.html` เรียบร้อยแล้ว พร้อมใช้งานได้ทันที!
 
