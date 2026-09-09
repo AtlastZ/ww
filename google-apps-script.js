@@ -18,6 +18,9 @@
  * 8. นำ URL ที่ได้ไปใส่ในไฟล์ index.html ตรงตัวแปร CONFIG.GOOGLE_SHEETS_SCRIPT_URL
  */
 
+// 🔒 กำหนด Spreadsheet ID ที่อนุญาตให้เขียนข้อมูลได้เพียงไฟล์นี้ไฟล์เดียวเท่านั้น
+const TARGET_SPREADSHEET_ID = '1ez4NB4q0Yv7mr4-SBOCT1OR18Opw7c7l_f_HnL6Glc0';
+
 // ฟังก์ชันหลักที่ทำงานเมื่อมี POST request จากหน้าเว็บ
 function doPost(e) {
   var lock = LockService.getScriptLock();
@@ -25,7 +28,11 @@ function doPost(e) {
   lock.tryLock(30000);
 
   try {
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    // จำกัดให้เปิดและเขียนได้เฉพาะ Google Sheet ID ที่ระบุไว้เท่านั้น
+    var ss = SpreadsheetApp.openById(TARGET_SPREADSHEET_ID);
+    if (!ss || ss.getId() !== TARGET_SPREADSHEET_ID) {
+      throw new Error("Unauthorized Spreadsheet Target");
+    }
     var data;
 
     // ตรวจสอบรูปแบบข้อมูลที่ส่งมา (JSON หรือ Form Data)
