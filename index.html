@@ -7,12 +7,12 @@
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Wedding E-Card | Sirilak & Peerapat (สิริลักษณ์ & พีรพัฒน์)</title>
   <meta name="description"
-    content="ขอเรียนเชิญร่วมเป็นเกียรติในพิธีมงคลสมรสระหว่าง สิริลักษณ์ แตงกระโทก (วาววา) & พีรพัฒน์ สุขเกษม (ตุ้ย) วันเสาร์ที่ ๑๗ มกราคม ๒๕๗๐ ณ ครัวครบรส บุรีรมย์ การ์เด้น">
+    content="มีความยินดีขอเรียนเชิญท่านเพื่อเป็นเกียรติเนื่องในงานพิธีมงคลสมรส ระหว่าง สิริลักษณ์ แตงกระโทก (วาววา) & พีรพัฒน์ สุขเกษม (ตุ้ย) วันอาทิตย์ที่ ๑๗ มกราคม ๒๕๗๐ ณ ครัวครบรส บุรีรมย์ การ์เด้น">
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:title" content="Wedding E-Card | Sirilak & Peerapat (สิริลักษณ์ & พีรพัฒน์)">
   <meta property="og:description"
-    content="ขอเรียนเชิญร่วมเป็นเกียรติในพิธีมงคลสมรส วันเสาร์ที่ ๑๗ มกราคม พ.ศ. ๒๕๗๐ ณ ครัวครบรส บุรีรมย์ การ์เด้น">
+    content="มีความยินดีขอเรียนเชิญท่านเพื่อเป็นเกียรติเนื่องในงานพิธีมงคลสมรส วันอาทิตย์ที่ ๑๗ มกราคม พ.ศ. ๒๕๗๐ ณ ครัวครบรส บุรีรมย์ การ์เด้น">
   <meta property="og:type" content="website">
 
   <!-- Google Fonts -->
@@ -85,11 +85,14 @@
               buttercup: '#F6BD60',
               mint: '#57BA98',
               sky: '#70C1B3',
-              earth: '#3D314A',
-              muted: '#6B6071',
+              earth: '#4A2E1C',
+              muted: '#8A7360',
               ivory: '#FFFFFF',
-              cream: '#FFF9F5',
-              sand: '#EFE7E1',
+              cream: '#FAF3E8',
+              sand: '#EFE2CC',
+              terracotta: '#9E4A28',
+              gold: '#C9A227',
+              mocha: '#7D5A3C',
             }
           },
           fontFamily: {
@@ -111,12 +114,11 @@
 
   <style>
     body {
-      background: radial-gradient(circle at 10% 15%, rgba(255, 218, 185, 0.45) 0%, transparent 40%),
-        radial-gradient(circle at 90% 25%, rgba(216, 203, 255, 0.45) 0%, transparent 45%),
-        radial-gradient(circle at 15% 65%, rgba(182, 240, 217, 0.35) 0%, transparent 40%),
-        radial-gradient(circle at 85% 85%, rgba(255, 205, 222, 0.45) 0%, transparent 45%),
-        linear-gradient(180deg, #FFF8F3 0%, #FAF5FF 50%, #F4FAF8 100%);
-      color: #3D314A;
+      background: radial-gradient(circle at 10% 10%, rgba(201, 162, 39, 0.16) 0%, transparent 42%),
+        radial-gradient(circle at 92% 18%, rgba(158, 74, 40, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 20% 80%, rgba(201, 162, 39, 0.12) 0%, transparent 45%),
+        linear-gradient(180deg, #FAF3E8 0%, #F6ECDB 55%, #FAF3E8 100%);
+      color: #4A2E1C;
       font-family: 'Prompt', sans-serif;
       -webkit-font-smoothing: antialiased;
       scroll-behavior: smooth;
@@ -127,17 +129,88 @@
     }
 
     .wax-seal-btn {
-      background: radial-gradient(circle at 35% 30%, #FF927B, #E76F51 60%, #B8472B 100%);
-      box-shadow: 0 10px 25px rgba(231, 111, 81, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.5);
+      background: radial-gradient(circle at 35% 30%, #C9763F, #9E4A28 60%, #6F3015 100%);
+      box-shadow: 0 10px 25px rgba(158, 74, 40, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.5);
     }
 
     .envelope-shadow {
-      filter: drop-shadow(0 22px 36px rgba(180, 100, 140, 0.28));
+      filter: drop-shadow(0 22px 36px rgba(110, 70, 30, 0.28));
     }
 
     .gold-border-card {
-      border: 1px solid rgba(244, 180, 195, 0.5);
+      border: 1px solid rgba(201, 162, 39, 0.35);
       backdrop-filter: blur(12px);
+    }
+
+    /* Door / Curtain opening effect (original artwork, not the vendor's video asset) */
+    .door-panel {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      background: linear-gradient(160deg, #FAF3E8 0%, #EFE2CC 45%, #DCC79A 100%);
+      transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1);
+      z-index: 10;
+    }
+
+    .door-panel-left {
+      left: 0;
+      border-right: 1px solid rgba(201, 162, 39, 0.4);
+    }
+
+    .door-panel-right {
+      right: 0;
+      border-left: 1px solid rgba(201, 162, 39, 0.4);
+    }
+
+    .door-panel.is-open.door-panel-left {
+      transform: translateX(-100%);
+    }
+
+    .door-panel.is-open.door-panel-right {
+      transform: translateX(100%);
+    }
+
+    /* Flying petal decoration (original SVG, not the vendor's butterfly GIFs) */
+    .petal-swarm {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 5;
+    }
+
+    .petal {
+      position: absolute;
+      animation: petalFly linear infinite;
+      opacity: 0.85;
+    }
+
+    .petal svg {
+      animation: petalFlutter 1.6s ease-in-out infinite;
+      display: block;
+    }
+
+    @keyframes petalFly {
+      from {
+        transform: translate(-10vw, 10vh) rotate(0deg);
+      }
+
+      to {
+        transform: translate(110vw, -30vh) rotate(25deg);
+      }
+    }
+
+    @keyframes petalFlutter {
+
+      0%,
+      100% {
+        transform: scaleX(1) rotate(0deg);
+      }
+
+      50% {
+        transform: scaleX(0.75) rotate(-8deg);
+      }
     }
 
     @keyframes gentlePulse {
@@ -200,84 +273,101 @@
     .wave-bar:nth-child(3) {
       animation: musicWave 1.4s ease-in-out infinite 0.4s;
     }
+
+    /* Carousel */
+    .carousel-img {
+      transition: opacity 0.5s ease;
+    }
+
+    .carousel-dot {
+      transition: background-color 0.25s ease, width 0.25s ease;
+    }
+
+    /* Mini calendar */
+    .calendar-grid-cell {
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   </style>
 </head>
 
 <body class="texture-paper pb-24 min-h-screen overflow-hidden" id="bodyRoot">
 
   <!-- FULL-SCREEN COVER ENVELOPE OVERLAY / POPUP -->
-  <div class="fixed inset-0 z-[100] flex items-center justify-center p-4 transition-all duration-700 ease-out"
+  <div class="fixed inset-0 z-[100] flex items-center justify-center p-4 transition-opacity duration-500 ease-out"
     id="envelopeCoverModal"
-    style="background: radial-gradient(circle at 50% 30%, rgba(255, 235, 225, 0.94) 0%, rgba(250, 240, 255, 0.96) 55%, rgba(240, 248, 250, 0.98) 100%); backdrop-filter: blur(18px);">
+    style="background: radial-gradient(circle at 50% 30%, rgba(250, 243, 232, 0.96) 0%, rgba(239, 226, 204, 0.97) 100%); backdrop-filter: blur(18px);">
     <!-- Ambient Glow Orbs in Background -->
     <div class="absolute -top-16 -left-16 w-72 h-72 rounded-full pointer-events-none opacity-60"
-      style="background: radial-gradient(circle, rgba(255, 180, 160, 0.6) 0%, transparent 70%); filter: blur(36px);">
+      style="background: radial-gradient(circle, rgba(201, 162, 39, 0.35) 0%, transparent 70%); filter: blur(36px);">
     </div>
     <div class="absolute -bottom-20 -right-20 w-80 h-80 rounded-full pointer-events-none opacity-60"
-      style="background: radial-gradient(circle, rgba(180, 160, 255, 0.5) 0%, transparent 70%); filter: blur(40px);">
+      style="background: radial-gradient(circle, rgba(158, 74, 40, 0.3) 0%, transparent 70%); filter: blur(40px);">
     </div>
-    <div
-      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none opacity-35"
-      style="background: radial-gradient(circle, rgba(130, 230, 210, 0.45) 0%, transparent 70%); filter: blur(45px);">
-    </div>
+
+    <!-- Door / Curtain Panels (open on tap, original CSS artwork) -->
+    <div class="door-panel door-panel-left" id="doorLeft"></div>
+    <div class="door-panel door-panel-right" id="doorRight"></div>
 
     <!-- Interactive Particles Container -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden z-20" id="particleContainer"></div>
 
     <!-- Modal Content Container -->
     <div
-      class="relative w-full max-w-sm flex flex-col items-center cursor-pointer select-none transition-all duration-700 ease-out transform"
+      class="relative w-full max-w-sm flex flex-col items-center cursor-pointer select-none transition-all duration-700 ease-out transform z-20"
       id="envelopeCardWrapper">
       <!-- Top Header in Popup -->
       <div class="text-center mb-4 space-y-1.5 pointer-events-none">
         <div
-          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-pink-200/80 shadow-xs mb-1">
-          <span class="w-2 h-2 rounded-full bg-gradient-to-tr from-pink-500 to-amber-400 animate-pulse"></span>
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-brand-gold/40 shadow-xs mb-1">
+          <span class="w-2 h-2 rounded-full bg-gradient-to-tr from-brand-terracotta to-brand-gold animate-pulse"></span>
           <span
-            class="editorial-sub text-[10px] font-semibold tracking-[0.24em] bg-gradient-to-r from-rose-600 via-purple-600 to-teal-600 bg-clip-text text-transparent">Official
+            class="editorial-sub text-[10px] font-semibold tracking-[0.24em] bg-gradient-to-r from-brand-terracotta via-brand-gold to-brand-terracotta bg-clip-text text-transparent">Official
             Wedding Invitation</span>
         </div>
         <p class="editorial-sub text-[10.5px] font-medium tracking-[0.22em] text-brand-muted">Together With Their
           Families · We Invite You</p>
         <h1 class="font-cormorant text-4xl sm:text-5xl font-normal tracking-wide mt-1 mb-0.5"
-          style="background: linear-gradient(135deg, rgb(124, 45, 18) 0%, rgb(168, 50, 35) 50%, rgb(88, 28, 135) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+          style="background: linear-gradient(135deg, #9E4A28 0%, #C9A227 50%, #9E4A28 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
           Sirilak & Peerapat</h1>
         <p class="text-xs font-normal text-brand-muted tracking-widest uppercase">สิริลักษณ์ & พีรพัฒน์</p>
       </div>
 
-      <!-- The Vibrant Pastel Sunset Envelope Card -->
+      <!-- Cream & Gold Envelope Card -->
       <div
-        class="relative w-full rounded-[2.2rem] overflow-hidden envelope-shadow p-6 pt-8 pb-9 text-center transition-all duration-500 hover:scale-[1.015] border border-white/60 group"
+        class="relative w-full rounded-[2.2rem] overflow-hidden envelope-shadow p-6 pt-8 pb-9 text-center transition-all duration-500 hover:scale-[1.015] border border-brand-gold/30 group"
         id="envelopeBox"
-        style="background: linear-gradient(140deg, #FFA07A 0%, #F38181 28%, #EA7B97 52%, #B388EB 80%, #7FD1B9 100%); box-shadow: rgba(235, 120, 150, 0.42) 0px 22px 50px -10px, rgba(255, 255, 255, 0.6) 0px 1px 2px inset;">
+        style="background: linear-gradient(150deg, #C9763F 0%, #9E4A28 45%, #7D5A3C 75%, #4A2E1C 100%); box-shadow: rgba(110, 70, 30, 0.42) 0px 22px 50px -10px, rgba(255, 255, 255, 0.25) 0px 1px 2px inset;">
         <!-- Color Flares -->
         <div class="absolute -top-12 -right-12 w-48 h-48 rounded-full pointer-events-none"
-          style="background: radial-gradient(circle, rgba(255, 240, 160, 0.65) 0%, rgba(255, 255, 255, 0) 70%); filter: blur(28px);">
+          style="background: radial-gradient(circle, rgba(201, 162, 39, 0.5) 0%, rgba(255, 255, 255, 0) 70%); filter: blur(28px);">
         </div>
         <div class="absolute -bottom-10 -left-10 w-48 h-48 rounded-full pointer-events-none"
-          style="background: radial-gradient(circle, rgba(160, 235, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%); filter: blur(24px);">
+          style="background: radial-gradient(circle, rgba(201, 162, 39, 0.3) 0%, rgba(255, 255, 255, 0) 70%); filter: blur(24px);">
         </div>
 
         <!-- Monogram Motif P & S -->
         <div class="relative mx-auto w-32 h-32 flex items-center justify-center my-2">
           <div
-            class="absolute inset-0 rounded-full border-2 border-white/60 bg-white/15 backdrop-blur-xs shadow-inner transition-transform group-hover:scale-105 duration-300">
+            class="absolute inset-0 rounded-full border-2 border-brand-gold/60 bg-white/10 backdrop-blur-xs shadow-inner transition-transform group-hover:scale-105 duration-300">
           </div>
           <div class="relative flex items-center justify-center select-none font-cursive">
             <span class="text-7xl font-normal text-white drop-shadow-md -translate-x-1 italic">S</span>
             <span
-              class="text-6xl font-light text-amber-100 opacity-95 -translate-x-2 translate-y-1 italic drop-shadow">P</span>
+              class="text-6xl font-light text-amber-200 opacity-95 -translate-x-2 translate-y-1 italic drop-shadow">P</span>
           </div>
         </div>
 
-        <p class="editorial-sub text-white/95 font-semibold mt-3 tracking-[0.32em] drop-shadow-sm">Save The Date</p>
-        <p class="font-cormorant text-3xl tracking-wider text-white font-bold drop-shadow-sm mt-0.5">17 · 01 · 70</p>
+        <p class="editorial-sub text-amber-100 font-semibold mt-3 tracking-[0.32em] drop-shadow-sm">Save The Date</p>
+        <p class="font-cormorant text-3xl tracking-wider text-white font-bold drop-shadow-sm mt-0.5">17 · 01 · 27</p>
         <p class="text-xs text-white/95 font-thaiSerif mt-0.5 drop-shadow-sm">๑๗ มกราคม ๒๕๗๐</p>
 
         <!-- Wax Seal Button (Clickable Interactive Centerpiece) -->
         <div class="mt-6 flex flex-col items-center">
           <button aria-label="แตะซองเพื่อเปิดการ์ด"
-            class="wax-seal-btn pulse-seal w-20 h-20 rounded-full flex flex-col items-center justify-center group-hover:scale-105 active:scale-95 transition-all cursor-pointer relative border border-rose-200/60"
+            class="wax-seal-btn pulse-seal w-20 h-20 rounded-full flex flex-col items-center justify-center group-hover:scale-105 active:scale-95 transition-all cursor-pointer relative border border-amber-200/40"
             id="openEnvelopeBtn" type="button">
             <div
               class="w-16 h-16 rounded-full border border-white/55 flex flex-col items-center justify-center bg-white/10 backdrop-blur-xs shadow-inner">
@@ -303,11 +393,11 @@
 
   <!-- Top Floating Controls -->
   <header
-    class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-4 py-3 bg-white/80 backdrop-blur-md border-b border-pink-100/70 max-w-md mx-auto">
+    class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-4 py-3 bg-brand-cream/90 backdrop-blur-md border-b border-brand-gold/25 max-w-md mx-auto">
     <div class="flex items-center gap-2">
-      <span class="w-2.5 h-2.5 rounded-full bg-gradient-to-tr from-pink-500 to-amber-400 animate-pulse"></span>
+      <span class="w-2.5 h-2.5 rounded-full bg-gradient-to-tr from-brand-terracotta to-brand-gold animate-pulse"></span>
       <span
-        class="text-xs font-semibold tracking-widest bg-gradient-to-r from-rose-500 via-purple-600 to-teal-600 bg-clip-text text-transparent uppercase">
+        class="text-xs font-semibold tracking-widest bg-gradient-to-r from-brand-terracotta via-brand-gold to-brand-terracotta bg-clip-text text-transparent uppercase">
         <a href="https://www.youtube.com/watch?v=3mYVyVY-lU4" target="_blank" rel="noopener noreferrer">คู่ชีวิต - COCKTAIL</a>
       </span>
     </div>
@@ -315,7 +405,7 @@
     <div class="flex items-center gap-2">
       <!-- Reopen Envelope Button -->
       <button
-        class="px-2.5 py-1 rounded-full bg-rose-50/90 border border-rose-200 text-rose-600 text-[11px] font-thaiSerif flex items-center gap-1 hover:bg-rose-100/80 transition-colors shadow-xs active:scale-95 cursor-pointer"
+        class="px-2.5 py-1 rounded-full bg-amber-50/90 border border-brand-gold/40 text-brand-terracotta text-[11px] font-thaiSerif flex items-center gap-1 hover:bg-amber-100/80 transition-colors shadow-xs active:scale-95 cursor-pointer"
         id="reopenEnvelopeBtn" title="ดูซองการ์ดอีกครั้ง">
         <span class="material-symbols-outlined text-sm">drafts</span>
         <span>ปิดซอง</span>
@@ -323,81 +413,108 @@
 
       <!-- Music Toggle Button -->
       <button
-        class="w-9 h-9 rounded-full bg-gradient-to-br from-pink-50 via-purple-50 to-amber-50 border border-pink-200/80 flex items-center justify-center text-rose-500 shadow-sm hover:scale-105 active:scale-95 transition-all overflow-hidden relative cursor-pointer"
+        class="w-9 h-9 rounded-full bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 border border-brand-gold/40 flex items-center justify-center text-brand-terracotta shadow-sm hover:scale-105 active:scale-95 transition-all overflow-hidden relative cursor-pointer"
         id="musicToggle" title="เปิด/ปิด เสียงเพลงบรรเลง">
         <span class="material-symbols-outlined text-lg" id="musicIcon">music_note</span>
         <div class="hidden items-center gap-0.5" id="musicWaves">
-          <span class="wave-bar w-0.5 bg-rose-500 rounded-full"></span>
-          <span class="wave-bar w-0.5 bg-rose-500 rounded-full"></span>
-          <span class="wave-bar w-0.5 bg-rose-500 rounded-full"></span>
+          <span class="wave-bar w-0.5 bg-brand-terracotta rounded-full"></span>
+          <span class="wave-bar w-0.5 bg-brand-terracotta rounded-full"></span>
+          <span class="wave-bar w-0.5 bg-brand-terracotta rounded-full"></span>
         </div>
       </button>
     </div>
   </header>
 
   <!-- Main Container Mobile Width ~400px - 440px -->
-  <main class="max-w-md mx-auto pt-14 px-4 space-y-6 transition-all duration-700" id="mainContent"
+  <main class="max-w-md mx-auto pt-16 px-4 space-y-7 transition-all duration-700" id="mainContent"
     style="filter: blur(2px);">
 
-    <!-- 1. HERO HEADER SECTION -->
-    <section class="pt-4 flex flex-col items-center text-center">
-      <!-- Tagline -->
-      <div class="text-center space-y-1 mb-2">
-        <p
-          class="editorial-sub font-medium bg-gradient-to-r from-rose-500 via-amber-500 to-violet-500 bg-clip-text text-transparent">
-          Together With Their Families · We Invite You</p>
-        <h1 class="font-cormorant text-4xl sm:text-5xl font-normal tracking-wide text-brand-earth mt-1 mb-0.5"
-          style="background: linear-gradient(135deg, rgb(124, 45, 18) 0%, rgb(168, 50, 35) 50%, rgb(88, 28, 135) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-          Sirilak & Peerapat</h1>
-        <p class="text-xs font-normal text-brand-muted tracking-widest uppercase pt-0.5">สิริลักษณ์ & พีรพัฒน์</p>
+    <!-- 1. HERO PHOTO + MUSIC PLAYER (shown right after the envelope opens) -->
+    <section class="relative rounded-3xl overflow-hidden shadow-card" id="heroPhoto">
+      <img src="assets/photos/wedding-01.jpg" alt="สิริลักษณ์ & พีรพัฒน์"
+        class="w-full aspect-[4/5] object-cover" fetchpriority="high" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-black/10"></div>
+
+      <!-- Flying petal decoration (original SVG artwork) -->
+      <div class="petal-swarm" aria-hidden="true">
+        <div class="petal" style="left: -5%; top: 70%; animation-duration: 9s; animation-delay: 0s;">
+          <svg height="20" viewbox="0 0 24 24" width="20"><ellipse cx="12" cy="12" fill="#C9A227" opacity="0.85"
+              rx="10" ry="6" transform="rotate(20 12 12)"></ellipse></svg>
+        </div>
+        <div class="petal" style="left: -5%; top: 40%; animation-duration: 12s; animation-delay: 2.5s;">
+          <svg height="16" viewbox="0 0 24 24" width="16"><ellipse cx="12" cy="12" fill="#E8C873" opacity="0.8" rx="10"
+              ry="6" transform="rotate(-15 12 12)"></ellipse></svg>
+        </div>
+        <div class="petal" style="left: -5%; top: 85%; animation-duration: 10.5s; animation-delay: 5s;">
+          <svg height="14" viewbox="0 0 24 24" width="14"><ellipse cx="12" cy="12" fill="#9E4A28" opacity="0.7" rx="10"
+              ry="6" transform="rotate(35 12 12)"></ellipse></svg>
+        </div>
       </div>
 
-      <!-- Compact Top Save-The-Date Banner in Main Flow -->
-      <div
-        class="w-full bg-gradient-to-r from-rose-100/70 via-purple-100/50 to-teal-100/60 rounded-2xl p-3 border border-pink-200/60 flex items-center justify-between shadow-xs">
-        <div class="flex items-center gap-2.5">
-          <div
-            class="w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-xs border border-rose-200/80 text-rose-600">
-            <span class="material-symbols-outlined text-lg">calendar_month</span>
-          </div>
-          <div class="text-left">
-            <span
-              class="editorial-sub text-[9.5px] font-semibold text-rose-600 tracking-widest block leading-tight">Save
-              The Date</span>
-            <span class="font-cormorant text-sm font-bold text-brand-earth">17 · 01 · 70</span>
-          </div>
-        </div>
-        <span
-          class="text-xs font-thaiSerif text-brand-muted px-2.5 py-1 bg-white/80 rounded-full border border-pink-100">
-          ๑๗ มกราคม ๒๕๗๐
-        </span>
+      <div class="absolute bottom-0 left-0 right-0 p-4 text-center">
+        <p class="editorial-sub text-white/90 tracking-[0.3em]">Together Forever</p>
+        <h1 class="font-cursive text-4xl text-white drop-shadow mt-1">Sirilak &amp; Tui</h1>
       </div>
+      <a href="#invitation"
+        class="absolute left-1/2 -translate-x-1/2 bottom-3 w-8 h-8 rounded-full bg-white/80 backdrop-blur flex items-center justify-center text-brand-earth shadow-md animate-bounce"
+        aria-label="เลื่อนลง">
+        <span class="material-symbols-outlined text-lg">expand_more</span>
+      </a>
     </section>
 
-    <!-- 2. FORMAL INVITATION & PARENTS & LIVE COUNTDOWN -->
+    <!-- Hero Music Player -->
+    <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-4 shadow-card gold-border-card flex items-center gap-3">
+      <button
+        class="w-11 h-11 shrink-0 rounded-full bg-gradient-to-br from-brand-terracotta to-brand-gold text-white flex items-center justify-center shadow-md cursor-pointer"
+        id="heroMusicToggle" type="button" aria-label="เล่น/หยุดเพลง">
+        <span class="material-symbols-outlined text-xl" id="heroMusicIcon">play_arrow</span>
+      </button>
+      <div class="flex-1 min-w-0">
+        <p class="text-xs font-semibold text-brand-earth truncate">คู่ชีวิต - COCKTAIL</p>
+        <input class="w-full accent-rose-500" id="heroMusicSeek" max="100" min="0" step="0.1" type="range" value="0" />
+      </div>
+      <span class="text-[11px] text-brand-muted tabular-nums" id="heroMusicTime">0:00</span>
+    </section>
+
+    <!-- 2. FORMAL INVITATION (greeting + portraits + names) -->
     <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-card gold-border-card text-center space-y-5"
-      id="invitationDetails">
+      id="invitation">
       <div class="space-y-1.5">
         <span
-          class="text-[11px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-gradient-to-r from-pink-100 via-purple-100 to-teal-100 text-purple-700 inline-block">พิธีมงคลสมรส</span>
+          class="text-[11px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-amber-50 border border-brand-gold/40 text-brand-terracotta inline-block">พิธีมงคลสมรส</span>
         <h2 class="font-thaiSerif text-xl font-normal text-brand-earth leading-relaxed tracking-wide">
-          มีความยินดีขอเรียนเชิญเพื่อเป็นเกียรติ<br />เนื่องในพิธีมงคลสมรส
+          มีความยินดีขอเรียนเชิญท่านเพื่อเป็นเกียรติ<br />เนื่องในงานพิธีมงคลสมรส ระหว่าง
         </h2>
       </div>
 
-      <!-- Couple & Parents Details (Verbatim Thai Hierarchy & User Nicknames) -->
+      <!-- Portraits -->
+      <div class="flex items-center justify-center gap-4">
+        <img src="assets/photos/bride.jpg" alt="รูปเจ้าสาว"
+          class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-swatch" />
+        <span class="material-symbols-outlined text-brand-terracotta text-2xl">favorite</span>
+        <img src="assets/photos/groom.jpg" alt="รูปเจ้าบ่าว"
+          class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-swatch" />
+      </div>
+
+      <div class="space-y-0.5">
+        <p class="font-cursive text-3xl text-brand-terracotta">Wawwa <i>&amp;</i> Tui</p>
+        <h3 class="font-thaiSerif text-lg font-medium text-brand-earth">สิริลักษณ์ แตงกระโทก</h3>
+        <h3 class="font-thaiSerif text-lg font-medium text-brand-earth">พีรพัฒน์ สุขเกษม</h3>
+      </div>
+
+      <!-- Couple & Parents Details -->
       <div class="py-2 space-y-5">
         <!-- Bride Details -->
         <div
-          class="space-y-2 bg-gradient-to-br from-rose-50/70 via-pink-50/40 to-amber-50/60 rounded-2xl p-5 border border-rose-100/80 shadow-xs">
+          class="space-y-2 bg-gradient-to-br from-amber-50/80 via-orange-50/40 to-amber-50/60 rounded-2xl p-5 border border-brand-gold/25 shadow-xs">
           <span
-            class="inline-block text-[9.5px] font-medium text-rose-600 tracking-[0.22em] uppercase bg-white/95 px-3 py-1 rounded-full border border-rose-200/80 shadow-xs">Bride
+            class="inline-block text-[9.5px] font-medium text-brand-terracotta tracking-[0.22em] uppercase bg-white/95 px-3 py-1 rounded-full border border-brand-gold/40 shadow-xs">Bride
             · เจ้าสาว</span>
-          <h3 class="font-thaiSerif text-lg font-medium text-rose-700 tracking-normal pt-0.5">
-            นางสาวสิริลักษณ์ แตงกระโทก <span class="text-rose-600 font-semibold">(วาววา)</span>
+          <h3 class="font-thaiSerif text-lg font-medium text-brand-terracotta tracking-normal pt-0.5">
+            นางสาวสิริลักษณ์ แตงกระโทก <span class="text-brand-terracotta font-semibold">(วาววา)</span>
           </h3>
           <p class="font-cormorant text-base text-brand-muted tracking-wider italic">Sirilak Tangkratok</p>
-          <div class="text-xs text-brand-earth/90 space-y-1 pt-2 border-t border-rose-100 font-normal leading-relaxed">
+          <div class="text-xs text-brand-earth/90 space-y-1 pt-2 border-t border-brand-gold/25 font-normal leading-relaxed">
             <p><span class="text-brand-muted font-light tracking-wide">บุตรีของ :</span> นายอุเทน — นางอนงค์ แตงกระโทก
             </p>
             <p><span class="text-brand-muted font-light tracking-wide">หลานของ :</span> นายเสริมสุข — นางยุพา แตงกระโทก
@@ -407,26 +524,26 @@
 
         <!-- Ampersand Motif -->
         <div class="flex items-center justify-center gap-3 py-0.5">
-          <div class="h-0.5 w-12 bg-gradient-to-r from-transparent via-rose-300 to-purple-300 rounded-full opacity-70">
+          <div class="h-0.5 w-12 bg-gradient-to-r from-transparent via-brand-gold to-brand-terracotta rounded-full opacity-70">
           </div>
-          <span class="font-cormorant text-2xl font-normal text-rose-600 italic">&amp;</span>
-          <span class="text-xs font-light text-purple-600 tracking-wider">กับ</span>
-          <div class="h-0.5 w-12 bg-gradient-to-r from-purple-300 via-teal-300 to-transparent rounded-full opacity-70">
+          <span class="font-cormorant text-2xl font-normal text-brand-terracotta italic">&amp;</span>
+          <span class="text-xs font-light text-brand-mocha tracking-wider">กับ</span>
+          <div class="h-0.5 w-12 bg-gradient-to-r from-brand-terracotta via-brand-gold to-transparent rounded-full opacity-70">
           </div>
         </div>
 
         <!-- Groom Details -->
         <div
-          class="space-y-2 bg-gradient-to-br from-purple-50/60 via-blue-50/40 to-teal-50/60 rounded-2xl p-5 border border-purple-100/80 shadow-xs">
+          class="space-y-2 bg-gradient-to-br from-stone-100/70 via-amber-50/30 to-stone-50/60 rounded-2xl p-5 border border-stone-300/50 shadow-xs">
           <span
-            class="inline-block text-[9.5px] font-medium text-purple-600 tracking-[0.22em] uppercase bg-white/95 px-3 py-1 rounded-full border border-purple-200/80 shadow-xs">Groom
+            class="inline-block text-[9.5px] font-medium text-brand-mocha tracking-[0.22em] uppercase bg-white/95 px-3 py-1 rounded-full border border-stone-300/70 shadow-xs">Groom
             · เจ้าบ่าว</span>
-          <h3 class="font-thaiSerif text-lg font-medium text-purple-700 tracking-normal pt-0.5">
-            นายพีรพัฒน์ สุขเกษม <span class="text-purple-600 font-semibold">(ตุ้ย)</span>
+          <h3 class="font-thaiSerif text-lg font-medium text-brand-mocha tracking-normal pt-0.5">
+            นายพีรพัฒน์ สุขเกษม <span class="text-brand-mocha font-semibold">(ตุ้ย)</span>
           </h3>
           <p class="font-cormorant text-base text-brand-muted tracking-wider italic">Peerapat Sukkasem</p>
           <div
-            class="text-xs text-brand-earth/90 space-y-1 pt-2 border-t border-purple-100 font-normal leading-relaxed">
+            class="text-xs text-brand-earth/90 space-y-1 pt-2 border-t border-stone-300/50 font-normal leading-relaxed">
             <p><span class="text-brand-muted font-light tracking-wide">บุตรของ :</span> นายณัฐนนท์ — นางญาณิศา สุขเกษม
             </p>
             <p><span class="text-brand-muted font-light tracking-wide">หลานของ :</span> นางกิม โมรา และ นางวาสนา สุขเกษม
@@ -434,27 +551,35 @@
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Date Badge -->
-      <div
-        class="bg-gradient-to-r from-amber-50 via-rose-50 to-teal-50 border border-pink-200/70 rounded-2xl py-3.5 px-4 shadow-xs">
-        <p class="font-thaiSerif text-base font-normal text-brand-earth tracking-wide">วันเสาร์ที่ ๑๗ มกราคม พุทธศักราช
-          ๒๕๗๐</p>
-        <p
-          class="editorial-sub font-semibold mt-1 tracking-[0.24em] bg-gradient-to-r from-rose-600 via-purple-600 to-teal-600 bg-clip-text text-transparent">
-          Saturday, January 17, 2027</p>
+    <!-- 3. SAVE THE DATE (calendar + countdown) -->
+    <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-card gold-border-card text-center space-y-4"
+      id="dateSection">
+      <div class="space-y-1">
+        <span
+          class="text-[11px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 inline-block">Save
+          The Date</span>
+        <h2 class="font-cormorant text-3xl font-bold text-brand-earth">17 · 01 · 2027</h2>
+        <p class="text-xs text-brand-muted font-thaiSerif">วันอาทิตย์ที่ ๑๗ มกราคม พุทธศักราช ๒๕๗๐</p>
+      </div>
+
+      <!-- Mini Calendar Grid -->
+      <div class="bg-gradient-to-br from-amber-50 via-orange-50 to-amber-50 rounded-2xl p-4 border border-brand-gold/30">
+        <p class="editorial-sub text-brand-muted font-medium mb-2 tracking-[0.2em]">JANUARY · 2027</p>
+        <div class="grid grid-cols-7 gap-1 text-[11px]" id="calendarGrid"></div>
       </div>
 
       <!-- Add to Calendar Action Buttons -->
       <div class="flex items-center justify-center gap-2 pt-1">
         <a id="googleCalBtn" href="#" target="_blank" rel="noopener noreferrer"
-          class="flex-1 py-2.5 px-3 rounded-xl bg-white border border-pink-200/90 text-brand-earth text-xs font-medium hover:bg-rose-50/50 transition-colors shadow-xs flex items-center justify-center gap-1.5">
-          <span class="material-symbols-outlined text-sm text-rose-500">event</span>
+          class="flex-1 py-2.5 px-3 rounded-xl bg-white border border-brand-gold/40 text-brand-earth text-xs font-medium hover:bg-amber-50/50 transition-colors shadow-xs flex items-center justify-center gap-1.5">
+          <span class="material-symbols-outlined text-sm text-brand-terracotta">event</span>
           <span>Google Calendar</span>
         </a>
         <button id="icsCalBtn" type="button"
-          class="flex-1 py-2.5 px-3 rounded-xl bg-white border border-pink-200/90 text-brand-earth text-xs font-medium hover:bg-purple-50/50 transition-colors shadow-xs flex items-center justify-center gap-1.5 cursor-pointer">
-          <span class="material-symbols-outlined text-sm text-purple-500">download</span>
+          class="flex-1 py-2.5 px-3 rounded-xl bg-white border border-brand-gold/40 text-brand-earth text-xs font-medium hover:bg-amber-50/50 transition-colors shadow-xs flex items-center justify-center gap-1.5 cursor-pointer">
+          <span class="material-symbols-outlined text-sm text-brand-mocha">download</span>
           <span>Apple / iCal (.ics)</span>
         </button>
       </div>
@@ -465,52 +590,100 @@
           นับถอยหลังสู่วันสำคัญ</p>
         <div class="grid grid-cols-4 gap-2 text-center" id="countdown">
           <div class="rounded-2xl py-2.5 px-1 text-white shadow-md transition-transform hover:scale-105"
-            style="background: linear-gradient(145deg, #F38181 0%, #E76F51 100%); box-shadow: 0 6px 14px -3px rgba(231, 111, 81, 0.35);">
+            style="background: linear-gradient(145deg, #C9763F 0%, #9E4A28 100%); box-shadow: 0 6px 14px -3px rgba(158, 74, 40, 0.35);">
             <span class="block font-cormorant text-2xl font-bold leading-tight" id="cd-days">--</span>
-            <span class="text-[9px] uppercase tracking-wider text-rose-100 font-medium">Days</span>
+            <span class="text-[9px] uppercase tracking-wider text-amber-100 font-medium">Days</span>
           </div>
           <div class="rounded-2xl py-2.5 px-1 text-white shadow-md transition-transform hover:scale-105"
-            style="background: linear-gradient(145deg, #F6BD60 0%, #E9A825 100%); box-shadow: 0 6px 14px -3px rgba(233, 168, 37, 0.35);">
+            style="background: linear-gradient(145deg, #D9B64A 0%, #C9A227 100%); box-shadow: 0 6px 14px -3px rgba(201, 162, 39, 0.35);">
             <span class="block font-cormorant text-2xl font-bold leading-tight" id="cd-hours">--</span>
             <span class="text-[9px] uppercase tracking-wider text-amber-100 font-medium">Hours</span>
           </div>
           <div class="rounded-2xl py-2.5 px-1 text-white shadow-md transition-transform hover:scale-105"
-            style="background: linear-gradient(145deg, #9D8DF1 0%, #7E6BE6 100%); box-shadow: 0 6px 14px -3px rgba(157, 141, 241, 0.35);">
+            style="background: linear-gradient(145deg, #9C8468 0%, #7D5A3C 100%); box-shadow: 0 6px 14px -3px rgba(125, 90, 60, 0.35);">
             <span class="block font-cormorant text-2xl font-bold leading-tight" id="cd-mins">--</span>
-            <span class="text-[9px] uppercase tracking-wider text-purple-100 font-medium">Mins</span>
+            <span class="text-[9px] uppercase tracking-wider text-stone-100 font-medium">Mins</span>
           </div>
           <div class="rounded-2xl py-2.5 px-1 text-white shadow-md transition-transform hover:scale-105"
-            style="background: linear-gradient(145deg, #70C1B3 0%, #4FA395 100%); box-shadow: 0 6px 14px -3px rgba(112, 193, 179, 0.35);">
+            style="background: linear-gradient(145deg, #B07A4A 0%, #8A5A30 100%); box-shadow: 0 6px 14px -3px rgba(138, 90, 48, 0.35);">
             <span class="block font-cormorant text-2xl font-bold leading-tight" id="cd-secs">--</span>
-            <span class="text-[9px] uppercase tracking-wider text-teal-100 font-medium">Secs</span>
+            <span class="text-[9px] uppercase tracking-wider text-orange-100 font-medium">Secs</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. CEREMONY ITINERARY -->
+    <!-- 4. WEDDING GALLERY (10-photo carousel) -->
+    <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-card gold-border-card text-center space-y-4">
+      <div class="space-y-1">
+        <p class="font-cursive text-2xl text-brand-terracotta">Our moments</p>
+        <h2 class="font-thaiSerif text-xl font-medium text-brand-earth">Wedding Gallery</h2>
+      </div>
+      <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-brand-sand" id="weddingGallery">
+        <img alt="Gallery image 1" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-100"
+          decoding="async" fetchpriority="high" src="assets/photos/wedding-01.jpg" />
+        <img alt="Gallery image 2" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
+          decoding="async" loading="lazy" src="assets/photos/wedding-02.jpg" />
+        <img alt="Gallery image 3" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
+          decoding="async" loading="lazy" src="assets/photos/wedding-03.jpg" />
+        <img alt="Gallery image 4" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
+          decoding="async" loading="lazy" src="assets/photos/wedding-04.jpg" />
+        <img alt="Gallery image 5" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
+          decoding="async" loading="lazy" src="assets/photos/wedding-05.jpg" />
+        <img alt="Gallery image 6" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
+          decoding="async" loading="lazy" src="assets/photos/wedding-06.jpg" />
+        <img alt="Gallery image 7" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
+          decoding="async" loading="lazy" src="assets/photos/wedding-07.jpg" />
+        <img alt="Gallery image 8" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
+          decoding="async" loading="lazy" src="assets/photos/wedding-08.jpg" />
+        <img alt="Gallery image 9" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
+          decoding="async" loading="lazy" src="assets/photos/wedding-09.jpg" />
+        <img alt="Gallery image 10" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
+          decoding="async" loading="lazy" src="assets/photos/wedding-10.jpg" />
+
+        <button aria-label="Previous photo" class="carousel-prev absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 backdrop-blur flex items-center justify-center text-brand-earth shadow-md cursor-pointer" type="button">
+          <span class="material-symbols-outlined text-lg">chevron_left</span>
+        </button>
+        <button aria-label="Next photo" class="carousel-next absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 backdrop-blur flex items-center justify-center text-brand-earth shadow-md cursor-pointer" type="button">
+          <span class="material-symbols-outlined text-lg">chevron_right</span>
+        </button>
+        <span class="carousel-counter absolute bottom-2 right-2 text-[10px] font-medium text-white bg-black/40 backdrop-blur px-2 py-0.5 rounded-full">01 / 10</span>
+      </div>
+      <div class="flex justify-center gap-1.5 flex-wrap">
+        <button aria-label="Photo 1" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-terracotta" type="button"></button>
+        <button aria-label="Photo 2" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
+        <button aria-label="Photo 3" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
+        <button aria-label="Photo 4" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
+        <button aria-label="Photo 5" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
+        <button aria-label="Photo 6" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
+        <button aria-label="Photo 7" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
+        <button aria-label="Photo 8" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
+        <button aria-label="Photo 9" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
+        <button aria-label="Photo 10" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
+      </div>
+    </section>
+
+    <!-- 5. CEREMONY ITINERARY -->
     <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-card gold-border-card space-y-4">
       <div class="text-center space-y-1">
-        <span
-          class="text-[11px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 inline-block">Wedding
-          Schedule</span>
+        <p class="font-cursive text-2xl text-amber-600">Wedding day</p>
         <h2 class="font-thaiSerif text-xl font-medium text-brand-earth">กำหนดการพิธีมงคลสมรส</h2>
-        <p class="text-xs text-brand-muted font-thaiSerif">วันเสาร์ที่ ๑๗ มกราคม พ.ศ. ๒๕๗๐</p>
+        <p class="text-xs text-brand-muted font-thaiSerif">วันอาทิตย์ที่ ๑๗ มกราคม พ.ศ. ๒๕๗๐</p>
       </div>
 
       <!-- Timeline Items -->
       <div
-        class="relative pl-6 space-y-4 before:content-[''] before:absolute before:left-2.5 before:top-3 before:bottom-3 before:w-0.5 before:bg-gradient-to-b before:from-rose-300 before:via-purple-300 before:to-teal-300">
+        class="relative pl-6 space-y-4 before:content-[''] before:absolute before:left-2.5 before:top-3 before:bottom-3 before:w-0.5 before:bg-gradient-to-b before:from-brand-gold before:via-brand-terracotta before:to-brand-mocha">
         <!-- Event 1: พิธีสงฆ์ -->
         <div
-          class="relative bg-gradient-to-r from-rose-50/70 to-pink-50/30 rounded-2xl p-4 border border-rose-200/60 shadow-xs">
+          class="relative bg-gradient-to-r from-amber-50/70 to-yellow-50/30 rounded-2xl p-4 border border-amber-200/60 shadow-xs">
           <div
-            class="absolute -left-[27px] top-3.5 w-3.5 h-3.5 rounded-full bg-rose-500 border-2 border-white shadow-md">
+            class="absolute -left-[27px] top-3.5 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-white shadow-md">
           </div>
           <div class="flex justify-between items-center mb-1.5">
-            <span class="text-xl font-bold tracking-tight text-rose-600 font-sans">07:19 น.</span>
+            <span class="text-xl font-bold tracking-tight text-amber-700 font-sans">07:19 น.</span>
             <span
-              class="text-[11px] tracking-wide uppercase text-rose-700 font-semibold px-2.5 py-0.5 bg-rose-100/90 rounded-full border border-rose-200/60">พิธีสงฆ์</span>
+              class="text-[11px] tracking-wide uppercase text-amber-700 font-semibold px-2.5 py-0.5 bg-amber-100/90 rounded-full border border-amber-200/60">พิธีสงฆ์</span>
           </div>
           <p class="text-base font-semibold text-brand-earth tracking-normal leading-snug">พิธีสงฆ์และเจริญพระพุทธมนต์
           </p>
@@ -518,50 +691,65 @@
             Merit Making Ceremony</p>
         </div>
 
-        <!-- Event 2: พิธีแห่ขันหมาก -->
+        <!-- Event 2: พิธีแห่ขันหมากและพิธีสู่ขอ -->
         <div
-          class="relative bg-gradient-to-r from-amber-50/70 to-yellow-50/30 rounded-2xl p-4 border border-amber-200/60 shadow-xs">
+          class="relative bg-gradient-to-r from-orange-50/70 to-amber-50/30 rounded-2xl p-4 border border-[#9E4A28]/25 shadow-xs">
           <div
-            class="absolute -left-[27px] top-3.5 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-white shadow-md">
+            class="absolute -left-[27px] top-3.5 w-3.5 h-3.5 rounded-full bg-[#9E4A28] border-2 border-white shadow-md">
           </div>
           <div class="flex justify-between items-center mb-1.5">
-            <span class="text-xl font-bold tracking-tight text-amber-700 font-sans">08:39 น.</span>
+            <span class="text-xl font-bold tracking-tight text-[#9E4A28] font-sans">08:19 น.</span>
             <span
-              class="text-[11px] tracking-wide uppercase text-amber-700 font-semibold px-2.5 py-0.5 bg-amber-100/90 rounded-full border border-amber-200/60">แห่ขันหมาก</span>
+              class="text-[11px] tracking-wide uppercase text-[#9E4A28] font-semibold px-2.5 py-0.5 bg-orange-100/80 rounded-full border border-[#9E4A28]/25">แห่ขันหมาก</span>
           </div>
-          <p class="text-base font-semibold text-brand-earth tracking-normal leading-snug">พิธีแห่ขันหมากและสู่ขอ</p>
+          <p class="text-base font-semibold text-brand-earth tracking-normal leading-snug">พิธีแห่ขันหมากและพิธีสู่ขอ</p>
           <p class="text-xs text-brand-muted font-normal mt-0.5 tracking-normal leading-relaxed">Traditional Khan Maak
             Procession</p>
         </div>
 
-        <!-- Event 3: พิธีสวมแหวนและหลั่งน้ำพระพุทธมนต์ -->
+        <!-- Event 3: พิธีรับไหว้ -->
         <div
-          class="relative bg-gradient-to-r from-purple-50/70 to-indigo-50/30 rounded-2xl p-4 border border-purple-200/60 shadow-xs">
+          class="relative bg-gradient-to-r from-stone-100/70 to-amber-50/30 rounded-2xl p-4 border border-stone-300/60 shadow-xs">
           <div
-            class="absolute -left-[27px] top-3.5 w-3.5 h-3.5 rounded-full bg-purple-500 border-2 border-white shadow-md">
+            class="absolute -left-[27px] top-3.5 w-3.5 h-3.5 rounded-full bg-stone-500 border-2 border-white shadow-md">
           </div>
           <div class="flex justify-between items-center mb-1.5">
-            <span class="text-xl font-bold tracking-tight text-purple-700 font-sans">10:19 น.</span>
+            <span class="text-xl font-bold tracking-tight text-stone-700 font-sans">09:19 น.</span>
             <span
-              class="text-[11px] tracking-wide uppercase text-purple-700 font-semibold px-2.5 py-0.5 bg-purple-100/90 rounded-full border border-purple-200/60">สวมแหวน
-              & หลั่งน้ำสังข์</span>
+              class="text-[11px] tracking-wide uppercase text-stone-700 font-semibold px-2.5 py-0.5 bg-stone-200/80 rounded-full border border-stone-300/60">รับไหว้</span>
           </div>
-          <p class="text-base font-semibold text-brand-earth tracking-normal leading-snug">
-            พิธีสวมแหวนและหลั่งน้ำพระพุทธมนต์</p>
-          <p class="text-xs text-brand-muted font-normal mt-0.5 tracking-normal leading-relaxed">Ring Exchange & Holy
-            Water Blessing</p>
+          <p class="text-base font-semibold text-brand-earth tracking-normal leading-snug">พิธีรับไหว้</p>
+          <p class="text-xs text-brand-muted font-normal mt-0.5 tracking-normal leading-relaxed">Respect-Paying Ritual
+          </p>
         </div>
 
-        <!-- Event 4: ร่วมรับประทานอาหาร -->
+        <!-- Event 4: พิธีหลั่งน้ำสังข์ -->
         <div
-          class="relative bg-gradient-to-r from-teal-50/70 to-emerald-50/30 rounded-2xl p-4 border border-teal-200/60 shadow-xs">
+          class="relative bg-gradient-to-r from-yellow-50/70 to-amber-50/30 rounded-2xl p-4 border border-[#C9A227]/30 shadow-xs">
           <div
-            class="absolute -left-[27px] top-3.5 w-3.5 h-3.5 rounded-full bg-teal-700 border-2 border-white shadow-md">
+            class="absolute -left-[27px] top-3.5 w-3.5 h-3.5 rounded-full bg-[#C9A227] border-2 border-white shadow-md">
           </div>
           <div class="flex justify-between items-center mb-1.5">
-            <span class="text-xl font-bold tracking-tight text-teal-700 font-sans">11:30 น.</span>
+            <span class="text-xl font-bold tracking-tight text-[#8a6d12] font-sans">10:19 น.</span>
             <span
-              class="text-[11px] tracking-wide uppercase text-teal-700 font-semibold px-2.5 py-0.5 bg-teal-100/90 rounded-full border border-teal-200/60">ฉลองมงคลสมรส</span>
+              class="text-[11px] tracking-wide uppercase text-[#8a6d12] font-semibold px-2.5 py-0.5 bg-yellow-100/80 rounded-full border border-[#C9A227]/30">หลั่งน้ำสังข์</span>
+          </div>
+          <p class="text-base font-semibold text-brand-earth tracking-normal leading-snug">
+            พิธีหลั่งน้ำสังข์</p>
+          <p class="text-xs text-brand-muted font-normal mt-0.5 tracking-normal leading-relaxed">Conch Shell Holy Water
+            Blessing</p>
+        </div>
+
+        <!-- Event 5: รับประทานอาหาร -->
+        <div
+          class="relative bg-gradient-to-r from-orange-100/70 to-stone-50/30 rounded-2xl p-4 border border-[#7D5A3C]/30 shadow-xs">
+          <div
+            class="absolute -left-[27px] top-3.5 w-3.5 h-3.5 rounded-full bg-[#7D5A3C] border-2 border-white shadow-md">
+          </div>
+          <div class="flex justify-between items-center mb-1.5">
+            <span class="text-xl font-bold tracking-tight text-[#7D5A3C] font-sans">11:30 น.</span>
+            <span
+              class="text-[11px] tracking-wide uppercase text-[#7D5A3C] font-semibold px-2.5 py-0.5 bg-orange-100/80 rounded-full border border-[#7D5A3C]/30">ฉลองมงคลสมรส</span>
           </div>
           <p class="text-base font-semibold text-brand-earth tracking-normal leading-snug">ร่วมรับประทานอาหาร
             (ฉลองมงคลสมรส)</p>
@@ -571,73 +759,29 @@
       </div>
     </section>
 
-    <!-- 4. DRESS CODE & THEME PALETTE -->
+    <!-- 6. LOCATION & VENUE -->
     <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-card gold-border-card text-center space-y-4">
-      <div class="space-y-1">
-        <span
-          class="text-[11px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-gradient-to-r from-rose-100 via-amber-100 to-teal-100 text-rose-700 inline-block">Theme
-          & Attire</span>
-        <h2
-          class="font-cormorant text-2xl font-bold tracking-wide bg-gradient-to-r from-rose-500 via-purple-600 to-teal-600 bg-clip-text text-transparent">
-          COLORFUL & JOYFUL</h2>
-        <p class="text-xs text-brand-muted">ขอเชิญทุกท่านร่วมแต่งกายด้วยชุดสุภาพในโทนสีสดใสหรือสีพาสเทลตามความสะดวก</p>
-      </div>
-
-      <!-- Color Swatches (Joyful Colorful Theme) -->
-      <div class="flex justify-center items-center gap-2.5 sm:gap-3 pt-1">
-        <div class="flex flex-col items-center space-y-1.5">
-          <div
-            class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#F07167] border-2 border-white shadow-swatch flex items-center justify-center text-white">
-            <span class="material-symbols-outlined text-sm font-bold drop-shadow">check</span>
-          </div>
-          <span class="text-[10px] text-brand-muted font-medium">Coral Rose</span>
-        </div>
-
-        <div class="flex flex-col items-center space-y-1.5">
-          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#FED766] border-2 border-white shadow-swatch"></div>
-          <span class="text-[10px] text-brand-muted font-medium">Buttercup</span>
-        </div>
-
-        <div class="flex flex-col items-center space-y-1.5">
-          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#C8B6FF] border-2 border-white shadow-swatch"></div>
-          <span class="text-[10px] text-brand-muted font-medium">Lavender</span>
-        </div>
-
-        <div class="flex flex-col items-center space-y-1.5">
-          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#98D8AA] border-2 border-white shadow-swatch"></div>
-          <span class="text-[10px] text-brand-muted font-medium">Soft Mint</span>
-        </div>
-
-        <div class="flex flex-col items-center space-y-1.5">
-          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#FFB5A7] border-2 border-white shadow-swatch"></div>
-          <span class="text-[10px] text-brand-muted font-medium">Sky Blush</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. LOCATION & VENUE -->
-    <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-card gold-border-card space-y-4">
       <div class="text-center space-y-1">
         <span
-          class="text-[11px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-teal-50 border border-teal-200 text-teal-700 inline-block">Venue
+          class="text-[11px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-amber-50 border border-brand-gold/40 text-brand-mocha inline-block">Venue
           & Map</span>
         <h2 class="font-thaiSerif text-xl font-medium text-brand-earth">สถานที่จัดงาน</h2>
         <p
-          class="font-thaiSerif text-lg font-semibold bg-gradient-to-r from-rose-500 to-purple-600 bg-clip-text text-transparent">
-          ณ ครัวครบรส บุรีรมย์ การ์เด้น</p>
+          class="font-thaiSerif text-lg font-semibold bg-gradient-to-r from-brand-terracotta to-brand-gold bg-clip-text text-transparent">
+          ครัวครบรส บุรีรมย์ การ์เด้น</p>
         <p class="text-xs text-brand-muted tracking-wide font-medium">Burirom Garden</p>
       </div>
 
       <!-- Map Mockup Graphic -->
       <div
-        class="relative w-full h-44 rounded-2xl overflow-hidden border border-pink-200/60 bg-gradient-to-br from-pink-50/50 via-purple-50/40 to-teal-50/50 flex items-center justify-center shadow-inner">
+        class="relative w-full h-44 rounded-2xl overflow-hidden border border-brand-gold/30 bg-gradient-to-br from-amber-50/60 via-orange-50/30 to-stone-50/50 flex items-center justify-center shadow-inner">
         <!-- Map visual abstraction pattern -->
         <div
-          class="absolute inset-0 opacity-25 bg-[radial-gradient(#E76F51_1.5px,transparent_1.5px)] [background-size:18px_18px]">
+          class="absolute inset-0 opacity-25 bg-[radial-gradient(#9E4A28_1.5px,transparent_1.5px)] [background-size:18px_18px]">
         </div>
         <div class="relative z-10 flex flex-col items-center text-center p-4">
           <div
-            class="w-11 h-11 rounded-full bg-gradient-to-tr from-rose-500 via-pink-500 to-amber-400 text-white flex items-center justify-center shadow-lg mb-2 animate-bounce">
+            class="w-11 h-11 rounded-full bg-gradient-to-tr from-brand-terracotta via-brand-mocha to-brand-gold text-white flex items-center justify-center shadow-lg mb-2 animate-bounce">
             <span class="material-symbols-outlined text-2xl">location_on</span>
           </div>
           <span class="text-sm font-semibold text-brand-earth font-thaiSerif">ครัวครบรส บุรีรมย์ การ์เด้น</span>
@@ -646,15 +790,59 @@
       </div>
 
       <!-- Map Button link -->
-      <a class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-2xl bg-white border border-pink-200 text-rose-600 font-medium text-sm hover:bg-rose-50/60 transition-all shadow-sm group"
-        href="https://maps.google.com/?q=ครัวครบรส+บุรีรมย์+การ์เด้น" rel="noopener noreferrer" target="_blank">
+      <a class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-2xl bg-white border border-brand-gold/40 text-brand-terracotta font-medium text-sm hover:bg-amber-50/60 transition-all shadow-sm group"
+        href="https://maps.app.goo.gl/7J8vqaN63tsh6xax9" rel="noopener noreferrer" target="_blank">
         <span
-          class="material-symbols-outlined text-lg text-rose-500 group-hover:scale-110 transition-transform">near_me</span>
+          class="material-symbols-outlined text-lg text-brand-terracotta group-hover:scale-110 transition-transform">near_me</span>
         <span>ดูเส้นทางบน Google Maps <br>(ครัวครบรส บุรีรมย์ การ์เด้น)</span>
       </a>
     </section>
 
-    <!-- 6. RSVP FORM -->
+    <!-- 7. DRESS CODE -->
+    <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-card gold-border-card text-center space-y-4">
+      <div class="space-y-1">
+        <span
+          class="text-[11px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-gradient-to-r from-amber-100 via-orange-100 to-amber-100 text-brand-terracotta inline-block">Theme
+          & Attire</span>
+        <h2
+          class="font-cormorant text-2xl font-bold tracking-wide bg-gradient-to-r from-brand-terracotta via-brand-gold to-brand-terracotta bg-clip-text text-transparent">
+          Dress Code</h2>
+        <p class="text-xs text-brand-muted">ขอเชิญทุกท่านร่วมแต่งกายด้วยชุดสุภาพในโทนสีตามจานสีด้านล่าง</p>
+      </div>
+
+      <!-- Color Swatches -->
+      <div class="flex justify-center items-center gap-2.5 sm:gap-3 pt-1 flex-wrap">
+        <div class="flex flex-col items-center space-y-1.5">
+          <div
+            class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#F5C8C3] border-2 border-white shadow-swatch flex items-center justify-center text-white">
+            <span class="material-symbols-outlined text-sm font-bold drop-shadow">check</span>
+          </div>
+          <span class="text-[10px] text-brand-muted font-medium">Blush Pink</span>
+        </div>
+
+        <div class="flex flex-col items-center space-y-1.5">
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#EA91A3] border-2 border-white shadow-swatch"></div>
+          <span class="text-[10px] text-brand-muted font-medium">Rose</span>
+        </div>
+
+        <div class="flex flex-col items-center space-y-1.5">
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#E4D2BC] border-2 border-white shadow-swatch"></div>
+          <span class="text-[10px] text-brand-muted font-medium">Sand Beige</span>
+        </div>
+
+        <div class="flex flex-col items-center space-y-1.5">
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#8A4F3D] border-2 border-white shadow-swatch"></div>
+          <span class="text-[10px] text-brand-muted font-medium">Mocha Brown</span>
+        </div>
+
+        <div class="flex flex-col items-center space-y-1.5">
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#C1D6D1] border-2 border-white shadow-swatch"></div>
+          <span class="text-[10px] text-brand-muted font-medium">Sage Mint</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. RSVP FORM (kept exactly as-is) -->
     <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-card gold-border-card space-y-4" id="rsvp">
       <div class="text-center space-y-1">
         <span
@@ -785,144 +973,142 @@
       </form>
     </section>
 
-    <!-- 7. BLESSINGS & EVENT QR -->
-    <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-card gold-border-card space-y-5" id="gift">
-      <div class="text-center space-y-1">
-        <span
-          class="text-[11px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-violet-50 border border-violet-200 text-violet-700 inline-block">Blessings
-          & Location</span>
-        <h2 class="font-thaiSerif text-xl font-medium text-brand-earth">ส่งคำอวยพร & แผนที่จัดงาน</h2>
-        <p class="text-xs text-brand-muted">เขียนคำอวยพรถึงบ่าวสาว หรือสแกนเพื่อเปิดแผนที่และรายละเอียด</p>
+    <!-- 9. GIFT: message + QR + slip upload -->
+    <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-card gold-border-card text-center space-y-5" id="gift">
+      <div class="space-y-1">
+        <p class="font-cursive text-2xl text-brand-terracotta">A gift from your heart</p>
+        <h2 class="font-thaiSerif text-xl font-medium text-brand-earth">มอบของขวัญให้บ่าวสาว</h2>
       </div>
 
-      <!-- Blessing Form (Connected to Google Sheets) -->
-      <form
-        class="space-y-2 bg-gradient-to-br from-pink-50/40 via-purple-50/30 to-amber-50/30 p-4 rounded-2xl border border-pink-200/60 shadow-xs"
-        id="wishForm">
+      <form class="space-y-3 text-left" id="giftForm">
         <!-- Anti-spam Honeypot -->
-        <input type="text" name="website" id="wishWebsite" style="display:none !important;" tabindex="-1"
+        <input type="text" name="website" id="giftWebsite" style="display:none !important;" tabindex="-1"
           autocomplete="off">
 
-        <label class="text-xs font-medium text-brand-earth flex items-center gap-1">
-          <span class="material-symbols-outlined text-sm text-rose-500">edit</span>
-          <span>เขียนคำอวยพรถึง คุณสิริลักษณ์ & คุณพีรพัฒน์</span>
-        </label>
-        <input
-          class="w-full text-xs px-3 py-2 rounded-xl bg-white border border-pink-200/80 text-brand-earth focus:outline-none focus:border-rose-400 focus:ring-2 focus:ring-rose-200/50 placeholder:text-brand-muted/50"
-          id="wishName" placeholder="ชื่อผู้ส่ง" maxlength="100" required type="text" />
-        <textarea
-          class="w-full text-xs p-3 rounded-xl bg-white border border-pink-200/80 text-brand-earth focus:outline-none focus:border-rose-400 focus:ring-2 focus:ring-rose-200/50 placeholder:text-brand-muted/50"
-          id="wishMessage" placeholder="พิมพ์ข้อความอวยพรบ่าวสาวที่นี่..." rows="3" maxlength="500" required></textarea>
+        <div class="space-y-1">
+          <label for="giftName" class="text-xs font-medium text-brand-earth">ชื่อผู้ส่ง <span class="text-rose-500">*</span></label>
+          <input
+            class="w-full text-sm px-3.5 py-2.5 rounded-xl bg-amber-50/40 border border-brand-gold/40 text-brand-earth focus:outline-none focus:border-brand-terracotta focus:ring-2 focus:ring-brand-gold/30 transition-all placeholder:text-brand-muted/50"
+            id="giftName" maxlength="100" placeholder="ชื่อ-นามสกุล" required type="text" />
+        </div>
+
+        <div class="space-y-1">
+          <label for="giftNote" class="text-xs font-medium text-brand-earth">ข้อความถึงบ่าวสาว <span class="text-brand-muted font-light">(ไม่บังคับ)</span></label>
+          <textarea
+            class="w-full text-sm p-3 rounded-xl bg-amber-50/40 border border-brand-gold/40 text-brand-earth focus:outline-none focus:border-brand-terracotta focus:ring-2 focus:ring-brand-gold/30 transition-all placeholder:text-brand-muted/50"
+            id="giftNote" maxlength="300" placeholder="ฝากคำอวยพรถึงบ่าวสาว..." rows="3"></textarea>
+        </div>
+
+        <!-- QR + account -->
+        <div class="flex flex-col items-center gap-2 py-2">
+          <img alt="QR Code สำหรับโอนเงินให้บ่าวสาว" class="w-40 h-40 rounded-2xl border border-brand-gold/40 shadow-md object-contain bg-white p-2"
+            src="assets/qr-gift.png" />
+          <p class="text-xs text-brand-earth text-center">
+            <span class="text-brand-muted">ชื่อบัญชี</span><br />
+            <strong>น.ส.สิริลักษณ์ แตงกระโทก</strong>
+          </p>
+        </div>
+
+        <div class="space-y-1">
+          <label for="giftSlip" class="text-xs font-medium text-brand-earth">แนบภาพสลิปการโอนเงิน <span class="text-rose-500">*</span></label>
+          <input
+            class="w-full text-xs px-3 py-2.5 rounded-xl bg-amber-50/40 border border-brand-gold/40 text-brand-earth file:mr-2 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:text-xs file:bg-amber-100 file:text-brand-terracotta cursor-pointer"
+            accept="image/jpeg,image/png,image/webp" id="giftSlip" required type="file" />
+        </div>
+
         <button
-          class="w-full py-2.5 rounded-xl text-white text-xs font-medium transition-all shadow-sm hover:opacity-95 cursor-pointer disabled:opacity-50"
-          id="submitWishBtn" style="background: linear-gradient(135deg, #F07167 0%, #FA8B73 50%, #FED766 100%);"
+          class="w-full py-3.5 rounded-2xl text-white font-medium text-sm tracking-wide shadow-rainbow active:scale-[0.99] transition-all flex items-center justify-center gap-1.5 hover:opacity-95 cursor-pointer disabled:opacity-50"
+          id="submitGiftBtn" style="background: linear-gradient(135deg, #9E4A28 0%, #C9A227 55%, #9E4A28 100%);"
           type="submit">
-          ส่งคำอวยพร 💌
+          <span class="material-symbols-outlined text-base" id="giftBtnIcon">redeem</span>
+          <span id="giftBtnText">ส่งสลิปให้บ่าวสาว</span>
         </button>
+
         <div
-          class="hidden p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs text-center font-thaiSerif"
-          id="wishSuccess">
-          ส่งคำอวยพรเรียบร้อยแล้วค่ะ ขอบพระคุณสำหรับคำอวยพรอันอบอุ่นนะคะ 💕
+          class="hidden p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs text-center font-thaiSerif leading-relaxed"
+          id="giftSuccess">
+          ได้รับสลิปเรียบร้อยแล้วค่ะ ขอบพระคุณสำหรับน้ำใจอันอบอุ่นนะคะ 💕
+        </div>
+
+        <div
+          class="hidden p-3.5 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs text-center font-thaiSerif leading-relaxed"
+          id="giftError">
+          เกิดข้อผิดพลาดในการเชื่อมต่อ กรุณาลองใหม่อีกครั้งค่ะ
         </div>
       </form>
+    </section>
 
-      <!-- QR Box: Google Maps & Event Details -->
-      <div
-        class="bg-gradient-to-b from-white via-pink-50/30 to-purple-50/30 p-5 rounded-3xl border border-pink-200/70 flex flex-col items-center text-center space-y-3 shadow-xs">
-        <div class="flex items-center gap-1.5 text-rose-600">
-          <span class="material-symbols-outlined text-lg">qr_code_scanner</span>
-          <span class="text-xs font-semibold uppercase tracking-wider font-thaiSerif">แผนที่และรายละเอียดงาน</span>
-        </div>
+    <!-- 10. PRE-WEDDING GALLERY (4-photo carousel) -->
+    <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-card gold-border-card text-center space-y-4">
+      <div class="space-y-1">
+        <p class="font-cursive text-2xl text-brand-gold">More moments</p>
+        <h2 class="font-thaiSerif text-xl font-medium text-brand-earth">Pre-wedding</h2>
+      </div>
+      <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-brand-sand" id="preweddingGallery">
+        <img alt="Gallery image 1" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-100"
+          decoding="async" src="assets/photos/prewedding-01.jpg" />
+        <img alt="Gallery image 2" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
+          decoding="async" loading="lazy" src="assets/photos/prewedding-02.jpg" />
+        <img alt="Gallery image 3" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
+          decoding="async" loading="lazy" src="assets/photos/prewedding-03.jpg" />
+        <img alt="Gallery image 4" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
+          decoding="async" loading="lazy" src="assets/photos/prewedding-04.jpg" />
 
-        <div
-          class="p-4 bg-white rounded-2xl shadow-md border border-pink-100 max-w-[210px] w-full flex flex-col items-center">
-          <div
-            class="text-[10px] font-semibold text-purple-600 tracking-wider uppercase mb-1.5 flex items-center gap-1">
-            <span class="material-symbols-outlined text-xs text-rose-500">map</span>
-            <span>Google Maps Location</span>
-          </div>
-          <!-- Stylized QR Graphic for Venue / Event -->
-          <svg class="w-36 h-36" fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <rect fill="white" height="100" width="100"></rect>
-            <!-- Outer Marks (Colorful) -->
-            <rect height="26" rx="4" stroke="#E76F51" stroke-width="4" width="26" x="10" y="10"></rect>
-            <rect fill="#E76F51" height="12" width="12" x="17" y="17"></rect>
-            <rect height="26" rx="4" stroke="#9D8DF1" stroke-width="4" width="26" x="64" y="10"></rect>
-            <rect fill="#9D8DF1" height="12" width="12" x="71" y="17"></rect>
-            <rect height="26" rx="4" stroke="#70C1B3" stroke-width="4" width="26" x="10" y="64"></rect>
-            <rect fill="#70C1B3" height="12" width="12" x="17" y="71"></rect>
-            <!-- Data pattern modules -->
-            <rect fill="#E76F51" height="6" width="6" x="42" y="12"></rect>
-            <rect fill="#9D8DF1" height="6" width="6" x="52" y="12"></rect>
-            <rect fill="#E76F51" height="10" width="6" x="42" y="24"></rect>
-            <rect fill="#F6BD60" height="6" width="14" x="52" y="30"></rect>
-            <rect fill="#70C1B3" height="6" width="10" x="12" y="44"></rect>
-            <rect fill="#E76F51" height="12" width="6" x="28" y="44"></rect>
-            <rect fill="#F6BD60" height="12" rx="2" width="12" x="44" y="44"></rect>
-            <rect fill="#9D8DF1" height="6" width="10" x="64" y="44"></rect>
-            <rect fill="#70C1B3" height="12" width="8" x="80" y="44"></rect>
-            <rect fill="#70C1B3" height="14" width="6" x="42" y="64"></rect>
-            <rect fill="#E76F51" height="6" width="12" x="54" y="64"></rect>
-            <rect fill="#9D8DF1" height="14" width="14" x="74" y="64"></rect>
-            <rect fill="#F6BD60" height="10" width="6" x="54" y="78"></rect>
-          </svg>
-          <div class="mt-2 text-[11px] leading-tight text-brand-earth">
-            <span
-              class="font-semibold font-thaiSerif block bg-gradient-to-r from-rose-500 to-purple-600 bg-clip-text text-transparent">ครัวครบรส
-              บุรีรมย์ การ์เด้น</span>
-            <span class="text-[10px] text-brand-muted block mt-0.5">สแกนเพื่อนำทางและดูรายละเอียดงาน</span>
-          </div>
-        </div>
-
-        <a class="w-full flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-xl bg-white border border-pink-200 text-brand-earth text-xs hover:bg-pink-50/50 transition-colors shadow-xs"
-          href="https://maps.google.com/?q=ครัวครบรส+บุรีรมย์+การ์เด้น" rel="noopener noreferrer" target="_blank">
-          <span class="material-symbols-outlined text-sm text-purple-500">open_in_new</span>
-          <span>เปิดแผนที่ใน Google Maps</span>
-        </a>
+        <button aria-label="Previous photo" class="carousel-prev absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 backdrop-blur flex items-center justify-center text-brand-earth shadow-md cursor-pointer" type="button">
+          <span class="material-symbols-outlined text-lg">chevron_left</span>
+        </button>
+        <button aria-label="Next photo" class="carousel-next absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 backdrop-blur flex items-center justify-center text-brand-earth shadow-md cursor-pointer" type="button">
+          <span class="material-symbols-outlined text-lg">chevron_right</span>
+        </button>
+        <span class="carousel-counter absolute bottom-2 right-2 text-[10px] font-medium text-white bg-black/40 backdrop-blur px-2 py-0.5 rounded-full">01 / 04</span>
+      </div>
+      <div class="flex justify-center gap-1.5">
+        <button aria-label="Photo 1" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-terracotta" type="button"></button>
+        <button aria-label="Photo 2" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
+        <button aria-label="Photo 3" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
+        <button aria-label="Photo 4" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
       </div>
     </section>
 
-    <!-- 8. FOOTER SECTION -->
+    <!-- 11. FOOTER SECTION -->
     <footer class="pt-6 pb-12 text-center space-y-3">
       <div class="flex items-center justify-center gap-2">
-        <span class="h-0.5 w-8 bg-gradient-to-r from-transparent to-pink-300 rounded-full"></span>
+        <span class="h-0.5 w-8 bg-gradient-to-r from-transparent to-brand-gold rounded-full"></span>
         <span
-          class="material-symbols-outlined text-base bg-gradient-to-r from-rose-400 via-purple-400 to-teal-400 bg-clip-text text-transparent">local_florist</span>
-        <span class="h-0.5 w-8 bg-gradient-to-l from-transparent to-teal-300 rounded-full"></span>
+          class="material-symbols-outlined text-base bg-gradient-to-r from-brand-terracotta via-brand-gold to-brand-terracotta bg-clip-text text-transparent">local_florist</span>
+        <span class="h-0.5 w-8 bg-gradient-to-l from-transparent to-brand-gold rounded-full"></span>
       </div>
-      <p class="text-xs text-brand-muted font-thaiSerif italic">
-        (ขออภัยหากมิได้มาเรียนเชิญด้วยตนเอง)
-      </p>
       <h3
-        class="font-cormorant text-2xl font-bold tracking-wide bg-gradient-to-r from-rose-500 via-purple-600 to-teal-600 bg-clip-text text-transparent">
-        #SirilakPeerapat #SPWedding ♡</h3>
+        class="font-cormorant text-2xl font-bold tracking-wide bg-gradient-to-r from-brand-terracotta via-brand-gold to-brand-terracotta bg-clip-text text-transparent">
+        Wawwa &amp; Tui</h3>
+      <p class="font-cursive text-lg text-brand-muted">With love, always</p>
       <p class="text-xs text-brand-muted font-light max-w-xs mx-auto font-thaiSerif">
         ขอบพระคุณทุกท่านที่มาร่วมเป็นเกียรติและสร้างความทรงจำอันแสนอบอุ่นร่วมกับเราสองคน
       </p>
       <p class="text-[11px] text-brand-muted font-thaiSerif pt-1">
-        วันเสาร์ที่ ๑๗ มกราคม ๒๕๗๐ ณ ครัวครบรส บุรีรมย์ การ์เด้น (Burirom Garden)
+        วันอาทิตย์ที่ ๑๗ มกราคม ๒๕๗๐ ณ ครัวครบรส บุรีรมย์ การ์เด้น (Burirom Garden)
       </p>
       <p class="text-[10px] text-brand-muted/60 tracking-wider uppercase font-medium">
-        SATURDAY · JANUARY 17 · 2027
+        17 · 01 · 2027
       </p>
     </footer>
   </main>
 
   <!-- Sticky Bottom Quick Navigation -->
   <nav
-    class="fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-t border-pink-100/80 max-w-md mx-auto py-2 px-4 flex justify-around items-center shadow-lg">
-    <a class="flex flex-col items-center text-rose-500 group" href="#rsvp">
+    class="fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-t border-brand-gold/30 max-w-md mx-auto py-2 px-4 flex justify-around items-center shadow-lg">
+    <a class="flex flex-col items-center text-brand-terracotta group" href="#rsvp">
       <span class="material-symbols-outlined text-xl group-hover:scale-110 transition-transform">mark_email_read</span>
       <span class="text-[10px] font-medium tracking-tight font-thaiSerif">ยืนยัน RSVP</span>
     </a>
-    <a class="flex flex-col items-center text-brand-muted group hover:text-purple-600 transition-colors"
-      href="https://maps.google.com/?q=ครัวครบรส+บุรีรมย์+การ์เด้น" target="_blank" rel="noopener noreferrer">
+    <a class="flex flex-col items-center text-brand-muted group hover:text-brand-terracotta transition-colors"
+      href="https://maps.app.goo.gl/7J8vqaN63tsh6xax9" target="_blank" rel="noopener noreferrer">
       <span class="material-symbols-outlined text-xl group-hover:scale-110 transition-transform">location_on</span>
       <span class="text-[10px] font-medium tracking-tight font-thaiSerif">แผนที่</span>
     </a>
-    <a class="flex flex-col items-center text-brand-muted group hover:text-teal-600 transition-colors" href="#gift">
-      <span class="material-symbols-outlined text-xl group-hover:scale-110 transition-transform">qr_code_scanner</span>
-      <span class="text-[10px] font-medium tracking-tight font-thaiSerif">รายละเอียดงาน</span>
+    <a class="flex flex-col items-center text-brand-muted group hover:text-brand-gold transition-colors" href="#gift">
+      <span class="material-symbols-outlined text-xl group-hover:scale-110 transition-transform">redeem</span>
+      <span class="text-[10px] font-medium tracking-tight font-thaiSerif">มอบของขวัญ</span>
     </a>
   </nav>
 
@@ -986,7 +1172,30 @@
     setInterval(updateCountdown, 1000);
 
     // -------------------------------------------------------------
-    // 2. Add To Calendar Buttons
+    // 2. Mini Calendar Grid (January 2027, highlight 17th)
+    // -------------------------------------------------------------
+    function renderMiniCalendar(containerId, year, monthIndex, highlightDay) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      const dayLabels = ['อา', 'จ', 'อ', 'พ', 'พฤ', 'ศ', 'ส'];
+      const firstWeekday = new Date(year, monthIndex, 1).getDay();
+      const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
+
+      let html = dayLabels.map(d => `<span class="calendar-grid-cell text-brand-muted font-semibold">${d}</span>`).join('');
+      for (let i = 0; i < firstWeekday; i++) html += '<span class="calendar-grid-cell"></span>';
+      for (let day = 1; day <= daysInMonth; day++) {
+        const isHighlight = day === highlightDay;
+        const cls = isHighlight
+          ? 'calendar-grid-cell rounded-full bg-gradient-to-br from-brand-terracotta to-brand-gold text-white font-bold'
+          : 'calendar-grid-cell text-brand-earth';
+        html += `<span class="${cls}">${day}</span>`;
+      }
+      container.innerHTML = html;
+    }
+    renderMiniCalendar('calendarGrid', 2027, 0, 17);
+
+    // -------------------------------------------------------------
+    // 3. Add To Calendar Buttons
     // -------------------------------------------------------------
     const calStartDate = '20270117T001900Z'; // 07:19 BKK
     const calEndDate = '20270117T073000Z';   // 14:30 BKK
@@ -1026,7 +1235,7 @@ END:VCALENDAR`;
     }
 
     // -------------------------------------------------------------
-    // 3. Envelope Cover Modal & Particle Sparkles
+    // 4. Envelope Cover Modal & Particle Sparkles
     // -------------------------------------------------------------
     const coverModal = document.getElementById('envelopeCoverModal');
     const cardWrapper = document.getElementById('envelopeCardWrapper');
@@ -1035,6 +1244,8 @@ END:VCALENDAR`;
     const mainContent = document.getElementById('mainContent');
     const reopenBtn = document.getElementById('reopenEnvelopeBtn');
     const particleContainer = document.getElementById('particleContainer');
+    const doorLeft = document.getElementById('doorLeft');
+    const doorRight = document.getElementById('doorRight');
 
     function spawnCelebrationSparkles() {
       const colors = ['#F07167', '#FED766', '#C8B6FF', '#98D8AA', '#FFB5A7', '#FFD166'];
@@ -1085,6 +1296,10 @@ END:VCALENDAR`;
         cardWrapper.classList.add('scale-105', 'opacity-90');
       }
 
+      // Doors slide open (original CSS animation)
+      if (doorLeft) doorLeft.classList.add('is-open');
+      if (doorRight) doorRight.classList.add('is-open');
+
       setTimeout(() => {
         if (coverModal) {
           coverModal.classList.add('opacity-0', 'pointer-events-none', 'scale-105');
@@ -1095,7 +1310,7 @@ END:VCALENDAR`;
         if (mainContent) {
           mainContent.style.filter = 'none';
         }
-      }, 400);
+      }, 700);
     }
 
     if (openBtn) {
@@ -1120,6 +1335,8 @@ END:VCALENDAR`;
         if (cardWrapper) {
           cardWrapper.classList.remove('scale-105', 'opacity-90');
         }
+        if (doorLeft) doorLeft.classList.remove('is-open');
+        if (doorRight) doorRight.classList.remove('is-open');
         if (bodyRoot) {
           bodyRoot.classList.add('overflow-hidden');
         }
@@ -1131,7 +1348,41 @@ END:VCALENDAR`;
     }
 
     // -------------------------------------------------------------
-    // 4. Form Controls: Side & Attendance & Guests
+    // 5. Photo Carousels (Wedding Gallery & Pre-wedding Gallery)
+    // -------------------------------------------------------------
+    function initCarousel(root) {
+      if (!root) return;
+      const imgs = root.querySelectorAll('.carousel-img');
+      const dotsWrap = root.parentElement.querySelector('.carousel-dot')?.parentElement;
+      const dots = dotsWrap ? dotsWrap.querySelectorAll('.carousel-dot') : [];
+      const counter = root.querySelector('.carousel-counter');
+      const prevBtn = root.querySelector('.carousel-prev');
+      const nextBtn = root.querySelector('.carousel-next');
+      let idx = 0;
+
+      function render() {
+        imgs.forEach((img, i) => {
+          img.classList.toggle('opacity-100', i === idx);
+          img.classList.toggle('opacity-0', i !== idx);
+        });
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('bg-brand-terracotta', i === idx);
+          dot.classList.toggle('bg-brand-gold/30', i !== idx);
+        });
+        if (counter) counter.textContent = `${String(idx + 1).padStart(2, '0')} / ${String(imgs.length).padStart(2, '0')}`;
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', () => { idx = (idx - 1 + imgs.length) % imgs.length; render(); });
+      if (nextBtn) nextBtn.addEventListener('click', () => { idx = (idx + 1) % imgs.length; render(); });
+      dots.forEach((dot, i) => dot.addEventListener('click', () => { idx = i; render(); }));
+
+      render();
+    }
+    initCarousel(document.getElementById('weddingGallery'));
+    initCarousel(document.getElementById('preweddingGallery'));
+
+    // -------------------------------------------------------------
+    // 6. Form Controls: Side & Attendance & Guests (RSVP, unchanged)
     // -------------------------------------------------------------
     const sideBtns = document.querySelectorAll('.side-btn');
     const selectedSideInput = document.getElementById('selectedSide');
@@ -1178,7 +1429,7 @@ END:VCALENDAR`;
     });
 
     // -------------------------------------------------------------
-    // 5. RSVP Submission to Google Sheets
+    // 7. RSVP Submission to Google Sheets (unchanged)
     // -------------------------------------------------------------
     const rsvpForm = document.getElementById('rsvpForm');
     const submitRsvpBtn = document.getElementById('submitRsvpBtn');
@@ -1284,36 +1535,55 @@ END:VCALENDAR`;
     });
 
     // -------------------------------------------------------------
-    // 6. Wishes Submission to Google Sheets
+    // 8. Gift Submission (name + note + slip image) to Google Sheets/Drive
     // -------------------------------------------------------------
-    const wishForm = document.getElementById('wishForm');
-    const submitWishBtn = document.getElementById('submitWishBtn');
-    const wishSuccess = document.getElementById('wishSuccess');
+    const giftForm = document.getElementById('giftForm');
+    const submitGiftBtn = document.getElementById('submitGiftBtn');
+    const giftBtnText = document.getElementById('giftBtnText');
+    const giftBtnIcon = document.getElementById('giftBtnIcon');
+    const giftSuccess = document.getElementById('giftSuccess');
+    const giftError = document.getElementById('giftError');
 
-    wishForm.addEventListener('submit', async (e) => {
+    function readFileAsBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result).split(',')[1] || '');
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    giftForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const name = document.getElementById('wishName').value.trim();
-      const message = document.getElementById('wishMessage').value.trim();
 
-      if (!name || !message) return;
+      const name = document.getElementById('giftName').value.trim();
+      const note = document.getElementById('giftNote').value.trim();
+      const slipInput = document.getElementById('giftSlip');
+      const slipFile = slipInput.files && slipInput.files[0];
 
-      submitWishBtn.disabled = true;
-      submitWishBtn.textContent = 'กำลังส่งคำอวยพร...';
-      wishSuccess.classList.add('hidden');
+      if (!name || !slipFile) {
+        alert('กรุณากรอกชื่อและแนบภาพสลิปการโอนเงิน');
+        return;
+      }
+
+      submitGiftBtn.disabled = true;
+      giftBtnIcon.textContent = 'progress_activity';
+      giftBtnIcon.classList.add('animate-spin');
+      giftBtnText.textContent = 'กำลังส่งสลิป...';
+      giftSuccess.classList.add('hidden');
+      giftError.classList.add('hidden');
 
       try {
+        const slipBase64 = await readFileAsBase64(slipFile);
+
         const payload = {
-          action: 'wish',
-          name: name,
-          attending: 'คำอวยพร 💌',
-          attendance: 'คำอวยพร 💌',
-          guests: '-',
-          email: '-',
-          phone: '-',
-          notes: message,
-          note: message,
-          message: message,
-          website: (document.getElementById('wishWebsite') && document.getElementById('wishWebsite').value) || ''
+          action: 'gift',
+          name,
+          note: note || '-',
+          slipBase64,
+          slipFilename: slipFile.name,
+          slipMimeType: slipFile.type || 'image/jpeg',
+          website: (document.getElementById('giftWebsite') && document.getElementById('giftWebsite').value) || ''
         };
 
         if (CONFIG.GOOGLE_SHEETS_SCRIPT_URL) {
@@ -1324,22 +1594,26 @@ END:VCALENDAR`;
             body: JSON.stringify(payload)
           });
         } else {
-          console.warn('Wishes demo mode saved:', payload);
-          await new Promise(r => setTimeout(r, 400));
+          console.warn('Gift demo mode saved:', payload.name);
+          await new Promise(r => setTimeout(r, 600));
         }
 
-        wishSuccess.classList.remove('hidden');
-        wishForm.reset();
+        giftSuccess.classList.remove('hidden');
+        giftForm.reset();
+        giftSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       } catch (err) {
-        console.error('Wish submission error:', err);
+        console.error('Gift submission failed:', err);
+        giftError.classList.remove('hidden');
       } finally {
-        submitWishBtn.disabled = false;
-        submitWishBtn.textContent = 'ส่งคำอวยพร 💌';
+        submitGiftBtn.disabled = false;
+        giftBtnIcon.textContent = 'redeem';
+        giftBtnIcon.classList.remove('animate-spin');
+        giftBtnText.textContent = 'ส่งสลิปให้บ่าวสาว';
       }
     });
 
     // -------------------------------------------------------------
-    // 7. Background Music: คู่ชีวิต - COCKTAIL (YouTube IFrame API)
+    // 9. Background Music: คู่ชีวิต - COCKTAIL (YouTube IFrame API)
     // -------------------------------------------------------------
     let ytPlayer = null;
     let isYtReady = false;
@@ -1347,6 +1621,10 @@ END:VCALENDAR`;
     const musicBtn = document.getElementById('musicToggle');
     const musicIcon = document.getElementById('musicIcon');
     const musicWaves = document.getElementById('musicWaves');
+    const heroMusicToggle = document.getElementById('heroMusicToggle');
+    const heroMusicIcon = document.getElementById('heroMusicIcon');
+    const heroMusicSeek = document.getElementById('heroMusicSeek');
+    const heroMusicTime = document.getElementById('heroMusicTime');
 
     const ytScriptTag = document.createElement('script');
     ytScriptTag.src = 'https://www.youtube.com/iframe_api';
@@ -1403,26 +1681,28 @@ END:VCALENDAR`;
 
     function setMusicPlayingState(playing) {
       isMusicPlaying = playing;
-      if (!musicBtn) return;
-      if (playing) {
-        if (musicIcon) musicIcon.classList.add('hidden');
-        if (musicWaves) {
-          musicWaves.classList.remove('hidden');
-          musicWaves.classList.add('flex');
+      if (musicBtn) {
+        if (playing) {
+          if (musicIcon) musicIcon.classList.add('hidden');
+          if (musicWaves) {
+            musicWaves.classList.remove('hidden');
+            musicWaves.classList.add('flex');
+          }
+          musicBtn.classList.add('bg-gradient-to-r', 'from-rose-500', 'to-purple-500', 'text-white', 'shadow-md');
+          musicBtn.classList.remove('text-rose-500');
+          musicBtn.setAttribute('title', 'แตะเพื่อหยุดเพลง "คู่ชีวิต"');
+        } else {
+          if (musicIcon) musicIcon.classList.remove('hidden');
+          if (musicWaves) {
+            musicWaves.classList.add('hidden');
+            musicWaves.classList.remove('flex');
+          }
+          musicBtn.classList.remove('bg-gradient-to-r', 'from-rose-500', 'to-purple-500', 'text-white', 'shadow-md');
+          musicBtn.classList.add('text-rose-500');
+          musicBtn.setAttribute('title', 'แตะเพื่อเปิดเพลง "คู่ชีวิต - COCKTAIL"');
         }
-        musicBtn.classList.add('bg-gradient-to-r', 'from-rose-500', 'to-purple-500', 'text-white', 'shadow-md');
-        musicBtn.classList.remove('text-rose-500');
-        musicBtn.setAttribute('title', 'แตะเพื่อหยุดเพลง "คู่ชีวิต"');
-      } else {
-        if (musicIcon) musicIcon.classList.remove('hidden');
-        if (musicWaves) {
-          musicWaves.classList.add('hidden');
-          musicWaves.classList.remove('flex');
-        }
-        musicBtn.classList.remove('bg-gradient-to-r', 'from-rose-500', 'to-purple-500', 'text-white', 'shadow-md');
-        musicBtn.classList.add('text-rose-500');
-        musicBtn.setAttribute('title', 'แตะเพื่อเปิดเพลง "คู่ชีวิต - COCKTAIL"');
       }
+      if (heroMusicIcon) heroMusicIcon.textContent = playing ? 'pause' : 'play_arrow';
     }
 
     let fadeInterval = null;
@@ -1489,6 +1769,33 @@ END:VCALENDAR`;
       }
     }
 
+    function formatTime(seconds) {
+      const s = Math.max(0, Math.floor(seconds || 0));
+      return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+    }
+
+    // Keep the hero player's seek bar & time label in sync with the YouTube player
+    setInterval(() => {
+      if (!ytPlayer || !isYtReady || typeof ytPlayer.getCurrentTime !== 'function') return;
+      if (!heroMusicSeek || !heroMusicTime) return;
+      if (document.activeElement === heroMusicSeek) return; // don't fight the user while dragging
+      const current = ytPlayer.getCurrentTime() - (CONFIG.MUSIC_START_SECONDS || 0);
+      const duration = ytPlayer.getDuration() - (CONFIG.MUSIC_START_SECONDS || 0);
+      if (duration > 0) {
+        heroMusicSeek.max = Math.floor(duration);
+        heroMusicSeek.value = Math.max(0, Math.floor(current));
+      }
+      heroMusicTime.textContent = formatTime(current);
+    }, 500);
+
+    if (heroMusicSeek) {
+      heroMusicSeek.addEventListener('change', () => {
+        if (!ytPlayer || typeof ytPlayer.seekTo !== 'function') return;
+        const seekSeconds = Number(heroMusicSeek.value) + (CONFIG.MUSIC_START_SECONDS || 0);
+        ytPlayer.seekTo(seekSeconds, true);
+      });
+    }
+
     function setupAutoplayGestureFallback() {
       const triggerPlay = () => {
         if (!isMusicPlaying) {
@@ -1508,6 +1815,9 @@ END:VCALENDAR`;
 
     if (musicBtn) {
       musicBtn.addEventListener('click', toggleMusic);
+    }
+    if (heroMusicToggle) {
+      heroMusicToggle.addEventListener('click', toggleMusic);
     }
   </script>
 </body>

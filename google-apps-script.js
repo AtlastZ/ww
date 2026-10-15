@@ -69,6 +69,11 @@ function doPost(e) {
       })).setMimeType(ContentService.MimeType.JSON);
     }
 
+    // 2.1 คำขอมอบของขวัญ (ชื่อ + ข้อความ + สลิปโอนเงิน) แยกไปบันทึกที่แท็บ Gifts และ Drive
+    if (params.action === 'gift') {
+      return handleGiftSubmission(ss, params);
+    }
+
     // 3. ตรวจสอบและ Sanitize ข้อมูล
     var name = sanitize(params.name || params.Name, 100);
     if (!name || name === '-') {
@@ -101,4 +106,50 @@ function doPost(e) {
   } finally {
     lock.releaseLock();
   }
+}
+
+/**
+ * บันทึกคำขอมอบของขวัญ: ชื่อ + ข้อความ ลงแท็บ "Gifts"
+ * และอัปโหลดภาพสลิปโอนเงิน (base64) ขึ้น Google Drive
+ */
+function handleGiftSubmission(ss, params) {
+  var name = sanitize(params.name, 100);
+  if (!name || name === '-') {
+    throw new Error("Name is required");
+  }
+  var note = sanitize(params.note, 300);
+  var fileUrl = '-';
+
+  if (params.slipBase64) {
+    var mimeType = params.slipMimeType || 'image/jpeg';
+    var filename = sanitize(params.slipFilename || 'slip.jpg', 100);
+    var bytes = Utilities.base64Decode(params.slipBase64);
+    var blob = Utilities.newBlob(bytes, mimeType, filename);
+    var folder = getOrCreateGiftFolder();
+    var file = folder.createFile(blob);
+    fileUrl = file.getUrl();
+  }
+
+  var giftSheet = ss.getSheetByName('Gifts');
+  if (!giftSheet) {
+    giftSheet = ss.insertSheet('Gifts');
+    giftSheet.appendRow(["Timestamp", "Name", "Note", "Slip"]);
+  }
+  giftSheet.appendRow([new Date(), name, note, fileUrl]);
+
+  return ContentService.createTextOutput(JSON.stringify({
+    result: "success"
+  })).setMimeType(ContentService.MimeType.JSON);
+}
+
+/**
+ * หาโฟลเดอร์ Drive สำหรับเก็บภาพสลิป หรือสร้างใหม่ถ้ายังไม่มี
+ */
+function getOrCreateGiftFolder() {
+  var folderName = 'Wedding Gift Slips';
+  var folders = DriveApp.getFoldersByName(folderName);
+  if (folders.hasNext()) {
+    return folders.next();
+  }
+  return DriveApp.createFolder(folderName);
 }
