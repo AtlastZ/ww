@@ -19,57 +19,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Sarabun:wght@300;400;500;600&family=Prompt:wght@300;400;500;600&family=Great+Vibes&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Trirong:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600&family=Prompt:wght@300;400;500;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
     rel="stylesheet">
-
-  <!-- Typography Helper Styles -->
-  <style id="custom-typography-rules">
-    body {
-      font-family: 'Sarabun', 'Prompt', sans-serif !important;
-      letter-spacing: 0.015em;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5 {
-      font-feature-settings: 'pnum' on, 'lnum' on;
-      letter-spacing: 0.03em;
-    }
-
-    .font-cormorant {
-      font-family: 'Cormorant Garamond', 'Playfair Display', serif !important;
-      letter-spacing: 0.04em;
-    }
-
-    .font-cinzel {
-      font-family: 'Cinzel', serif !important;
-      letter-spacing: 0.12em;
-    }
-
-    .font-thaiSerif {
-      font-family: 'Sarabun', 'Prompt', sans-serif !important;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      line-height: 1.7;
-    }
-
-    .editorial-sub {
-      font-family: 'Cinzel', serif;
-      letter-spacing: 0.22em;
-      font-size: 10.5px;
-      text-transform: uppercase;
-    }
-
-    .thai-body {
-      font-family: 'Sarabun', sans-serif;
-      font-weight: 400;
-      line-height: 1.75;
-    }
-  </style>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -79,341 +30,321 @@
         extend: {
           colors: {
             brand: {
-              coral: '#E76F51',
-              rose: '#F48482',
-              lavender: '#9D8DF1',
-              buttercup: '#F6BD60',
-              mint: '#57BA98',
-              sky: '#70C1B3',
-              earth: '#4A2E1C',
-              muted: '#8A7360',
+              earth: '#2A2015',
+              muted: '#6B5A42',
               ivory: '#FFFFFF',
-              cream: '#FAF3E8',
-              sand: '#EFE2CC',
-              terracotta: '#9E4A28',
-              gold: '#C9A227',
-              mocha: '#7D5A3C',
+              cream: '#F3ECD9',
+              sand: '#E8DCC0',
+              terracotta: '#B8541F',
+              gold: '#9C7A2E',
+              mocha: '#3F5633',
+              betel: '#7A2E26',
             }
           },
           fontFamily: {
-            cormorant: ['"Cormorant Garamond"', 'serif'],
+            cormorant: ['"Fraunces"', 'serif'],
             thaiSerif: ['"Sarabun"', '"Prompt"', 'sans-serif'],
             prompt: ['"Prompt"', 'sans-serif'],
-            cursive: ['"Great Vibes"', 'cursive'],
+            cursive: ['"Fraunces"', 'serif'],
           },
           boxShadow: {
-            'card': '0 14px 38px -10px rgba(109, 76, 118, 0.08), 0 4px 16px -2px rgba(231, 111, 81, 0.05)',
-            'seal': '0 10px 25px rgba(231, 111, 81, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.5)',
-            'swatch': '0 6px 16px rgba(120, 80, 140, 0.12)',
-            'rainbow': '0 10px 25px -4px rgba(244, 132, 130, 0.35)',
+            'card': '0 20px 48px -14px rgba(20, 14, 8, 0.28), 0 4px 16px -4px rgba(20, 14, 8, 0.12)',
+            'rainbow': '0 10px 25px -4px rgba(184, 84, 31, 0.35)',
+            'glow-gold': '0 0 18px rgba(156, 122, 46, 0.55)',
           }
         }
       }
     }
   </script>
 
-  <style>
+  <!-- Typography & Core Styles -->
+  <style id="custom-typography-rules">
+    :root {
+      --sky-a: #15111f;
+      --sky-b: #241a30;
+      --sky-c: #342419;
+      --star-opacity: 0;
+    }
+
+    * { -webkit-tap-highlight-color: transparent; }
+
     body {
-      background: radial-gradient(circle at 10% 10%, rgba(201, 162, 39, 0.16) 0%, transparent 42%),
-        radial-gradient(circle at 92% 18%, rgba(158, 74, 40, 0.12) 0%, transparent 45%),
-        radial-gradient(circle at 20% 80%, rgba(201, 162, 39, 0.12) 0%, transparent 45%),
-        linear-gradient(180deg, #FAF3E8 0%, #F6ECDB 55%, #FAF3E8 100%);
-      color: #4A2E1C;
-      font-family: 'Prompt', sans-serif;
+      font-family: 'Sarabun', 'Prompt', sans-serif;
+      letter-spacing: 0.01em;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
-      scroll-behavior: smooth;
+      color: #2A2015;
+      background: #F3ECD9;
+      overflow-x: hidden;
     }
 
-    .texture-paper {
-      background-attachment: fixed;
+    h1, h2, h3, h4, h5 {
+      font-feature-settings: 'pnum' on, 'lnum' on;
     }
 
-    .wax-seal-btn {
-      background: radial-gradient(circle at 35% 30%, #C9763F, #9E4A28 60%, #6F3015 100%);
-      box-shadow: 0 10px 25px rgba(158, 74, 40, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.5);
+    .font-cormorant {
+      font-family: 'Fraunces', serif !important;
+      font-optical-sizing: auto;
+      letter-spacing: 0.01em;
     }
 
-    .envelope-shadow {
-      filter: drop-shadow(0 22px 36px rgba(110, 70, 30, 0.28));
+    .font-cinzel {
+      font-family: 'Trirong', serif !important;
+      letter-spacing: 0.03em;
     }
 
-    .gold-border-card {
-      border: 1px solid rgba(201, 162, 39, 0.35);
-      backdrop-filter: blur(12px);
+    .font-cursive {
+      font-family: 'Fraunces', serif !important;
+      font-optical-sizing: auto;
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: 0.01em;
     }
 
-    /* Door / Curtain opening effect (original artwork, not the vendor's video asset) */
-    .door-panel {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 50%;
-      background: linear-gradient(160deg, #FAF3E8 0%, #EFE2CC 45%, #DCC79A 100%);
-      transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1);
-      z-index: 10;
+    .font-thaiSerif {
+      font-family: 'Sarabun', 'Prompt', sans-serif !important;
+      font-weight: 500;
+      letter-spacing: 0.015em;
+      line-height: 1.7;
     }
 
-    .door-panel-left {
-      left: 0;
-      border-right: 1px solid rgba(201, 162, 39, 0.4);
+    .label-sub {
+      font-family: 'Trirong', serif;
+      font-style: italic;
+      letter-spacing: 0.02em;
+      font-size: 13px;
+      font-weight: 500;
     }
 
-    .door-panel-right {
-      right: 0;
-      border-left: 1px solid rgba(201, 162, 39, 0.4);
-    }
-
-    .door-panel.is-open.door-panel-left {
-      transform: translateX(-100%);
-    }
-
-    .door-panel.is-open.door-panel-right {
-      transform: translateX(100%);
-    }
-
-    /* Flying petal decoration (original SVG, not the vendor's butterfly GIFs) */
-    .petal-swarm {
-      position: absolute;
+    /* ---------- Sky: the one continuous light system, tied to scroll = time of day ---------- */
+    #skyLayer {
+      position: fixed;
       inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 5;
+      z-index: -2;
+      background: linear-gradient(180deg, var(--sky-a) 0%, var(--sky-b) 48%, var(--sky-c) 100%);
+      transition: none;
     }
 
-    .petal {
-      position: absolute;
-      animation: petalFly linear infinite;
-      opacity: 0.85;
+    #starLayer {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      opacity: var(--star-opacity);
+      background-image:
+        radial-gradient(1.5px 1.5px at 20% 30%, rgba(255,255,255,0.9) 0%, transparent 60%),
+        radial-gradient(1px 1px at 65% 15%, rgba(255,255,255,0.7) 0%, transparent 60%),
+        radial-gradient(1.5px 1.5px at 80% 60%, rgba(255,255,255,0.8) 0%, transparent 60%),
+        radial-gradient(1px 1px at 40% 75%, rgba(255,255,255,0.6) 0%, transparent 60%),
+        radial-gradient(1.5px 1.5px at 10% 85%, rgba(255,255,255,0.7) 0%, transparent 60%),
+        radial-gradient(1px 1px at 90% 35%, rgba(255,255,255,0.6) 0%, transparent 60%),
+        radial-gradient(1.5px 1.5px at 55% 50%, rgba(255,255,255,0.5) 0%, transparent 60%);
+      background-size: 100% 100%;
     }
 
-    .petal svg {
-      animation: petalFlutter 1.6s ease-in-out infinite;
-      display: block;
+    .panel {
+      background: rgba(243, 236, 217, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(156, 122, 46, 0.25);
     }
 
-    @keyframes petalFly {
-      from {
-        transform: translate(-10vw, 10vh) rotate(0deg);
-      }
-
-      to {
-        transform: translate(110vw, -30vh) rotate(25deg);
-      }
-    }
-
-    @keyframes petalFlutter {
-
-      0%,
-      100% {
-        transform: scaleX(1) rotate(0deg);
-      }
-
-      50% {
-        transform: scaleX(0.75) rotate(-8deg);
-      }
-    }
-
-    @keyframes gentlePulse {
-
-      0%,
-      100% {
-        transform: scale(1);
-        box-shadow: 0 10px 25px rgba(231, 111, 81, 0.45), 0 0 0 0 rgba(231, 111, 81, 0.4);
-      }
-
-      50% {
-        transform: scale(1.04);
-        box-shadow: 0 14px 28px rgba(231, 111, 81, 0.55), 0 0 0 12px rgba(231, 111, 81, 0);
-      }
-    }
-
-    .pulse-seal {
-      animation: gentlePulse 2.4s infinite ease-in-out;
-    }
-
-    @keyframes sparkleFade {
-      0% {
-        transform: translateY(0) scale(0.6) rotate(0deg);
-        opacity: 1;
-      }
-
-      100% {
-        transform: translateY(-140px) scale(1.3) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
-    .sparkle-particle {
-      position: absolute;
-      pointer-events: none;
-      animation: sparkleFade 1.2s cubic-bezier(0.2, 0.8, 0.3, 1) forwards;
-    }
-
-    /* Music equalizer waves */
-    @keyframes musicWave {
-
-      0%,
-      100% {
-        height: 6px;
-      }
-
-      50% {
-        height: 16px;
-      }
-    }
-
-    .wave-bar:nth-child(1) {
-      animation: musicWave 1.2s ease-in-out infinite;
-    }
-
-    .wave-bar:nth-child(2) {
-      animation: musicWave 0.9s ease-in-out infinite 0.2s;
-    }
-
-    .wave-bar:nth-child(3) {
-      animation: musicWave 1.4s ease-in-out infinite 0.4s;
-    }
-
-    /* Carousel */
-    .carousel-img {
-      transition: opacity 0.5s ease;
-    }
-
-    .carousel-dot {
-      transition: background-color 0.25s ease, width 0.25s ease;
-    }
-
-    /* Mini calendar */
-    .calendar-grid-cell {
-      aspect-ratio: 1 / 1;
+    /* ---------- Envelope gate: real 3D hinge ---------- */
+    #envelopeGate {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: opacity 0.6s ease, visibility 0.6s;
     }
+
+    #heroCanvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .envelope-3d {
+      perspective: 1400px;
+      position: relative;
+    }
+
+    .envelope-body {
+      position: relative;
+      transform-style: preserve-3d;
+    }
+
+    .envelope-flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 52%;
+      transform-origin: top center;
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      background: linear-gradient(160deg, #D9793A 0%, #B8541F 55%, #7A2E26 100%);
+      z-index: 5;
+      border-top-left-radius: 1.6rem;
+      border-top-right-radius: 1.6rem;
+    }
+
+    .envelope-flap.is-open {
+      animation: flapOpen 1000ms cubic-bezier(0.3, 0, 0.2, 1) forwards;
+    }
+
+    @keyframes flapOpen {
+      0% { transform: rotateX(0deg); filter: drop-shadow(0 6px 10px rgba(0,0,0,0.35)); }
+      55% { transform: rotateX(-150deg); filter: drop-shadow(0 55px 50px rgba(0,0,0,0.5)); }
+      100% { transform: rotateX(-172deg); filter: drop-shadow(0 14px 18px rgba(0,0,0,0.3)); }
+    }
+
+    .seal-pulse {
+      animation: sealPulse 2.6s infinite ease-in-out;
+    }
+
+    @keyframes sealPulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 10px 25px rgba(184, 84, 31, 0.45), 0 0 0 0 rgba(184, 84, 31, 0.35); }
+      50% { transform: scale(1.05); box-shadow: 0 14px 30px rgba(184, 84, 31, 0.55), 0 0 0 14px rgba(184, 84, 31, 0); }
+    }
+
+    /* ---------- Petal / ember particles ---------- */
+    .petal-swarm { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 5; }
+    .petal { position: absolute; animation: petalFly linear infinite; opacity: 0.85; }
+    .petal svg { animation: petalFlutter 1.6s ease-in-out infinite; display: block; }
+    @keyframes petalFly { from { transform: translate(-10vw, 10vh) rotate(0deg); } to { transform: translate(110vw, -30vh) rotate(25deg); } }
+    @keyframes petalFlutter { 0%, 100% { transform: scaleX(1) rotate(0deg); } 50% { transform: scaleX(0.75) rotate(-8deg); } }
+
+    @keyframes sparkleFade {
+      0% { transform: translateY(0) scale(0.6) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-140px) scale(1.3) rotate(360deg); opacity: 0; }
+    }
+    .sparkle-particle { position: absolute; pointer-events: none; animation: sparkleFade 1.2s cubic-bezier(0.2, 0.8, 0.3, 1) forwards; }
+
+    @keyframes musicWave { 0%, 100% { height: 6px; } 50% { height: 16px; } }
+    .wave-bar:nth-child(1) { animation: musicWave 1.2s ease-in-out infinite; }
+    .wave-bar:nth-child(2) { animation: musicWave 0.9s ease-in-out infinite 0.2s; }
+    .wave-bar:nth-child(3) { animation: musicWave 1.4s ease-in-out infinite 0.4s; }
+
+    /* ---------- 3D Coverflow galleries ---------- */
+    .coverflow { position: relative; perspective: 1300px; }
+    .cf-track { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; }
+    .cf-item {
+      position: absolute;
+      top: 0; left: 50%;
+      width: 72%;
+      margin-left: -36%;
+      height: 100%;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -14px rgba(20, 14, 8, 0.5);
+      transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.55s ease;
+      will-change: transform;
+    }
+    .cf-item img { width: 100%; height: 100%; object-fit: cover; display: block; user-select: none; pointer-events: none; }
+    .cf-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 2.5rem; height: 2.5rem; border-radius: 9999px;
+      background: rgba(255,255,255,0.85); backdrop-filter: blur(6px);
+      display: flex; align-items: center; justify-content: center;
+      color: #2A2015; box-shadow: 0 6px 16px rgba(0,0,0,0.2); z-index: 50; cursor: pointer;
+    }
+
+    /* ---------- Sundial ceremony timeline ---------- */
+    .sundial-line {
+      position: absolute; left: 10px; top: 6px; bottom: 6px; width: 2px;
+      background: linear-gradient(180deg, #D9793A 0%, #9C7A2E 35%, #3F5633 65%, #7A2E26 100%);
+      border-radius: 999px;
+    }
+    .sundial-dot {
+      box-shadow: 0 0 0 4px rgba(243,236,217,1), 0 0 16px 2px var(--dot-glow, rgba(184,84,31,0.5));
+    }
+
+    .calendar-grid-cell { aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .petal, .wave-bar, .seal-pulse, .sparkle-particle { animation: none !important; }
+      .envelope-flap.is-open { animation-duration: 400ms !important; }
+      .cf-item { transition-duration: 0.2s !important; }
+    }
+
+    :focus-visible { outline: 2px solid #9C7A2E; outline-offset: 2px; }
   </style>
 </head>
 
-<body class="texture-paper pb-24 min-h-screen overflow-hidden" id="bodyRoot">
+<body class="pb-24 min-h-screen overflow-hidden" id="bodyRoot">
 
-  <!-- FULL-SCREEN COVER ENVELOPE OVERLAY / POPUP -->
-  <div class="fixed inset-0 z-[100] flex items-center justify-center p-4 transition-opacity duration-500 ease-out"
-    id="envelopeCoverModal"
-    style="background: radial-gradient(circle at 50% 30%, rgba(250, 243, 232, 0.96) 0%, rgba(239, 226, 204, 0.97) 100%); backdrop-filter: blur(18px);">
-    <!-- Ambient Glow Orbs in Background -->
-    <div class="absolute -top-16 -left-16 w-72 h-72 rounded-full pointer-events-none opacity-60"
-      style="background: radial-gradient(circle, rgba(201, 162, 39, 0.35) 0%, transparent 70%); filter: blur(36px);">
-    </div>
-    <div class="absolute -bottom-20 -right-20 w-80 h-80 rounded-full pointer-events-none opacity-60"
-      style="background: radial-gradient(circle, rgba(158, 74, 40, 0.3) 0%, transparent 70%); filter: blur(40px);">
-    </div>
+  <div id="skyLayer"></div>
+  <div id="starLayer"></div>
 
-    <!-- Door / Curtain Panels (open on tap, original CSS artwork) -->
-    <div class="door-panel door-panel-left" id="doorLeft"></div>
-    <div class="door-panel door-panel-right" id="doorRight"></div>
-
-    <!-- Interactive Particles Container -->
+  <!-- ENVELOPE GATE: Three.js lit garland behind a real 3D envelope hinge -->
+  <div id="envelopeGate">
+    <canvas id="heroCanvas"></canvas>
     <div class="absolute inset-0 pointer-events-none overflow-hidden z-20" id="particleContainer"></div>
 
-    <!-- Modal Content Container -->
-    <div
-      class="relative w-full max-w-sm flex flex-col items-center cursor-pointer select-none transition-all duration-700 ease-out transform z-20"
-      id="envelopeCardWrapper">
-      <!-- Top Header in Popup -->
-      <div class="text-center mb-4 space-y-1.5 pointer-events-none">
-        <div
-          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-brand-gold/40 shadow-xs mb-1">
-          <span class="w-2 h-2 rounded-full bg-gradient-to-tr from-brand-terracotta to-brand-gold animate-pulse"></span>
-          <span
-            class="editorial-sub text-[10px] font-semibold tracking-[0.24em] bg-gradient-to-r from-brand-terracotta via-brand-gold to-brand-terracotta bg-clip-text text-transparent">Official
-            Wedding Invitation</span>
-        </div>
-        <p class="editorial-sub text-[10.5px] font-medium tracking-[0.22em] text-brand-muted">Together With Their
-          Families · We Invite You</p>
-        <h1 class="font-cormorant text-4xl sm:text-5xl font-normal tracking-wide mt-1 mb-0.5"
-          style="background: linear-gradient(135deg, #9E4A28 0%, #C9A227 50%, #9E4A28 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-          Sirilak & Peerapat</h1>
-        <p class="text-xs font-normal text-brand-muted tracking-widest uppercase">สิริลักษณ์ & พีรพัฒน์</p>
+    <div class="relative w-full max-w-sm flex flex-col items-center px-4 z-30">
+      <div class="text-center mb-5 space-y-1">
+        <p class="label-sub text-sm text-amber-100/90">Together with their families, we invite you</p>
+        <h1 class="font-cormorant text-4xl sm:text-5xl font-normal tracking-wide mt-1 mb-0.5 text-amber-50">
+          Sirilak &amp; Peerapat</h1>
+        <p class="text-xs font-normal text-amber-100/70 tracking-widest">สิริลักษณ์ &amp; พีรพัฒน์</p>
       </div>
 
-      <!-- Cream & Gold Envelope Card -->
-      <div
-        class="relative w-full rounded-[2.2rem] overflow-hidden envelope-shadow p-6 pt-8 pb-9 text-center transition-all duration-500 hover:scale-[1.015] border border-brand-gold/30 group"
-        id="envelopeBox"
-        style="background: linear-gradient(150deg, #C9763F 0%, #9E4A28 45%, #7D5A3C 75%, #4A2E1C 100%); box-shadow: rgba(110, 70, 30, 0.42) 0px 22px 50px -10px, rgba(255, 255, 255, 0.25) 0px 1px 2px inset;">
-        <!-- Color Flares -->
-        <div class="absolute -top-12 -right-12 w-48 h-48 rounded-full pointer-events-none"
-          style="background: radial-gradient(circle, rgba(201, 162, 39, 0.5) 0%, rgba(255, 255, 255, 0) 70%); filter: blur(28px);">
-        </div>
-        <div class="absolute -bottom-10 -left-10 w-48 h-48 rounded-full pointer-events-none"
-          style="background: radial-gradient(circle, rgba(201, 162, 39, 0.3) 0%, rgba(255, 255, 255, 0) 70%); filter: blur(24px);">
-        </div>
+      <div class="envelope-3d w-full">
+        <div class="envelope-body relative w-full rounded-[1.6rem] overflow-hidden p-6 pt-10 pb-9 text-center border border-amber-200/20"
+          style="background: linear-gradient(150deg, #D9793A 0%, #B8541F 45%, #3F5633 75%, #2A2015 100%); box-shadow: 0 25px 60px -10px rgba(10,6,3,0.6);">
 
-        <!-- Monogram Motif P & S -->
-        <div class="relative mx-auto w-32 h-32 flex items-center justify-center my-2">
-          <div
-            class="absolute inset-0 rounded-full border-2 border-brand-gold/60 bg-white/10 backdrop-blur-xs shadow-inner transition-transform group-hover:scale-105 duration-300">
-          </div>
-          <div class="relative flex items-center justify-center select-none font-cursive">
-            <span class="text-7xl font-normal text-white drop-shadow-md -translate-x-1 italic">S</span>
-            <span
-              class="text-6xl font-light text-amber-200 opacity-95 -translate-x-2 translate-y-1 italic drop-shadow">P</span>
-          </div>
-        </div>
+          <div class="envelope-flap" id="envelopeFlap"></div>
 
-        <p class="editorial-sub text-amber-100 font-semibold mt-3 tracking-[0.32em] drop-shadow-sm">Save The Date</p>
-        <p class="font-cormorant text-3xl tracking-wider text-white font-bold drop-shadow-sm mt-0.5">17 · 01 · 27</p>
-        <p class="text-xs text-white/95 font-thaiSerif mt-0.5 drop-shadow-sm">๑๗ มกราคม ๒๕๗๐</p>
-
-        <!-- Wax Seal Button (Clickable Interactive Centerpiece) -->
-        <div class="mt-6 flex flex-col items-center">
-          <button aria-label="แตะซองเพื่อเปิดการ์ด"
-            class="wax-seal-btn pulse-seal w-20 h-20 rounded-full flex flex-col items-center justify-center group-hover:scale-105 active:scale-95 transition-all cursor-pointer relative border border-amber-200/40"
-            id="openEnvelopeBtn" type="button">
-            <div
-              class="w-16 h-16 rounded-full border border-white/55 flex flex-col items-center justify-center bg-white/10 backdrop-blur-xs shadow-inner">
-              <span
-                class="material-symbols-outlined text-amber-200 text-2xl group-hover:scale-110 transition-transform drop-shadow">favorite</span>
-              <span class="text-[11px] text-white font-normal tracking-wide mt-0.5 italic drop-shadow font-cursive">S &
-                P</span>
+          <div class="relative mx-auto w-28 h-28 flex items-center justify-center my-2">
+            <div class="absolute inset-0 rounded-full border-2 border-amber-200/50 bg-white/10 backdrop-blur-sm shadow-inner"></div>
+            <div class="relative flex items-center justify-center select-none font-cursive">
+              <span class="text-6xl font-normal text-white drop-shadow-md -translate-x-1 italic">S</span>
+              <span class="text-5xl font-light text-amber-200 opacity-95 -translate-x-2 translate-y-1 italic drop-shadow">P</span>
             </div>
-          </button>
-          <p
-            class="text-xs text-white mt-3.5 font-light tracking-wide flex items-center gap-1.5 drop-shadow group-hover:scale-105 transition-transform">
-            <span>แตะซองเพื่อเปิดการ์ด</span>
-            <span class="material-symbols-outlined text-sm text-amber-200 animate-bounce">touch_app</span>
-          </p>
+          </div>
+
+          <p class="label-sub text-amber-100 font-semibold mt-2 drop-shadow-sm">Save the date</p>
+          <p class="font-cormorant text-3xl tracking-wider text-white font-bold drop-shadow-sm mt-0.5">17 · 01 · 27</p>
+          <p class="text-xs text-white/90 font-thaiSerif mt-0.5 drop-shadow-sm">๑๗ มกราคม ๒๕๗๐</p>
+
+          <div class="mt-5 flex flex-col items-center">
+            <button aria-label="แตะซองเพื่อเปิดการ์ด"
+              class="seal-pulse w-20 h-20 rounded-full flex flex-col items-center justify-center active:scale-95 transition-all cursor-pointer relative border border-amber-200/40"
+              id="openEnvelopeBtn" type="button"
+              style="background: radial-gradient(circle at 35% 30%, #D9793A, #B8541F 60%, #5A2810 100%);">
+              <div class="w-16 h-16 rounded-full border border-white/55 flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm shadow-inner">
+                <span class="material-symbols-outlined text-amber-200 text-2xl drop-shadow">favorite</span>
+                <span class="text-[11px] text-white font-normal tracking-wide mt-0.5 italic drop-shadow font-cursive">S &amp; P</span>
+              </div>
+            </button>
+            <p class="text-xs text-white mt-3.5 font-light tracking-wide flex items-center gap-1.5 drop-shadow">
+              <span>แตะซองเพื่อเปิดการ์ด</span>
+              <span class="material-symbols-outlined text-sm text-amber-200 animate-bounce">touch_app</span>
+            </p>
+          </div>
         </div>
       </div>
-
-      <!-- Small prompt hint at bottom of popup -->
-      <p class="text-[11px] text-brand-muted/80 mt-4 tracking-wider uppercase font-medium">Click or Tap to Unseal
-        Invitation</p>
     </div>
   </div>
 
   <!-- Top Floating Controls -->
-  <header
-    class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-4 py-3 bg-brand-cream/90 backdrop-blur-md border-b border-brand-gold/25 max-w-md mx-auto">
+  <header class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-4 py-3 panel border-b max-w-md mx-auto">
     <div class="flex items-center gap-2">
       <span class="w-2.5 h-2.5 rounded-full bg-gradient-to-tr from-brand-terracotta to-brand-gold animate-pulse"></span>
-      <span
-        class="text-xs font-semibold tracking-widest bg-gradient-to-r from-brand-terracotta via-brand-gold to-brand-terracotta bg-clip-text text-transparent uppercase">
+      <span class="text-xs font-semibold tracking-wide bg-gradient-to-r from-brand-terracotta via-brand-gold to-brand-terracotta bg-clip-text text-transparent">
         <a href="https://www.youtube.com/watch?v=3mYVyVY-lU4" target="_blank" rel="noopener noreferrer">คู่ชีวิต - COCKTAIL</a>
       </span>
     </div>
-
     <div class="flex items-center gap-2">
-      <!-- Reopen Envelope Button -->
-      <button
-        class="px-2.5 py-1 rounded-full bg-amber-50/90 border border-brand-gold/40 text-brand-terracotta text-[11px] font-thaiSerif flex items-center gap-1 hover:bg-amber-100/80 transition-colors shadow-xs active:scale-95 cursor-pointer"
+      <button class="px-2.5 py-1 rounded-full bg-amber-50/90 border border-brand-gold/40 text-brand-terracotta text-[11px] font-thaiSerif flex items-center gap-1 hover:bg-amber-100/80 transition-colors shadow-xs active:scale-95 cursor-pointer"
         id="reopenEnvelopeBtn" title="ดูซองการ์ดอีกครั้ง">
         <span class="material-symbols-outlined text-sm">drafts</span>
         <span>ปิดซอง</span>
       </button>
-
-      <!-- Music Toggle Button -->
-      <button
-        class="w-9 h-9 rounded-full bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 border border-brand-gold/40 flex items-center justify-center text-brand-terracotta shadow-sm hover:scale-105 active:scale-95 transition-all overflow-hidden relative cursor-pointer"
+      <button class="w-9 h-9 rounded-full bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 border border-brand-gold/40 flex items-center justify-center text-brand-terracotta shadow-sm hover:scale-105 active:scale-95 transition-all overflow-hidden relative cursor-pointer"
         id="musicToggle" title="เปิด/ปิด เสียงเพลงบรรเลง">
         <span class="material-symbols-outlined text-lg" id="musicIcon">music_note</span>
         <div class="hidden items-center gap-0.5" id="musicWaves">
@@ -425,75 +356,57 @@
     </div>
   </header>
 
-  <!-- Main Container Mobile Width ~400px - 440px -->
-  <main class="max-w-md mx-auto pt-16 px-4 space-y-7 transition-all duration-700" id="mainContent"
-    style="filter: blur(2px);">
+  <!-- Main Container -->
+  <main class="max-w-md mx-auto pt-16 px-4 space-y-7" id="mainContent">
 
-    <!-- 1. HERO PHOTO + MUSIC PLAYER (shown right after the envelope opens) -->
+    <!-- 1. HERO PHOTO + MUSIC PLAYER -->
     <section class="relative rounded-3xl overflow-hidden shadow-card" id="heroPhoto">
-      <img src="assets/photos/wedding-01.jpg" alt="สิริลักษณ์ & พีรพัฒน์"
-        class="w-full aspect-[4/5] object-cover" fetchpriority="high" />
+      <img src="assets/photos/wedding-01.jpg" alt="สิริลักษณ์ & พีรพัฒน์" class="w-full aspect-[4/5] object-cover" fetchpriority="high" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-black/10"></div>
-
-      <!-- Flying petal decoration (original SVG artwork) -->
       <div class="petal-swarm" aria-hidden="true">
         <div class="petal" style="left: -5%; top: 70%; animation-duration: 9s; animation-delay: 0s;">
-          <svg height="20" viewbox="0 0 24 24" width="20"><ellipse cx="12" cy="12" fill="#C9A227" opacity="0.85"
-              rx="10" ry="6" transform="rotate(20 12 12)"></ellipse></svg>
+          <svg height="20" viewbox="0 0 24 24" width="20"><ellipse cx="12" cy="12" fill="#C7A355" opacity="0.85" rx="10" ry="6" transform="rotate(20 12 12)"></ellipse></svg>
         </div>
         <div class="petal" style="left: -5%; top: 40%; animation-duration: 12s; animation-delay: 2.5s;">
-          <svg height="16" viewbox="0 0 24 24" width="16"><ellipse cx="12" cy="12" fill="#E8C873" opacity="0.8" rx="10"
-              ry="6" transform="rotate(-15 12 12)"></ellipse></svg>
+          <svg height="16" viewbox="0 0 24 24" width="16"><ellipse cx="12" cy="12" fill="#B8541F" opacity="0.8" rx="10" ry="6" transform="rotate(-15 12 12)"></ellipse></svg>
         </div>
         <div class="petal" style="left: -5%; top: 85%; animation-duration: 10.5s; animation-delay: 5s;">
-          <svg height="14" viewbox="0 0 24 24" width="14"><ellipse cx="12" cy="12" fill="#9E4A28" opacity="0.7" rx="10"
-              ry="6" transform="rotate(35 12 12)"></ellipse></svg>
+          <svg height="14" viewbox="0 0 24 24" width="14"><ellipse cx="12" cy="12" fill="#3F5633" opacity="0.7" rx="10" ry="6" transform="rotate(35 12 12)"></ellipse></svg>
         </div>
       </div>
-
       <div class="absolute bottom-0 left-0 right-0 p-4 text-center">
-        <p class="editorial-sub text-white/90 tracking-[0.3em]">Together Forever</p>
+        <p class="label-sub text-white/90 tracking-wide">Together, always</p>
         <h1 class="font-cursive text-4xl text-white drop-shadow mt-1">Sirilak &amp; Tui</h1>
       </div>
-      <a href="#invitation"
-        class="absolute left-1/2 -translate-x-1/2 bottom-3 w-8 h-8 rounded-full bg-white/80 backdrop-blur flex items-center justify-center text-brand-earth shadow-md animate-bounce"
-        aria-label="เลื่อนลง">
+      <a href="#invitation" class="absolute left-1/2 -translate-x-1/2 bottom-3 w-8 h-8 rounded-full bg-white/80 backdrop-blur flex items-center justify-center text-brand-earth shadow-md animate-bounce" aria-label="เลื่อนลง">
         <span class="material-symbols-outlined text-lg">expand_more</span>
       </a>
     </section>
 
-    <!-- Hero Music Player -->
-    <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-4 shadow-card gold-border-card flex items-center gap-3">
-      <button
-        class="w-11 h-11 shrink-0 rounded-full bg-gradient-to-br from-brand-terracotta to-brand-gold text-white flex items-center justify-center shadow-md cursor-pointer"
+    <section class="panel rounded-3xl p-4 shadow-card flex items-center gap-3">
+      <button class="w-11 h-11 shrink-0 rounded-full bg-gradient-to-br from-brand-terracotta to-brand-gold text-white flex items-center justify-center shadow-md cursor-pointer"
         id="heroMusicToggle" type="button" aria-label="เล่น/หยุดเพลง">
         <span class="material-symbols-outlined text-xl" id="heroMusicIcon">play_arrow</span>
       </button>
       <div class="flex-1 min-w-0">
         <p class="text-xs font-semibold text-brand-earth truncate">คู่ชีวิต - COCKTAIL</p>
-        <input class="w-full accent-rose-500" id="heroMusicSeek" max="100" min="0" step="0.1" type="range" value="0" />
+        <input class="w-full accent-[#B8541F]" id="heroMusicSeek" max="100" min="0" step="0.1" type="range" value="0" />
       </div>
       <span class="text-[11px] text-brand-muted tabular-nums" id="heroMusicTime">0:00</span>
     </section>
 
-    <!-- 2. FORMAL INVITATION (greeting + portraits + names) -->
-    <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-card gold-border-card text-center space-y-5"
-      id="invitation">
+    <!-- 2. FORMAL INVITATION -->
+    <section class="panel rounded-3xl p-6 shadow-card text-center space-y-5" id="invitation">
       <div class="space-y-1.5">
-        <span
-          class="text-[11px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-amber-50 border border-brand-gold/40 text-brand-terracotta inline-block">พิธีมงคลสมรส</span>
         <h2 class="font-thaiSerif text-xl font-normal text-brand-earth leading-relaxed tracking-wide">
           มีความยินดีขอเรียนเชิญท่านเพื่อเป็นเกียรติ<br />เนื่องในงานพิธีมงคลสมรส ระหว่าง
         </h2>
       </div>
 
-      <!-- Portraits -->
       <div class="flex items-center justify-center gap-4">
-        <img src="assets/photos/bride.jpg" alt="รูปเจ้าสาว"
-          class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-swatch" />
+        <img src="assets/photos/bride.jpg" alt="รูปเจ้าสาว" class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg" />
         <span class="material-symbols-outlined text-brand-terracotta text-2xl">favorite</span>
-        <img src="assets/photos/groom.jpg" alt="รูปเจ้าบ่าว"
-          class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-swatch" />
+        <img src="assets/photos/groom.jpg" alt="รูปเจ้าบ่าว" class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg" />
       </div>
 
       <div class="space-y-0.5">
@@ -502,75 +415,59 @@
         <h3 class="font-thaiSerif text-lg font-medium text-brand-earth">พีรพัฒน์ สุขเกษม</h3>
       </div>
 
-      <!-- Couple & Parents Details -->
       <div class="py-2 space-y-5">
-        <!-- Bride Details -->
-        <div
-          class="space-y-2 bg-gradient-to-br from-amber-50/80 via-orange-50/40 to-amber-50/60 rounded-2xl p-5 border border-brand-gold/25 shadow-xs">
-          <span
-            class="inline-block text-[9.5px] font-medium text-brand-terracotta tracking-[0.22em] uppercase bg-white/95 px-3 py-1 rounded-full border border-brand-gold/40 shadow-xs">Bride
-            · เจ้าสาว</span>
+        <div class="space-y-2 bg-gradient-to-br from-amber-50/80 via-orange-50/40 to-amber-50/60 rounded-2xl p-5 border border-brand-gold/25 shadow-xs">
+          <span class="inline-block text-[9.5px] font-medium text-brand-terracotta tracking-[0.18em] bg-white/95 px-3 py-1 rounded-full border border-brand-gold/40 shadow-xs">Bride · เจ้าสาว</span>
           <h3 class="font-thaiSerif text-lg font-medium text-brand-terracotta tracking-normal pt-0.5">
             นางสาวสิริลักษณ์ แตงกระโทก <span class="text-brand-terracotta font-semibold">(วาววา)</span>
           </h3>
           <p class="font-cormorant text-base text-brand-muted tracking-wider italic">Sirilak Tangkratok</p>
           <div class="text-xs text-brand-earth/90 space-y-1 pt-2 border-t border-brand-gold/25 font-normal leading-relaxed">
-            <p><span class="text-brand-muted font-light tracking-wide">บุตรีของ :</span> นายอุเทน — นางอนงค์ แตงกระโทก
-            </p>
-            <p><span class="text-brand-muted font-light tracking-wide">หลานของ :</span> นายเสริมสุข — นางยุพา แตงกระโทก
-            </p>
+            <p><span class="text-brand-muted font-light tracking-wide">บุตรีของ :</span> นายอุเทน — นางอนงค์ แตงกระโทก</p>
+            <p><span class="text-brand-muted font-light tracking-wide">หลานของ :</span> นายเสริมสุข — นางยุพา แตงกระโทก</p>
           </div>
         </div>
 
-        <!-- Ampersand Motif -->
-        <div class="flex items-center justify-center gap-3 py-0.5">
-          <div class="h-0.5 w-12 bg-gradient-to-r from-transparent via-brand-gold to-brand-terracotta rounded-full opacity-70">
-          </div>
-          <span class="font-cormorant text-2xl font-normal text-brand-terracotta italic">&amp;</span>
+        <div class="flex flex-col items-center gap-0.5 py-1" aria-hidden="true">
+          <svg width="140" height="26" viewbox="0 0 140 26" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6 Q 70 28 136 6" fill="none" stroke="#3F5633" stroke-width="1.5" opacity="0.55"></path>
+            <circle cx="14" cy="9" fill="#C7A355" r="3.6"></circle>
+            <circle cx="34" cy="15" fill="#B8541F" r="3.6"></circle>
+            <circle cx="54" cy="19.5" fill="#9C7A2E" r="3.6"></circle>
+            <circle cx="70" cy="21" fill="#D9793A" r="4.2"></circle>
+            <circle cx="86" cy="19.5" fill="#9C7A2E" r="3.6"></circle>
+            <circle cx="106" cy="15" fill="#B8541F" r="3.6"></circle>
+            <circle cx="126" cy="9" fill="#C7A355" r="3.6"></circle>
+          </svg>
           <span class="text-xs font-light text-brand-mocha tracking-wider">กับ</span>
-          <div class="h-0.5 w-12 bg-gradient-to-r from-brand-terracotta via-brand-gold to-transparent rounded-full opacity-70">
-          </div>
         </div>
 
-        <!-- Groom Details -->
-        <div
-          class="space-y-2 bg-gradient-to-br from-stone-100/70 via-amber-50/30 to-stone-50/60 rounded-2xl p-5 border border-stone-300/50 shadow-xs">
-          <span
-            class="inline-block text-[9.5px] font-medium text-brand-mocha tracking-[0.22em] uppercase bg-white/95 px-3 py-1 rounded-full border border-stone-300/70 shadow-xs">Groom
-            · เจ้าบ่าว</span>
+        <div class="space-y-2 bg-gradient-to-br from-stone-100/70 via-amber-50/30 to-stone-50/60 rounded-2xl p-5 border border-stone-300/50 shadow-xs">
+          <span class="inline-block text-[9.5px] font-medium text-brand-mocha tracking-[0.18em] bg-white/95 px-3 py-1 rounded-full border border-stone-300/70 shadow-xs">Groom · เจ้าบ่าว</span>
           <h3 class="font-thaiSerif text-lg font-medium text-brand-mocha tracking-normal pt-0.5">
             นายพีรพัฒน์ สุขเกษม <span class="text-brand-mocha font-semibold">(ตุ้ย)</span>
           </h3>
           <p class="font-cormorant text-base text-brand-muted tracking-wider italic">Peerapat Sukkasem</p>
-          <div
-            class="text-xs text-brand-earth/90 space-y-1 pt-2 border-t border-stone-300/50 font-normal leading-relaxed">
-            <p><span class="text-brand-muted font-light tracking-wide">บุตรของ :</span> นายณัฐนนท์ — นางญาณิศา สุขเกษม
-            </p>
-            <p><span class="text-brand-muted font-light tracking-wide">หลานของ :</span> นางกิม โมรา และ นางวาสนา สุขเกษม
-            </p>
+          <div class="text-xs text-brand-earth/90 space-y-1 pt-2 border-t border-stone-300/50 font-normal leading-relaxed">
+            <p><span class="text-brand-muted font-light tracking-wide">บุตรของ :</span> นายณัฐนนท์ — นางญาณิศา สุขเกษม</p>
+            <p><span class="text-brand-muted font-light tracking-wide">หลานของ :</span> นางกิม โมรา และ นางวาสนา สุขเกษม</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. SAVE THE DATE (calendar + countdown) -->
-    <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-card gold-border-card text-center space-y-4"
-      id="dateSection">
+    <!-- 3. SAVE THE DATE -->
+    <section class="panel rounded-3xl p-6 shadow-card text-center space-y-4" id="dateSection">
       <div class="space-y-1">
-        <span
-          class="text-[11px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 inline-block">Save
-          The Date</span>
         <h2 class="font-cormorant text-3xl font-bold text-brand-earth">17 · 01 · 2027</h2>
         <p class="text-xs text-brand-muted font-thaiSerif">วันอาทิตย์ที่ ๑๗ มกราคม พุทธศักราช ๒๕๗๐</p>
       </div>
 
-      <!-- Mini Calendar Grid -->
       <div class="bg-gradient-to-br from-amber-50 via-orange-50 to-amber-50 rounded-2xl p-4 border border-brand-gold/30">
-        <p class="editorial-sub text-brand-muted font-medium mb-2 tracking-[0.2em]">JANUARY · 2027</p>
+        <p class="label-sub text-brand-muted font-medium mb-2">January 2027</p>
         <div class="grid grid-cols-7 gap-1 text-[11px]" id="calendarGrid"></div>
       </div>
 
-      <!-- Add to Calendar Action Buttons -->
       <div class="flex items-center justify-center gap-2 pt-1">
         <a id="googleCalBtn" href="#" target="_blank" rel="noopener noreferrer"
           class="flex-1 py-2.5 px-3 rounded-xl bg-white border border-brand-gold/40 text-brand-earth text-xs font-medium hover:bg-amber-50/50 transition-colors shadow-xs flex items-center justify-center gap-1.5">
@@ -584,204 +481,139 @@
         </button>
       </div>
 
-      <!-- Live Countdown -->
       <div class="pt-2">
-        <p class="editorial-sub text-brand-muted font-medium mb-3 tracking-[0.2em]">Countdown ·
-          นับถอยหลังสู่วันสำคัญ</p>
+        <p class="label-sub text-brand-muted font-medium mb-3">นับถอยหลังสู่วันสำคัญ</p>
         <div class="grid grid-cols-4 gap-2 text-center" id="countdown">
           <div class="rounded-2xl py-2.5 px-1 text-white shadow-md transition-transform hover:scale-105"
-            style="background: linear-gradient(145deg, #C9763F 0%, #9E4A28 100%); box-shadow: 0 6px 14px -3px rgba(158, 74, 40, 0.35);">
+            style="background: linear-gradient(145deg, #D9793A 0%, #B8541F 100%); box-shadow: 0 6px 14px -3px rgba(184, 84, 31, 0.35);">
             <span class="block font-cormorant text-2xl font-bold leading-tight" id="cd-days">--</span>
-            <span class="text-[9px] uppercase tracking-wider text-amber-100 font-medium">Days</span>
+            <span class="text-[9px] tracking-wider text-amber-100 font-medium">Days</span>
           </div>
           <div class="rounded-2xl py-2.5 px-1 text-white shadow-md transition-transform hover:scale-105"
-            style="background: linear-gradient(145deg, #D9B64A 0%, #C9A227 100%); box-shadow: 0 6px 14px -3px rgba(201, 162, 39, 0.35);">
+            style="background: linear-gradient(145deg, #C7A355 0%, #9C7A2E 100%); box-shadow: 0 6px 14px -3px rgba(156, 122, 46, 0.35);">
             <span class="block font-cormorant text-2xl font-bold leading-tight" id="cd-hours">--</span>
-            <span class="text-[9px] uppercase tracking-wider text-amber-100 font-medium">Hours</span>
+            <span class="text-[9px] tracking-wider text-amber-100 font-medium">Hours</span>
           </div>
           <div class="rounded-2xl py-2.5 px-1 text-white shadow-md transition-transform hover:scale-105"
-            style="background: linear-gradient(145deg, #9C8468 0%, #7D5A3C 100%); box-shadow: 0 6px 14px -3px rgba(125, 90, 60, 0.35);">
+            style="background: linear-gradient(145deg, #5C7A4A 0%, #3F5633 100%); box-shadow: 0 6px 14px -3px rgba(63, 86, 51, 0.35);">
             <span class="block font-cormorant text-2xl font-bold leading-tight" id="cd-mins">--</span>
-            <span class="text-[9px] uppercase tracking-wider text-stone-100 font-medium">Mins</span>
+            <span class="text-[9px] tracking-wider text-stone-100 font-medium">Mins</span>
           </div>
           <div class="rounded-2xl py-2.5 px-1 text-white shadow-md transition-transform hover:scale-105"
-            style="background: linear-gradient(145deg, #B07A4A 0%, #8A5A30 100%); box-shadow: 0 6px 14px -3px rgba(138, 90, 48, 0.35);">
+            style="background: linear-gradient(145deg, #9C4336 0%, #7A2E26 100%); box-shadow: 0 6px 14px -3px rgba(122, 46, 38, 0.35);">
             <span class="block font-cormorant text-2xl font-bold leading-tight" id="cd-secs">--</span>
-            <span class="text-[9px] uppercase tracking-wider text-orange-100 font-medium">Secs</span>
+            <span class="text-[9px] tracking-wider text-orange-100 font-medium">Secs</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 4. WEDDING GALLERY (10-photo carousel) -->
-    <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-card gold-border-card text-center space-y-4">
+    <!-- 4. WEDDING GALLERY: 3D coverflow -->
+    <section class="text-center space-y-4">
       <div class="space-y-1">
         <p class="font-cursive text-2xl text-brand-terracotta">Our moments</p>
         <h2 class="font-thaiSerif text-xl font-medium text-brand-earth">Wedding Gallery</h2>
       </div>
-      <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-brand-sand" id="weddingGallery">
-        <img alt="Gallery image 1" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-100"
-          decoding="async" fetchpriority="high" src="assets/photos/wedding-01.jpg" />
-        <img alt="Gallery image 2" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
-          decoding="async" loading="lazy" src="assets/photos/wedding-02.jpg" />
-        <img alt="Gallery image 3" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
-          decoding="async" loading="lazy" src="assets/photos/wedding-03.jpg" />
-        <img alt="Gallery image 4" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
-          decoding="async" loading="lazy" src="assets/photos/wedding-04.jpg" />
-        <img alt="Gallery image 5" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
-          decoding="async" loading="lazy" src="assets/photos/wedding-05.jpg" />
-        <img alt="Gallery image 6" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
-          decoding="async" loading="lazy" src="assets/photos/wedding-06.jpg" />
-        <img alt="Gallery image 7" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
-          decoding="async" loading="lazy" src="assets/photos/wedding-07.jpg" />
-        <img alt="Gallery image 8" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
-          decoding="async" loading="lazy" src="assets/photos/wedding-08.jpg" />
-        <img alt="Gallery image 9" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
-          decoding="async" loading="lazy" src="assets/photos/wedding-09.jpg" />
-        <img alt="Gallery image 10" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
-          decoding="async" loading="lazy" src="assets/photos/wedding-10.jpg" />
-
-        <button aria-label="Previous photo" class="carousel-prev absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 backdrop-blur flex items-center justify-center text-brand-earth shadow-md cursor-pointer" type="button">
+      <div class="relative">
+        <div class="coverflow aspect-[4/5]" id="weddingGallery">
+          <div class="cf-track">
+            <div class="cf-item"><img alt="Gallery image 1" loading="lazy" src="assets/photos/wedding-01.jpg" /></div>
+            <div class="cf-item"><img alt="Gallery image 2" loading="lazy" src="assets/photos/wedding-02.jpg" /></div>
+            <div class="cf-item"><img alt="Gallery image 3" loading="lazy" src="assets/photos/wedding-03.jpg" /></div>
+            <div class="cf-item"><img alt="Gallery image 4" loading="lazy" src="assets/photos/wedding-04.jpg" /></div>
+            <div class="cf-item"><img alt="Gallery image 5" loading="lazy" src="assets/photos/wedding-05.jpg" /></div>
+            <div class="cf-item"><img alt="Gallery image 6" loading="lazy" src="assets/photos/wedding-06.jpg" /></div>
+            <div class="cf-item"><img alt="Gallery image 7" loading="lazy" src="assets/photos/wedding-07.jpg" /></div>
+            <div class="cf-item"><img alt="Gallery image 8" loading="lazy" src="assets/photos/wedding-08.jpg" /></div>
+            <div class="cf-item"><img alt="Gallery image 9" loading="lazy" src="assets/photos/wedding-09.jpg" /></div>
+            <div class="cf-item"><img alt="Gallery image 10" loading="lazy" src="assets/photos/wedding-10.jpg" /></div>
+          </div>
+        </div>
+        <button aria-label="Previous photo" class="cf-prev cf-arrow" style="left: -0.25rem;" type="button">
           <span class="material-symbols-outlined text-lg">chevron_left</span>
         </button>
-        <button aria-label="Next photo" class="carousel-next absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 backdrop-blur flex items-center justify-center text-brand-earth shadow-md cursor-pointer" type="button">
+        <button aria-label="Next photo" class="cf-next cf-arrow" style="right: -0.25rem;" type="button">
           <span class="material-symbols-outlined text-lg">chevron_right</span>
         </button>
-        <span class="carousel-counter absolute bottom-2 right-2 text-[10px] font-medium text-white bg-black/40 backdrop-blur px-2 py-0.5 rounded-full">01 / 10</span>
-      </div>
-      <div class="flex justify-center gap-1.5 flex-wrap">
-        <button aria-label="Photo 1" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-terracotta" type="button"></button>
-        <button aria-label="Photo 2" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
-        <button aria-label="Photo 3" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
-        <button aria-label="Photo 4" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
-        <button aria-label="Photo 5" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
-        <button aria-label="Photo 6" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
-        <button aria-label="Photo 7" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
-        <button aria-label="Photo 8" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
-        <button aria-label="Photo 9" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
-        <button aria-label="Photo 10" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
+        <span class="cf-counter absolute bottom-2 right-1/2 translate-x-1/2 text-[10px] font-medium text-white bg-black/40 backdrop-blur px-2 py-0.5 rounded-full z-50">01 / 10</span>
       </div>
     </section>
 
-    <!-- 5. CEREMONY ITINERARY -->
-    <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-card gold-border-card space-y-4">
+    <!-- 5. CEREMONY ITINERARY: sundial timeline -->
+    <section class="panel rounded-3xl p-6 shadow-card space-y-4">
       <div class="text-center space-y-1">
         <p class="font-cursive text-2xl text-amber-600">Wedding day</p>
         <h2 class="font-thaiSerif text-xl font-medium text-brand-earth">กำหนดการพิธีมงคลสมรส</h2>
         <p class="text-xs text-brand-muted font-thaiSerif">วันอาทิตย์ที่ ๑๗ มกราคม พ.ศ. ๒๕๗๐</p>
       </div>
 
-      <!-- Timeline Items -->
-      <div
-        class="relative pl-6 space-y-4 before:content-[''] before:absolute before:left-2.5 before:top-3 before:bottom-3 before:w-0.5 before:bg-gradient-to-b before:from-brand-gold before:via-brand-terracotta before:to-brand-mocha">
-        <!-- Event 1: พิธีสงฆ์ -->
-        <div
-          class="relative bg-gradient-to-r from-amber-50/70 to-yellow-50/30 rounded-2xl p-4 border border-amber-200/60 shadow-xs">
-          <div
-            class="absolute -left-[27px] top-3.5 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-white shadow-md">
-          </div>
+      <div class="relative pl-7 space-y-4">
+        <div class="sundial-line"></div>
+
+        <div class="relative bg-gradient-to-r from-amber-50/70 to-yellow-50/30 rounded-2xl p-4 border border-amber-200/60 shadow-xs">
+          <div class="sundial-dot absolute -left-[31px] top-3.5 w-3.5 h-3.5 rounded-full bg-amber-500" style="--dot-glow: rgba(217,121,10,0.5);"></div>
           <div class="flex justify-between items-center mb-1.5">
             <span class="text-xl font-bold tracking-tight text-amber-700 font-sans">07:19 น.</span>
-            <span
-              class="text-[11px] tracking-wide uppercase text-amber-700 font-semibold px-2.5 py-0.5 bg-amber-100/90 rounded-full border border-amber-200/60">พิธีสงฆ์</span>
+            <span class="text-[11px] tracking-wide text-amber-700 font-semibold px-2.5 py-0.5 bg-amber-100/90 rounded-full border border-amber-200/60">พิธีสงฆ์</span>
           </div>
-          <p class="text-base font-semibold text-brand-earth tracking-normal leading-snug">พิธีสงฆ์และเจริญพระพุทธมนต์
-          </p>
-          <p class="text-xs text-brand-muted font-normal mt-0.5 tracking-normal leading-relaxed">Buddhist Blessing &
-            Merit Making Ceremony</p>
+          <p class="text-base font-semibold text-brand-earth tracking-normal leading-snug">พิธีสงฆ์และเจริญพระพุทธมนต์</p>
+          <p class="text-xs text-brand-muted font-normal mt-0.5 tracking-normal leading-relaxed">Buddhist Blessing &amp; Merit Making Ceremony</p>
         </div>
 
-        <!-- Event 2: พิธีแห่ขันหมากและพิธีสู่ขอ -->
-        <div
-          class="relative bg-gradient-to-r from-orange-50/70 to-amber-50/30 rounded-2xl p-4 border border-[#9E4A28]/25 shadow-xs">
-          <div
-            class="absolute -left-[27px] top-3.5 w-3.5 h-3.5 rounded-full bg-[#9E4A28] border-2 border-white shadow-md">
-          </div>
+        <div class="relative bg-gradient-to-r from-orange-50/70 to-amber-50/30 rounded-2xl p-4 border border-[#B8541F]/25 shadow-xs">
+          <div class="sundial-dot absolute -left-[31px] top-3.5 w-3.5 h-3.5 rounded-full bg-[#B8541F]" style="--dot-glow: rgba(184,84,31,0.55);"></div>
           <div class="flex justify-between items-center mb-1.5">
-            <span class="text-xl font-bold tracking-tight text-[#9E4A28] font-sans">08:19 น.</span>
-            <span
-              class="text-[11px] tracking-wide uppercase text-[#9E4A28] font-semibold px-2.5 py-0.5 bg-orange-100/80 rounded-full border border-[#9E4A28]/25">แห่ขันหมาก</span>
+            <span class="text-xl font-bold tracking-tight text-[#B8541F] font-sans">08:19 น.</span>
+            <span class="text-[11px] tracking-wide text-[#B8541F] font-semibold px-2.5 py-0.5 bg-orange-100/80 rounded-full border border-[#B8541F]/25">แห่ขันหมาก</span>
           </div>
           <p class="text-base font-semibold text-brand-earth tracking-normal leading-snug">พิธีแห่ขันหมากและพิธีสู่ขอ</p>
-          <p class="text-xs text-brand-muted font-normal mt-0.5 tracking-normal leading-relaxed">Traditional Khan Maak
-            Procession</p>
+          <p class="text-xs text-brand-muted font-normal mt-0.5 tracking-normal leading-relaxed">Traditional Khan Maak Procession</p>
         </div>
 
-        <!-- Event 3: พิธีรับไหว้ -->
-        <div
-          class="relative bg-gradient-to-r from-stone-100/70 to-amber-50/30 rounded-2xl p-4 border border-stone-300/60 shadow-xs">
-          <div
-            class="absolute -left-[27px] top-3.5 w-3.5 h-3.5 rounded-full bg-stone-500 border-2 border-white shadow-md">
-          </div>
+        <div class="relative bg-gradient-to-r from-green-50/70 to-amber-50/30 rounded-2xl p-4 border border-[#3F5633]/25 shadow-xs">
+          <div class="sundial-dot absolute -left-[31px] top-3.5 w-3.5 h-3.5 rounded-full bg-[#3F5633]" style="--dot-glow: rgba(63,86,51,0.55);"></div>
           <div class="flex justify-between items-center mb-1.5">
-            <span class="text-xl font-bold tracking-tight text-stone-700 font-sans">09:19 น.</span>
-            <span
-              class="text-[11px] tracking-wide uppercase text-stone-700 font-semibold px-2.5 py-0.5 bg-stone-200/80 rounded-full border border-stone-300/60">รับไหว้</span>
+            <span class="text-xl font-bold tracking-tight text-[#3F5633] font-sans">09:19 น.</span>
+            <span class="text-[11px] tracking-wide text-[#3F5633] font-semibold px-2.5 py-0.5 bg-green-100/70 rounded-full border border-[#3F5633]/25">รับไหว้</span>
           </div>
           <p class="text-base font-semibold text-brand-earth tracking-normal leading-snug">พิธีรับไหว้</p>
-          <p class="text-xs text-brand-muted font-normal mt-0.5 tracking-normal leading-relaxed">Respect-Paying Ritual
-          </p>
+          <p class="text-xs text-brand-muted font-normal mt-0.5 tracking-normal leading-relaxed">Respect-Paying Ritual</p>
         </div>
 
-        <!-- Event 4: พิธีหลั่งน้ำสังข์ -->
-        <div
-          class="relative bg-gradient-to-r from-yellow-50/70 to-amber-50/30 rounded-2xl p-4 border border-[#C9A227]/30 shadow-xs">
-          <div
-            class="absolute -left-[27px] top-3.5 w-3.5 h-3.5 rounded-full bg-[#C9A227] border-2 border-white shadow-md">
-          </div>
+        <div class="relative bg-gradient-to-r from-yellow-50/70 to-amber-50/30 rounded-2xl p-4 border border-[#9C7A2E]/30 shadow-xs">
+          <div class="sundial-dot absolute -left-[31px] top-3.5 w-3.5 h-3.5 rounded-full bg-[#9C7A2E]" style="--dot-glow: rgba(156,122,46,0.6);"></div>
           <div class="flex justify-between items-center mb-1.5">
-            <span class="text-xl font-bold tracking-tight text-[#8a6d12] font-sans">10:19 น.</span>
-            <span
-              class="text-[11px] tracking-wide uppercase text-[#8a6d12] font-semibold px-2.5 py-0.5 bg-yellow-100/80 rounded-full border border-[#C9A227]/30">หลั่งน้ำสังข์</span>
+            <span class="text-xl font-bold tracking-tight text-[#6b5720] font-sans">10:19 น.</span>
+            <span class="text-[11px] tracking-wide text-[#6b5720] font-semibold px-2.5 py-0.5 bg-yellow-100/80 rounded-full border border-[#9C7A2E]/30">หลั่งน้ำสังข์</span>
           </div>
-          <p class="text-base font-semibold text-brand-earth tracking-normal leading-snug">
-            พิธีหลั่งน้ำสังข์</p>
-          <p class="text-xs text-brand-muted font-normal mt-0.5 tracking-normal leading-relaxed">Conch Shell Holy Water
-            Blessing</p>
+          <p class="text-base font-semibold text-brand-earth tracking-normal leading-snug">พิธีหลั่งน้ำสังข์</p>
+          <p class="text-xs text-brand-muted font-normal mt-0.5 tracking-normal leading-relaxed">Conch Shell Holy Water Blessing</p>
         </div>
 
-        <!-- Event 5: รับประทานอาหาร -->
-        <div
-          class="relative bg-gradient-to-r from-orange-100/70 to-stone-50/30 rounded-2xl p-4 border border-[#7D5A3C]/30 shadow-xs">
-          <div
-            class="absolute -left-[27px] top-3.5 w-3.5 h-3.5 rounded-full bg-[#7D5A3C] border-2 border-white shadow-md">
-          </div>
+        <div class="relative bg-gradient-to-r from-red-50/70 to-amber-50/30 rounded-2xl p-4 border border-[#7A2E26]/25 shadow-xs">
+          <div class="sundial-dot absolute -left-[31px] top-3.5 w-3.5 h-3.5 rounded-full bg-[#7A2E26]" style="--dot-glow: rgba(122,46,38,0.6);"></div>
           <div class="flex justify-between items-center mb-1.5">
-            <span class="text-xl font-bold tracking-tight text-[#7D5A3C] font-sans">11:30 น.</span>
-            <span
-              class="text-[11px] tracking-wide uppercase text-[#7D5A3C] font-semibold px-2.5 py-0.5 bg-orange-100/80 rounded-full border border-[#7D5A3C]/30">ฉลองมงคลสมรส</span>
+            <span class="text-xl font-bold tracking-tight text-[#7A2E26] font-sans">11:30 น.</span>
+            <span class="text-[11px] tracking-wide text-[#7A2E26] font-semibold px-2.5 py-0.5 bg-red-100/70 rounded-full border border-[#7A2E26]/25">ฉลองมงคลสมรส</span>
           </div>
-          <p class="text-base font-semibold text-brand-earth tracking-normal leading-snug">ร่วมรับประทานอาหาร
-            (ฉลองมงคลสมรส)</p>
-          <p class="text-xs text-brand-muted font-normal mt-0.5 tracking-normal leading-relaxed">Wedding Luncheon
-            Celebration</p>
+          <p class="text-base font-semibold text-brand-earth tracking-normal leading-snug">ร่วมรับประทานอาหาร (ฉลองมงคลสมรส)</p>
+          <p class="text-xs text-brand-muted font-normal mt-0.5 tracking-normal leading-relaxed">Wedding Luncheon Celebration</p>
         </div>
       </div>
     </section>
 
     <!-- 6. LOCATION & VENUE -->
-    <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-card gold-border-card text-center space-y-4">
+    <section class="panel rounded-3xl p-6 shadow-card text-center space-y-4">
       <div class="text-center space-y-1">
-        <span
-          class="text-[11px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-amber-50 border border-brand-gold/40 text-brand-mocha inline-block">Venue
-          & Map</span>
         <h2 class="font-thaiSerif text-xl font-medium text-brand-earth">สถานที่จัดงาน</h2>
-        <p
-          class="font-thaiSerif text-lg font-semibold bg-gradient-to-r from-brand-terracotta to-brand-gold bg-clip-text text-transparent">
-          ครัวครบรส บุรีรมย์ การ์เด้น</p>
+        <p class="font-thaiSerif text-lg font-semibold bg-gradient-to-r from-brand-terracotta to-brand-gold bg-clip-text text-transparent">ครัวครบรส บุรีรมย์ การ์เด้น</p>
         <p class="text-xs text-brand-muted tracking-wide font-medium">Burirom Garden</p>
       </div>
 
-      <!-- Map Mockup Graphic -->
-      <div
-        class="relative w-full h-44 rounded-2xl overflow-hidden border border-brand-gold/30 bg-gradient-to-br from-amber-50/60 via-orange-50/30 to-stone-50/50 flex items-center justify-center shadow-inner">
-        <!-- Map visual abstraction pattern -->
-        <div
-          class="absolute inset-0 opacity-25 bg-[radial-gradient(#9E4A28_1.5px,transparent_1.5px)] [background-size:18px_18px]">
-        </div>
+      <div class="relative w-full h-44 rounded-2xl overflow-hidden border border-brand-gold/30 bg-gradient-to-br from-amber-50/60 via-orange-50/30 to-stone-50/50 flex items-center justify-center shadow-inner">
+        <div class="absolute inset-0 opacity-25 bg-[radial-gradient(#B8541F_1.5px,transparent_1.5px)] [background-size:18px_18px]"></div>
         <div class="relative z-10 flex flex-col items-center text-center p-4">
-          <div
-            class="w-11 h-11 rounded-full bg-gradient-to-tr from-brand-terracotta via-brand-mocha to-brand-gold text-white flex items-center justify-center shadow-lg mb-2 animate-bounce">
+          <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-brand-terracotta via-brand-mocha to-brand-gold text-white flex items-center justify-center shadow-lg mb-2 animate-bounce">
             <span class="material-symbols-outlined text-2xl">location_on</span>
           </div>
           <span class="text-sm font-semibold text-brand-earth font-thaiSerif">ครัวครบรส บุรีรมย์ การ์เด้น</span>
@@ -789,320 +621,224 @@
         </div>
       </div>
 
-      <!-- Map Button link -->
       <a class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-2xl bg-white border border-brand-gold/40 text-brand-terracotta font-medium text-sm hover:bg-amber-50/60 transition-all shadow-sm group"
         href="https://maps.app.goo.gl/7J8vqaN63tsh6xax9" rel="noopener noreferrer" target="_blank">
-        <span
-          class="material-symbols-outlined text-lg text-brand-terracotta group-hover:scale-110 transition-transform">near_me</span>
+        <span class="material-symbols-outlined text-lg text-brand-terracotta group-hover:scale-110 transition-transform">near_me</span>
         <span>ดูเส้นทางบน Google Maps <br>(ครัวครบรส บุรีรมย์ การ์เด้น)</span>
       </a>
     </section>
 
     <!-- 7. DRESS CODE -->
-    <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-card gold-border-card text-center space-y-4">
+    <section class="panel rounded-3xl p-6 shadow-card text-center space-y-4">
       <div class="space-y-1">
-        <span
-          class="text-[11px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-gradient-to-r from-amber-100 via-orange-100 to-amber-100 text-brand-terracotta inline-block">Theme
-          & Attire</span>
-        <h2
-          class="font-cormorant text-2xl font-bold tracking-wide bg-gradient-to-r from-brand-terracotta via-brand-gold to-brand-terracotta bg-clip-text text-transparent">
-          Dress Code</h2>
+        <h2 class="font-cormorant text-2xl font-bold tracking-wide bg-gradient-to-r from-brand-terracotta via-brand-gold to-brand-terracotta bg-clip-text text-transparent">Dress Code</h2>
         <p class="text-xs text-brand-muted">ขอเชิญทุกท่านร่วมแต่งกายด้วยชุดสุภาพในโทนสีตามจานสีด้านล่าง</p>
       </div>
 
-      <!-- Color Swatches -->
       <div class="flex justify-center items-center gap-2.5 sm:gap-3 pt-1 flex-wrap">
         <div class="flex flex-col items-center space-y-1.5">
-          <div
-            class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#F5C8C3] border-2 border-white shadow-swatch flex items-center justify-center text-white">
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#F5C8C3] border-2 border-white shadow-md flex items-center justify-center text-white">
             <span class="material-symbols-outlined text-sm font-bold drop-shadow">check</span>
           </div>
           <span class="text-[10px] text-brand-muted font-medium">Blush Pink</span>
         </div>
-
         <div class="flex flex-col items-center space-y-1.5">
-          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#EA91A3] border-2 border-white shadow-swatch"></div>
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#EA91A3] border-2 border-white shadow-md"></div>
           <span class="text-[10px] text-brand-muted font-medium">Rose</span>
         </div>
-
         <div class="flex flex-col items-center space-y-1.5">
-          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#E4D2BC] border-2 border-white shadow-swatch"></div>
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#E4D2BC] border-2 border-white shadow-md"></div>
           <span class="text-[10px] text-brand-muted font-medium">Sand Beige</span>
         </div>
-
         <div class="flex flex-col items-center space-y-1.5">
-          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#8A4F3D] border-2 border-white shadow-swatch"></div>
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#8A4F3D] border-2 border-white shadow-md"></div>
           <span class="text-[10px] text-brand-muted font-medium">Mocha Brown</span>
         </div>
-
         <div class="flex flex-col items-center space-y-1.5">
-          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#C1D6D1] border-2 border-white shadow-swatch"></div>
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#C1D6D1] border-2 border-white shadow-md"></div>
           <span class="text-[10px] text-brand-muted font-medium">Sage Mint</span>
         </div>
       </div>
     </section>
 
-    <!-- 8. RSVP FORM (kept exactly as-is) -->
-    <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-card gold-border-card space-y-4" id="rsvp">
+    <!-- 8. RSVP FORM -->
+    <section class="panel rounded-3xl p-6 shadow-card space-y-4" id="rsvp">
       <div class="text-center space-y-1">
-        <span
-          class="text-[11px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-rose-600 inline-block">Response
-          Required</span>
         <h2 class="font-thaiSerif text-xl font-medium text-brand-earth">ยืนยันการเข้าร่วมงาน (R.S.V.P)</h2>
         <p class="text-xs text-brand-muted">เพื่อให้เราสามารถเตรียมการต้อนรับทุกท่านอย่างอบอุ่นและสมเกียรติ 💌</p>
       </div>
 
       <form class="space-y-4 pt-1" id="rsvpForm">
-        <!-- Anti-Spam Honeypot (Hidden from humans) -->
-        <input type="text" name="website" id="rsvpWebsite" style="display:none !important;" tabindex="-1"
-          autocomplete="off">
-
-        <!-- Hidden state inputs -->
+        <input type="text" name="website" id="rsvpWebsite" style="display:none !important;" tabindex="-1" autocomplete="off">
         <input type="hidden" id="selectedSide" name="side" value="ฝ่ายเจ้าสาว (คุณสิริลักษณ์)">
         <input type="hidden" id="selectedAttendance" name="attendance" value="สะดวกเข้าร่วมงาน">
         <input type="hidden" id="selectedGuests" name="guests" value="1">
 
-        <!-- Guest Name -->
         <div class="space-y-1">
           <label for="guestName" class="text-xs font-medium text-brand-earth flex items-center gap-1">
-            <span>ชื่อ-นามสกุล</span>
-            <span class="text-rose-500">*</span>
+            <span>ชื่อ-นามสกุล</span><span class="text-brand-betel">*</span>
           </label>
-          <input
-            class="w-full text-sm px-3.5 py-2.5 rounded-xl bg-pink-50/30 border border-pink-200/80 text-brand-earth focus:outline-none focus:border-rose-400 focus:ring-2 focus:ring-rose-200/50 transition-all placeholder:text-brand-muted/50"
+          <input class="w-full text-sm px-3.5 py-2.5 rounded-xl bg-amber-50/40 border border-brand-gold/40 text-brand-earth focus:outline-none focus:border-brand-terracotta focus:ring-2 focus:ring-brand-gold/30 transition-all placeholder:text-brand-muted/50"
             id="guestName" name="name" placeholder="กรุณาระบุชื่อ-นามสกุลของคุณ" required maxlength="100" type="text" />
         </div>
 
-        <!-- Guest Phone -->
         <div class="space-y-1">
-          <label for="guestPhone" class="text-xs font-medium text-brand-earth flex items-center gap-1">
-            <span>เบอร์โทรศัพท์ (ถ้ามี)</span>
-          </label>
-          <input
-            class="w-full text-sm px-3.5 py-2.5 rounded-xl bg-pink-50/30 border border-pink-200/80 text-brand-earth focus:outline-none focus:border-rose-400 focus:ring-2 focus:ring-rose-200/50 transition-all placeholder:text-brand-muted/50"
+          <label for="guestPhone" class="text-xs font-medium text-brand-earth flex items-center gap-1"><span>เบอร์โทรศัพท์ (ถ้ามี)</span></label>
+          <input class="w-full text-sm px-3.5 py-2.5 rounded-xl bg-amber-50/40 border border-brand-gold/40 text-brand-earth focus:outline-none focus:border-brand-terracotta focus:ring-2 focus:ring-brand-gold/30 transition-all placeholder:text-brand-muted/50"
             id="guestPhone" name="phone" placeholder="08x-xxx-xxxx" maxlength="30" type="tel" />
         </div>
 
-        <!-- Guest Side: Tailored for Sirilak & Peerapat -->
         <div class="space-y-1">
           <label class="text-xs font-medium text-brand-earth">ท่านเป็นแขกฝ่ายใด *</label>
           <div class="grid grid-cols-2 gap-2" id="sideToggle">
-            <button
-              class="side-btn py-2.5 px-3 rounded-xl border border-rose-400 bg-gradient-to-r from-rose-500 to-pink-500 text-white text-xs font-medium flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer"
-              data-side="ฝ่ายเจ้าสาว (คุณสิริลักษณ์)" type="button">
-              <span>👰 ฝ่ายเจ้าสาว (วาววา)</span>
-            </button>
-            <button
-              class="side-btn py-2.5 px-3 rounded-xl border border-pink-200 bg-white text-brand-earth text-xs font-medium flex items-center justify-center gap-1.5 transition-all cursor-pointer"
-              data-side="ฝ่ายเจ้าบ่าว (คุณพีรพัฒน์)" type="button">
-              <span>🤵 ฝ่ายเจ้าบ่าว (ตุ้ย)</span>
-            </button>
+            <button class="side-btn py-2.5 px-3 rounded-xl border border-brand-terracotta/60 bg-gradient-to-r from-brand-terracotta to-brand-gold text-white text-xs font-medium flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer"
+              data-side="ฝ่ายเจ้าสาว (คุณสิริลักษณ์)" type="button"><span>👰 ฝ่ายเจ้าสาว (วาววา)</span></button>
+            <button class="side-btn py-2.5 px-3 rounded-xl border border-brand-gold/30 bg-white text-brand-earth text-xs font-medium flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+              data-side="ฝ่ายเจ้าบ่าว (คุณพีรพัฒน์)" type="button"><span>🤵 ฝ่ายเจ้าบ่าว (ตุ้ย)</span></button>
           </div>
         </div>
 
-        <!-- Attendance -->
         <div class="space-y-1">
           <label class="text-xs font-medium text-brand-earth">ท่านสะดวกเข้าร่วมงานหรือไม่ *</label>
           <div class="grid grid-cols-2 gap-2" id="attendToggle">
-            <button
-              class="attend-btn py-2.5 px-3 rounded-xl border border-purple-400 bg-gradient-to-r from-purple-500 to-violet-500 text-white text-xs font-medium flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer"
-              data-attend="สะดวกเข้าร่วมงาน" type="button">
-              <span>✅ สะดวกเข้าร่วมงาน</span>
-            </button>
-            <button
-              class="attend-btn py-2.5 px-3 rounded-xl border border-pink-200 bg-white text-brand-earth text-xs font-medium flex items-center justify-center gap-1.5 transition-all cursor-pointer"
-              data-attend="ไม่สะดวก" type="button">
-              <span>❌ ไม่สะดวก</span>
-            </button>
+            <button class="attend-btn py-2.5 px-3 rounded-xl border border-brand-betel/60 bg-gradient-to-r from-brand-betel to-brand-terracotta text-white text-xs font-medium flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer"
+              data-attend="สะดวกเข้าร่วมงาน" type="button"><span>✅ สะดวกเข้าร่วมงาน</span></button>
+            <button class="attend-btn py-2.5 px-3 rounded-xl border border-brand-gold/30 bg-white text-brand-earth text-xs font-medium flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+              data-attend="ไม่สะดวก" type="button"><span>❌ ไม่สะดวก</span></button>
           </div>
         </div>
 
-        <!-- Guests Count -->
         <div class="space-y-1 transition-opacity duration-300" id="guestCountSection">
           <label class="text-xs font-medium text-brand-earth">จำนวนผู้เข้าร่วม (รวมตัวท่าน)</label>
           <div class="flex gap-2" id="guestCount">
-            <button
-              class="count-btn flex-1 py-2 rounded-xl bg-gradient-to-r from-rose-500 to-pink-500 text-white border border-rose-400 text-xs font-medium shadow-xs cursor-pointer"
-              data-count="1" type="button">1</button>
-            <button
-              class="count-btn flex-1 py-2 rounded-xl bg-white text-brand-earth border border-pink-200 text-xs font-medium cursor-pointer"
-              data-count="2" type="button">2</button>
-            <button
-              class="count-btn flex-1 py-2 rounded-xl bg-white text-brand-earth border border-pink-200 text-xs font-medium cursor-pointer"
-              data-count="3" type="button">3</button>
-            <button
-              class="count-btn flex-1 py-2 rounded-xl bg-white text-brand-earth border border-pink-200 text-xs font-medium cursor-pointer"
-              data-count="4" type="button">4</button>
-            <button
-              class="count-btn flex-1 py-2 rounded-xl bg-white text-brand-earth border border-pink-200 text-xs font-medium cursor-pointer"
-              data-count="5+" type="button">5+</button>
+            <button class="count-btn flex-1 py-2 rounded-xl bg-gradient-to-r from-brand-terracotta to-brand-gold text-white border border-brand-terracotta/60 text-xs font-medium shadow-xs cursor-pointer" data-count="1" type="button">1</button>
+            <button class="count-btn flex-1 py-2 rounded-xl bg-white text-brand-earth border border-brand-gold/30 text-xs font-medium cursor-pointer" data-count="2" type="button">2</button>
+            <button class="count-btn flex-1 py-2 rounded-xl bg-white text-brand-earth border border-brand-gold/30 text-xs font-medium cursor-pointer" data-count="3" type="button">3</button>
+            <button class="count-btn flex-1 py-2 rounded-xl bg-white text-brand-earth border border-brand-gold/30 text-xs font-medium cursor-pointer" data-count="4" type="button">4</button>
+            <button class="count-btn flex-1 py-2 rounded-xl bg-white text-brand-earth border border-brand-gold/30 text-xs font-medium cursor-pointer" data-count="5+" type="button">5+</button>
           </div>
         </div>
 
-        <!-- Optional Note -->
         <div class="space-y-1">
           <label for="rsvpNote" class="text-xs font-medium text-brand-earth">ข้อความถึงบ่าวสาว (ถ้ามี)</label>
-          <textarea
-            class="w-full text-sm p-3 rounded-xl bg-pink-50/30 border border-pink-200/80 text-brand-earth focus:outline-none focus:border-rose-400 focus:ring-2 focus:ring-rose-200/50 transition-all placeholder:text-brand-muted/50"
-            id="rsvpNote" name="note" rows="2" maxlength="300"
-            placeholder="ฝากข้อความหรืออาหารที่แพ้/รับประทานไม่ได้..."></textarea>
+          <textarea class="w-full text-sm p-3 rounded-xl bg-amber-50/40 border border-brand-gold/40 text-brand-earth focus:outline-none focus:border-brand-terracotta focus:ring-2 focus:ring-brand-gold/30 transition-all placeholder:text-brand-muted/50"
+            id="rsvpNote" name="note" rows="2" maxlength="300" placeholder="ฝากข้อความหรืออาหารที่แพ้/รับประทานไม่ได้..."></textarea>
         </div>
 
-        <!-- Submit Button -->
-        <button
-          class="w-full py-3.5 rounded-2xl text-white font-medium text-sm tracking-wide shadow-rainbow active:scale-[0.99] transition-all flex items-center justify-center gap-1.5 mt-2 hover:opacity-95 cursor-pointer disabled:opacity-50"
-          id="submitRsvpBtn" style="background: linear-gradient(135deg, #F07167 0%, #D946EF 55%, #8B5CF6 100%);"
-          type="submit">
+        <button class="w-full py-3.5 rounded-2xl text-white font-medium text-sm tracking-wide shadow-rainbow active:scale-[0.99] transition-all flex items-center justify-center gap-1.5 mt-2 hover:opacity-95 cursor-pointer disabled:opacity-50"
+          id="submitRsvpBtn" style="background: linear-gradient(135deg, #B8541F 0%, #9C7A2E 55%, #B8541F 100%);" type="submit">
           <span class="material-symbols-outlined text-base" id="rsvpBtnIcon">mail</span>
           <span id="rsvpBtnText">ยืนยันการเข้าร่วมงาน</span>
         </button>
 
-        <!-- Feedback Success -->
-        <div
-          class="hidden p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs text-center font-thaiSerif leading-relaxed"
-          id="rsvpSuccess">
+        <div class="hidden p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs text-center font-thaiSerif leading-relaxed" id="rsvpSuccess">
           บันทึกข้อมูลเรียบร้อยแล้วค่ะ ขอบพระคุณอย่างยิ่งที่ร่วมเป็นเกียรติในวันสำคัญ 💕
         </div>
-
-        <!-- Feedback Error -->
-        <div
-          class="hidden p-3.5 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs text-center font-thaiSerif leading-relaxed"
-          id="rsvpError">
+        <div class="hidden p-3.5 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs text-center font-thaiSerif leading-relaxed" id="rsvpError">
           เกิดข้อผิดพลาดในการเชื่อมต่อ กรุณาลองใหม่อีกครั้ง หรือติดต่อบ่าวสาวโดยตรงค่ะ
         </div>
       </form>
     </section>
 
-    <!-- 9. GIFT: message + QR + slip upload -->
-    <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-card gold-border-card text-center space-y-5" id="gift">
+    <!-- 9. GIFT -->
+    <section class="panel rounded-3xl p-6 shadow-card text-center space-y-5" id="gift">
       <div class="space-y-1">
         <p class="font-cursive text-2xl text-brand-terracotta">A gift from your heart</p>
         <h2 class="font-thaiSerif text-xl font-medium text-brand-earth">มอบของขวัญให้บ่าวสาว</h2>
       </div>
 
       <form class="space-y-3 text-left" id="giftForm">
-        <!-- Anti-spam Honeypot -->
-        <input type="text" name="website" id="giftWebsite" style="display:none !important;" tabindex="-1"
-          autocomplete="off">
+        <input type="text" name="website" id="giftWebsite" style="display:none !important;" tabindex="-1" autocomplete="off">
 
         <div class="space-y-1">
-          <label for="giftName" class="text-xs font-medium text-brand-earth">ชื่อผู้ส่ง <span class="text-rose-500">*</span></label>
-          <input
-            class="w-full text-sm px-3.5 py-2.5 rounded-xl bg-amber-50/40 border border-brand-gold/40 text-brand-earth focus:outline-none focus:border-brand-terracotta focus:ring-2 focus:ring-brand-gold/30 transition-all placeholder:text-brand-muted/50"
+          <label for="giftName" class="text-xs font-medium text-brand-earth">ชื่อผู้ส่ง <span class="text-brand-betel">*</span></label>
+          <input class="w-full text-sm px-3.5 py-2.5 rounded-xl bg-amber-50/40 border border-brand-gold/40 text-brand-earth focus:outline-none focus:border-brand-terracotta focus:ring-2 focus:ring-brand-gold/30 transition-all placeholder:text-brand-muted/50"
             id="giftName" maxlength="100" placeholder="ชื่อ-นามสกุล" required type="text" />
         </div>
 
         <div class="space-y-1">
           <label for="giftNote" class="text-xs font-medium text-brand-earth">ข้อความถึงบ่าวสาว <span class="text-brand-muted font-light">(ไม่บังคับ)</span></label>
-          <textarea
-            class="w-full text-sm p-3 rounded-xl bg-amber-50/40 border border-brand-gold/40 text-brand-earth focus:outline-none focus:border-brand-terracotta focus:ring-2 focus:ring-brand-gold/30 transition-all placeholder:text-brand-muted/50"
+          <textarea class="w-full text-sm p-3 rounded-xl bg-amber-50/40 border border-brand-gold/40 text-brand-earth focus:outline-none focus:border-brand-terracotta focus:ring-2 focus:ring-brand-gold/30 transition-all placeholder:text-brand-muted/50"
             id="giftNote" maxlength="300" placeholder="ฝากคำอวยพรถึงบ่าวสาว..." rows="3"></textarea>
         </div>
 
-        <!-- QR + account -->
         <div class="flex flex-col items-center gap-2 py-2">
-          <img alt="QR Code สำหรับโอนเงินให้บ่าวสาว" class="w-40 h-40 rounded-2xl border border-brand-gold/40 shadow-md object-contain bg-white p-2"
-            src="assets/qr-gift.png" />
+          <img alt="QR Code สำหรับโอนเงินให้บ่าวสาว" class="w-40 h-40 rounded-2xl border border-brand-gold/40 shadow-md object-contain bg-white p-2" src="assets/qr-gift.png" />
           <p class="text-xs text-brand-earth text-center">
-            <span class="text-brand-muted">ชื่อบัญชี</span><br />
-            <strong>น.ส.สิริลักษณ์ แตงกระโทก</strong>
+            <span class="text-brand-muted">ชื่อบัญชี</span><br /><strong>น.ส.สิริลักษณ์ แตงกระโทก</strong>
           </p>
         </div>
 
         <div class="space-y-1">
-          <label for="giftSlip" class="text-xs font-medium text-brand-earth">แนบภาพสลิปการโอนเงิน <span class="text-rose-500">*</span></label>
-          <input
-            class="w-full text-xs px-3 py-2.5 rounded-xl bg-amber-50/40 border border-brand-gold/40 text-brand-earth file:mr-2 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:text-xs file:bg-amber-100 file:text-brand-terracotta cursor-pointer"
+          <label for="giftSlip" class="text-xs font-medium text-brand-earth">แนบภาพสลิปการโอนเงิน <span class="text-brand-betel">*</span></label>
+          <input class="w-full text-xs px-3 py-2.5 rounded-xl bg-amber-50/40 border border-brand-gold/40 text-brand-earth file:mr-2 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:text-xs file:bg-amber-100 file:text-brand-terracotta cursor-pointer"
             accept="image/jpeg,image/png,image/webp" id="giftSlip" required type="file" />
         </div>
 
-        <button
-          class="w-full py-3.5 rounded-2xl text-white font-medium text-sm tracking-wide shadow-rainbow active:scale-[0.99] transition-all flex items-center justify-center gap-1.5 hover:opacity-95 cursor-pointer disabled:opacity-50"
-          id="submitGiftBtn" style="background: linear-gradient(135deg, #9E4A28 0%, #C9A227 55%, #9E4A28 100%);"
-          type="submit">
+        <button class="w-full py-3.5 rounded-2xl text-white font-medium text-sm tracking-wide shadow-rainbow active:scale-[0.99] transition-all flex items-center justify-center gap-1.5 hover:opacity-95 cursor-pointer disabled:opacity-50"
+          id="submitGiftBtn" style="background: linear-gradient(135deg, #B8541F 0%, #9C7A2E 55%, #B8541F 100%);" type="submit">
           <span class="material-symbols-outlined text-base" id="giftBtnIcon">redeem</span>
           <span id="giftBtnText">ส่งสลิปให้บ่าวสาว</span>
         </button>
 
-        <div
-          class="hidden p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs text-center font-thaiSerif leading-relaxed"
-          id="giftSuccess">
+        <div class="hidden p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs text-center font-thaiSerif leading-relaxed" id="giftSuccess">
           ได้รับสลิปเรียบร้อยแล้วค่ะ ขอบพระคุณสำหรับน้ำใจอันอบอุ่นนะคะ 💕
         </div>
-
-        <div
-          class="hidden p-3.5 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs text-center font-thaiSerif leading-relaxed"
-          id="giftError">
+        <div class="hidden p-3.5 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs text-center font-thaiSerif leading-relaxed" id="giftError">
           เกิดข้อผิดพลาดในการเชื่อมต่อ กรุณาลองใหม่อีกครั้งค่ะ
         </div>
       </form>
     </section>
 
-    <!-- 10. PRE-WEDDING GALLERY (4-photo carousel) -->
-    <section class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-card gold-border-card text-center space-y-4">
+    <!-- 10. PRE-WEDDING GALLERY: 3D coverflow -->
+    <section class="text-center space-y-4">
       <div class="space-y-1">
         <p class="font-cursive text-2xl text-brand-gold">More moments</p>
         <h2 class="font-thaiSerif text-xl font-medium text-brand-earth">Pre-wedding</h2>
       </div>
-      <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-brand-sand" id="preweddingGallery">
-        <img alt="Gallery image 1" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-100"
-          decoding="async" src="assets/photos/prewedding-01.jpg" />
-        <img alt="Gallery image 2" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
-          decoding="async" loading="lazy" src="assets/photos/prewedding-02.jpg" />
-        <img alt="Gallery image 3" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
-          decoding="async" loading="lazy" src="assets/photos/prewedding-03.jpg" />
-        <img alt="Gallery image 4" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0"
-          decoding="async" loading="lazy" src="assets/photos/prewedding-04.jpg" />
-
-        <button aria-label="Previous photo" class="carousel-prev absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 backdrop-blur flex items-center justify-center text-brand-earth shadow-md cursor-pointer" type="button">
+      <div class="relative">
+        <div class="coverflow aspect-[4/5]" id="preweddingGallery">
+          <div class="cf-track">
+            <div class="cf-item"><img alt="Gallery image 1" loading="lazy" src="assets/photos/prewedding-01.jpg" /></div>
+            <div class="cf-item"><img alt="Gallery image 2" loading="lazy" src="assets/photos/prewedding-02.jpg" /></div>
+            <div class="cf-item"><img alt="Gallery image 3" loading="lazy" src="assets/photos/prewedding-03.jpg" /></div>
+            <div class="cf-item"><img alt="Gallery image 4" loading="lazy" src="assets/photos/prewedding-04.jpg" /></div>
+          </div>
+        </div>
+        <button aria-label="Previous photo" class="cf-prev cf-arrow" style="left: -0.25rem;" type="button">
           <span class="material-symbols-outlined text-lg">chevron_left</span>
         </button>
-        <button aria-label="Next photo" class="carousel-next absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 backdrop-blur flex items-center justify-center text-brand-earth shadow-md cursor-pointer" type="button">
+        <button aria-label="Next photo" class="cf-next cf-arrow" style="right: -0.25rem;" type="button">
           <span class="material-symbols-outlined text-lg">chevron_right</span>
         </button>
-        <span class="carousel-counter absolute bottom-2 right-2 text-[10px] font-medium text-white bg-black/40 backdrop-blur px-2 py-0.5 rounded-full">01 / 04</span>
-      </div>
-      <div class="flex justify-center gap-1.5">
-        <button aria-label="Photo 1" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-terracotta" type="button"></button>
-        <button aria-label="Photo 2" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
-        <button aria-label="Photo 3" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
-        <button aria-label="Photo 4" class="carousel-dot w-1.5 h-1.5 rounded-full bg-brand-gold/30" type="button"></button>
+        <span class="cf-counter absolute bottom-2 right-1/2 translate-x-1/2 text-[10px] font-medium text-white bg-black/40 backdrop-blur px-2 py-0.5 rounded-full z-50">01 / 04</span>
       </div>
     </section>
 
-    <!-- 11. FOOTER SECTION -->
+    <!-- 11. FOOTER -->
     <footer class="pt-6 pb-12 text-center space-y-3">
       <div class="flex items-center justify-center gap-2">
         <span class="h-0.5 w-8 bg-gradient-to-r from-transparent to-brand-gold rounded-full"></span>
-        <span
-          class="material-symbols-outlined text-base bg-gradient-to-r from-brand-terracotta via-brand-gold to-brand-terracotta bg-clip-text text-transparent">local_florist</span>
+        <span class="material-symbols-outlined text-base bg-gradient-to-r from-brand-terracotta via-brand-gold to-brand-terracotta bg-clip-text text-transparent">local_florist</span>
         <span class="h-0.5 w-8 bg-gradient-to-l from-transparent to-brand-gold rounded-full"></span>
       </div>
-      <h3
-        class="font-cormorant text-2xl font-bold tracking-wide bg-gradient-to-r from-brand-terracotta via-brand-gold to-brand-terracotta bg-clip-text text-transparent">
-        Wawwa &amp; Tui</h3>
-      <p class="font-cursive text-lg text-brand-muted">With love, always</p>
-      <p class="text-xs text-brand-muted font-light max-w-xs mx-auto font-thaiSerif">
+      <h3 class="font-cormorant text-2xl font-bold tracking-wide bg-gradient-to-r from-brand-terracotta via-brand-gold to-brand-terracotta bg-clip-text text-transparent">Wawwa &amp; Tui</h3>
+      <p class="font-cursive text-lg text-amber-100">With love, always</p>
+      <p class="text-xs text-amber-50/80 font-light max-w-xs mx-auto font-thaiSerif">
         ขอบพระคุณทุกท่านที่มาร่วมเป็นเกียรติและสร้างความทรงจำอันแสนอบอุ่นร่วมกับเราสองคน
       </p>
-      <p class="text-[11px] text-brand-muted font-thaiSerif pt-1">
-        วันอาทิตย์ที่ ๑๗ มกราคม ๒๕๗๐ ณ ครัวครบรส บุรีรมย์ การ์เด้น (Burirom Garden)
-      </p>
-      <p class="text-[10px] text-brand-muted/60 tracking-wider uppercase font-medium">
-        17 · 01 · 2027
-      </p>
+      <p class="text-[11px] text-amber-50/70 font-thaiSerif pt-1">วันอาทิตย์ที่ ๑๗ มกราคม ๒๕๗๐ ณ ครัวครบรส บุรีรมย์ การ์เด้น (Burirom Garden)</p>
+      <p class="text-[10px] text-amber-50/50 tracking-wider font-medium">17 · 01 · 2027</p>
     </footer>
   </main>
 
   <!-- Sticky Bottom Quick Navigation -->
-  <nav
-    class="fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-t border-brand-gold/30 max-w-md mx-auto py-2 px-4 flex justify-around items-center shadow-lg">
+  <nav class="fixed bottom-0 left-0 right-0 z-50 panel border-t max-w-md mx-auto py-2 px-4 flex justify-around items-center shadow-lg">
     <a class="flex flex-col items-center text-brand-terracotta group" href="#rsvp">
       <span class="material-symbols-outlined text-xl group-hover:scale-110 transition-transform">mark_email_read</span>
       <span class="text-[10px] font-medium tracking-tight font-thaiSerif">ยืนยัน RSVP</span>
     </a>
-    <a class="flex flex-col items-center text-brand-muted group hover:text-brand-terracotta transition-colors"
-      href="https://maps.app.goo.gl/7J8vqaN63tsh6xax9" target="_blank" rel="noopener noreferrer">
+    <a class="flex flex-col items-center text-brand-muted group hover:text-brand-terracotta transition-colors" href="https://maps.app.goo.gl/7J8vqaN63tsh6xax9" target="_blank" rel="noopener noreferrer">
       <span class="material-symbols-outlined text-xl group-hover:scale-110 transition-transform">location_on</span>
       <span class="text-[10px] font-medium tracking-tight font-thaiSerif">แผนที่</span>
     </a>
@@ -1113,50 +849,41 @@
   </nav>
 
   <!-- Hidden Container for YouTube Audio Player -->
-  <div id="youtubePlayer"
-    style="position:fixed; bottom:-9999px; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none;"></div>
+  <div id="youtubePlayer" style="position:fixed; bottom:-9999px; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none;"></div>
 
-  <!-- Interactive Scripts -->
+  <!-- Three.js (hero lit garland scene) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
   <script>
-    // =========================================================================
-    // ⚙️ CONFIGURATION & BACKEND INTEGRATION
-    // =========================================================================
     const CONFIG = {
-      // 📌 Web App URL ของ Google Apps Script (Security Hardened):
       GOOGLE_SHEETS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbyxokCp6LUfHgMEAcDgvBqmn24wAEem0gWGatz_YL9Z-mMyTBg9xg2g5DXI9iqtEDDa/exec',
-
-      // ข้อมูลวันแต่งงาน
       WEDDING_DATE: '2027-01-17T07:19:00+07:00',
       BRIDE_NAME: 'สิริลักษณ์ แตงกระโทก',
       GROOM_NAME: 'พีรพัฒน์ สุขเกษม',
       VENUE_NAME: 'ครัวครบรส บุรีรมย์ การ์เด้น',
-
-      // เพลงประกอบ (Background Music: คู่ชีวิต - COCKTAIL)
       YOUTUBE_VIDEO_ID: '3mYVyVY-lU4',
-      MUSIC_START_SECONDS: 220, // นาทีที่ 3:38 (3 * 60 + 38 = 218 วินาที)
+      MUSIC_START_SECONDS: 220,
       MUSIC_TARGET_VOLUME: 80
     };
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // -------------------------------------------------------------
     // 1. Live Countdown Timer
     // -------------------------------------------------------------
     const targetDate = new Date(CONFIG.WEDDING_DATE).getTime();
-
     function updateCountdown() {
       const now = new Date().getTime();
       const distance = targetDate - now;
-
       const dEl = document.getElementById('cd-days');
       const hEl = document.getElementById('cd-hours');
       const mEl = document.getElementById('cd-mins');
       const sEl = document.getElementById('cd-secs');
-
       if (distance > 0) {
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const secs = Math.floor((distance % (1000 * 60)) / 1000);
-
         if (dEl) dEl.textContent = days;
         if (hEl) hEl.textContent = hours.toString().padStart(2, '0');
         if (mEl) mEl.textContent = mins.toString().padStart(2, '0');
@@ -1180,7 +907,6 @@
       const dayLabels = ['อา', 'จ', 'อ', 'พ', 'พฤ', 'ศ', 'ส'];
       const firstWeekday = new Date(year, monthIndex, 1).getDay();
       const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
-
       let html = dayLabels.map(d => `<span class="calendar-grid-cell text-brand-muted font-semibold">${d}</span>`).join('');
       for (let i = 0; i < firstWeekday; i++) html += '<span class="calendar-grid-cell"></span>';
       for (let day = 1; day <= daysInMonth; day++) {
@@ -1197,12 +923,11 @@
     // -------------------------------------------------------------
     // 3. Add To Calendar Buttons
     // -------------------------------------------------------------
-    const calStartDate = '20270117T001900Z'; // 07:19 BKK
-    const calEndDate = '20270117T073000Z';   // 14:30 BKK
+    const calStartDate = '20270117T001900Z';
+    const calEndDate = '20270117T073000Z';
     const calTitle = encodeURIComponent('งานพิธีมงคลสมรส สิริลักษณ์ & พีรพัฒน์');
     const calDetails = encodeURIComponent('ขอเรียนเชิญร่วมเป็นเกียรติในพิธีมงคลสมรส สิริลักษณ์ แตงกระโทก (วาววา) & พีรพัฒน์ สุขเกษม (ตุ้ย) ณ ครัวครบรส บุรีรมย์ การ์เด้น');
     const calLocation = encodeURIComponent('ครัวครบรส บุรีรมย์ การ์เด้น');
-
     const gCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${calTitle}&dates=${calStartDate}/${calEndDate}&details=${calDetails}&location=${calLocation}`;
     const gCalBtn = document.getElementById('googleCalBtn');
     if (gCalBtn) gCalBtn.href = gCalUrl;
@@ -1235,25 +960,181 @@ END:VCALENDAR`;
     }
 
     // -------------------------------------------------------------
-    // 4. Envelope Cover Modal & Particle Sparkles
+    // 4. Sky layer: scroll position = time of day (dawn -> night)
     // -------------------------------------------------------------
-    const coverModal = document.getElementById('envelopeCoverModal');
-    const cardWrapper = document.getElementById('envelopeCardWrapper');
+    const skyStops = [
+      { t: 0.00, a: [20, 17, 31], b: [36, 26, 48], c: [58, 40, 25], star: 0.55 },
+      { t: 0.16, a: [58, 40, 25], b: [184, 84, 31], c: [240, 179, 92], star: 0.1 },
+      { t: 0.36, a: [243, 236, 217], b: [246, 233, 201], c: [232, 220, 192], star: 0 },
+      { t: 0.58, a: [232, 220, 192], b: [217, 121, 58], c: [184, 84, 31], star: 0 },
+      { t: 0.78, a: [122, 46, 38], b: [63, 42, 42], c: [31, 20, 32], star: 0.4 },
+      { t: 1.00, a: [21, 16, 42], b: [13, 10, 28], c: [0, 0, 0], star: 0.85 }
+    ];
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    function rgbStr(c) { return `rgb(${Math.round(c[0])}, ${Math.round(c[1])}, ${Math.round(c[2])})`; }
+
+    const skyLayer = document.getElementById('skyLayer');
+    const starLayer = document.getElementById('starLayer');
+    let skyTicking = false;
+    function updateSky() {
+      skyTicking = false;
+      const doc = document.documentElement;
+      const scrollTop = window.scrollY || doc.scrollTop;
+      const scrollHeight = (doc.scrollHeight - window.innerHeight) || 1;
+      const progress = Math.min(Math.max(scrollTop / scrollHeight, 0), 1);
+
+      let lo = skyStops[0], hi = skyStops[skyStops.length - 1];
+      for (let i = 0; i < skyStops.length - 1; i++) {
+        if (progress >= skyStops[i].t && progress <= skyStops[i + 1].t) {
+          lo = skyStops[i]; hi = skyStops[i + 1]; break;
+        }
+      }
+      const span = (hi.t - lo.t) || 1;
+      const localT = Math.min(Math.max((progress - lo.t) / span, 0), 1);
+
+      const a = [0, 1, 2].map(i => lerp(lo.a[i], hi.a[i], localT));
+      const b = [0, 1, 2].map(i => lerp(lo.b[i], hi.b[i], localT));
+      const c = [0, 1, 2].map(i => lerp(lo.c[i], hi.c[i], localT));
+      const star = lerp(lo.star, hi.star, localT);
+
+      skyLayer.style.background = `linear-gradient(180deg, ${rgbStr(a)} 0%, ${rgbStr(b)} 48%, ${rgbStr(c)} 100%)`;
+      starLayer.style.setProperty('--star-opacity', star.toFixed(2));
+    }
+    window.addEventListener('scroll', () => {
+      if (!skyTicking) { skyTicking = true; requestAnimationFrame(updateSky); }
+    }, { passive: true });
+    updateSky();
+
+    // -------------------------------------------------------------
+    // 5. Three.js hero scene: floating marigold garland, flickering
+    //    candlelight, real-time dynamic shadow
+    // -------------------------------------------------------------
+    (function initHeroScene() {
+      const canvas = document.getElementById('heroCanvas');
+      if (!canvas || typeof THREE === 'undefined') return;
+      let renderer, scene, camera, garlandGroup, flameLight, flameMesh, rafId;
+      let pointerX = 0, pointerY = 0;
+      let running = true;
+
+      try {
+        renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+        scene = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera(42, window.innerWidth / window.innerHeight, 0.1, 50);
+        camera.position.set(0, 0.6, 6.5);
+        camera.lookAt(0, 0, 0);
+
+        const ambient = new THREE.AmbientLight(0x3a2a1f, 0.9);
+        scene.add(ambient);
+
+        flameLight = new THREE.PointLight(0xffb366, 2.6, 12, 2);
+        flameLight.position.set(0, 0.4, 1.6);
+        flameLight.castShadow = true;
+        flameLight.shadow.mapSize.set(512, 512);
+        scene.add(flameLight);
+
+        flameMesh = new THREE.Mesh(
+          new THREE.SphereGeometry(0.14, 12, 12),
+          new THREE.MeshStandardMaterial({ color: 0xffdca0, emissive: 0xffa94d, emissiveIntensity: 1.6 })
+        );
+        flameMesh.position.copy(flameLight.position);
+        scene.add(flameMesh);
+
+        const groundMat = new THREE.MeshStandardMaterial({ color: 0x2a2015, roughness: 0.9, metalness: 0.05 });
+        const ground = new THREE.Mesh(new THREE.CircleGeometry(4.2, 48), groundMat);
+        ground.rotation.x = -Math.PI / 2;
+        ground.position.y = -1.6;
+        ground.receiveShadow = true;
+        scene.add(ground);
+
+        garlandGroup = new THREE.Group();
+        garlandGroup.position.set(0, 0.2, 0);
+        const ringGeo = new THREE.TorusGeometry(1.5, 0.06, 10, 64);
+        const ringMat = new THREE.MeshStandardMaterial({ color: 0x3f5633, roughness: 0.6 });
+        const ring = new THREE.Mesh(ringGeo, ringMat);
+        ring.castShadow = true;
+        garlandGroup.add(ring);
+
+        const beadColors = [0xd9793a, 0xb8541f, 0x9c7a2e, 0xc7a355];
+        const beadCount = 26;
+        for (let i = 0; i < beadCount; i++) {
+          const angle = (i / beadCount) * Math.PI * 2;
+          const color = beadColors[i % beadColors.length];
+          const bead = new THREE.Mesh(
+            new THREE.SphereGeometry(0.12, 10, 10),
+            new THREE.MeshStandardMaterial({ color, roughness: 0.5, metalness: 0.1 })
+          );
+          bead.position.set(Math.cos(angle) * 1.5, Math.sin(angle) * 1.5 * 0.3, Math.sin(angle) * 0.25);
+          bead.castShadow = true;
+          garlandGroup.add(bead);
+        }
+        garlandGroup.rotation.x = Math.PI / 2.6;
+        scene.add(garlandGroup);
+
+        function resize() {
+          const w = canvas.clientWidth || window.innerWidth;
+          const h = canvas.clientHeight || window.innerHeight;
+          camera.aspect = w / h;
+          camera.updateProjectionMatrix();
+          renderer.setSize(w, h, false);
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        window.addEventListener('pointermove', (e) => {
+          pointerX = (e.clientX / window.innerWidth - 0.5) * 2;
+          pointerY = (e.clientY / window.innerHeight - 0.5) * 2;
+        }, { passive: true });
+
+        const clock = new THREE.Clock();
+        function animate() {
+          if (!running) return;
+          rafId = requestAnimationFrame(animate);
+          const t = clock.getElapsedTime();
+
+          if (!prefersReducedMotion) {
+            garlandGroup.rotation.z = t * 0.25;
+            garlandGroup.position.y = 0.2 + Math.sin(t * 0.8) * 0.08;
+            const flicker = 1 + Math.sin(t * 9) * 0.12 + (Math.random() - 0.5) * 0.08;
+            flameLight.intensity = 2.6 * flicker;
+            flameMesh.material.emissiveIntensity = 1.6 * flicker;
+            camera.position.x += (pointerX * 0.6 - camera.position.x) * 0.04;
+            camera.position.y += (0.6 - pointerY * 0.3 - camera.position.y) * 0.04;
+            camera.lookAt(0, 0, 0);
+          }
+          renderer.render(scene, camera);
+        }
+        animate();
+
+        document.addEventListener('visibilitychange', () => {
+          running = !document.hidden;
+          if (running) animate(); else cancelAnimationFrame(rafId);
+        });
+      } catch (err) {
+        console.warn('3D hero scene unavailable, falling back to static sky:', err);
+        if (canvas) canvas.style.display = 'none';
+      }
+    })();
+
+    // -------------------------------------------------------------
+    // 6. Envelope Gate: real 3D hinge open
+    // -------------------------------------------------------------
+    const gate = document.getElementById('envelopeGate');
     const openBtn = document.getElementById('openEnvelopeBtn');
+    const envelopeFlap = document.getElementById('envelopeFlap');
     const bodyRoot = document.getElementById('bodyRoot');
-    const mainContent = document.getElementById('mainContent');
     const reopenBtn = document.getElementById('reopenEnvelopeBtn');
     const particleContainer = document.getElementById('particleContainer');
-    const doorLeft = document.getElementById('doorLeft');
-    const doorRight = document.getElementById('doorRight');
 
     function spawnCelebrationSparkles() {
-      const colors = ['#F07167', '#FED766', '#C8B6FF', '#98D8AA', '#FFB5A7', '#FFD166'];
+      const colors = ['#D9793A', '#B8541F', '#9C7A2E', '#C7A355', '#3F5633'];
       const rect = openBtn ? openBtn.getBoundingClientRect() : { left: window.innerWidth / 2, top: window.innerHeight / 2, width: 80, height: 80 };
       const originX = rect.left + rect.width / 2;
       const originY = rect.top + rect.height / 2;
-
-      for (let i = 0; i < 30; i++) {
+      for (let i = 0; i < 28; i++) {
         const p = document.createElement('div');
         p.className = 'sparkle-particle';
         const color = colors[Math.floor(Math.random() * colors.length)];
@@ -1262,7 +1143,6 @@ END:VCALENDAR`;
         const dist = Math.random() * 120 + 40;
         const targetX = Math.cos(angle) * dist;
         const targetY = Math.sin(angle) * dist - 50;
-
         p.style.width = `${size}px`;
         p.style.height = `${size}px`;
         p.style.backgroundColor = color;
@@ -1272,126 +1152,94 @@ END:VCALENDAR`;
         p.style.transform = `translate(0, 0) scale(0)`;
         p.style.boxShadow = `0 0 10px ${color}`;
         p.style.transition = 'transform 0.85s cubic-bezier(0.1, 0.9, 0.2, 1), opacity 0.85s ease-out';
-
         particleContainer.appendChild(p);
-
         requestAnimationFrame(() => {
           p.style.transform = `translate(${targetX}px, ${targetY}px) scale(1) rotate(${Math.random() * 360}deg)`;
         });
-
-        setTimeout(() => {
-          p.style.opacity = '0';
-          setTimeout(() => p.remove(), 400);
-        }, 600);
+        setTimeout(() => { p.style.opacity = '0'; setTimeout(() => p.remove(), 400); }, 600);
       }
     }
 
     function openEnvelope() {
       spawnCelebrationSparkles();
-
-      // Trigger music playback immediately on unseal
       playMusic();
-
-      if (cardWrapper) {
-        cardWrapper.classList.add('scale-105', 'opacity-90');
-      }
-
-      // Doors slide open (original CSS animation)
-      if (doorLeft) doorLeft.classList.add('is-open');
-      if (doorRight) doorRight.classList.add('is-open');
-
+      if (envelopeFlap) envelopeFlap.classList.add('is-open');
       setTimeout(() => {
-        if (coverModal) {
-          coverModal.classList.add('opacity-0', 'pointer-events-none', 'scale-105');
-        }
-        if (bodyRoot) {
-          bodyRoot.classList.remove('overflow-hidden');
-        }
-        if (mainContent) {
-          mainContent.style.filter = 'none';
-        }
-      }, 700);
+        if (gate) { gate.style.opacity = '0'; gate.style.visibility = 'hidden'; gate.style.pointerEvents = 'none'; }
+        if (bodyRoot) bodyRoot.classList.remove('overflow-hidden');
+      }, prefersReducedMotion ? 350 : 950);
     }
+    if (openBtn) openBtn.addEventListener('click', (e) => { e.stopPropagation(); openEnvelope(); });
 
-    if (openBtn) {
-      openBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        openEnvelope();
-      });
-    }
-
-    if (cardWrapper) {
-      cardWrapper.addEventListener('click', () => {
-        openEnvelope();
-      });
-    }
-
-    // Allow reopening the envelope from header
     if (reopenBtn) {
       reopenBtn.addEventListener('click', () => {
-        if (coverModal) {
-          coverModal.classList.remove('opacity-0', 'pointer-events-none', 'scale-105');
-        }
-        if (cardWrapper) {
-          cardWrapper.classList.remove('scale-105', 'opacity-90');
-        }
-        if (doorLeft) doorLeft.classList.remove('is-open');
-        if (doorRight) doorRight.classList.remove('is-open');
-        if (bodyRoot) {
-          bodyRoot.classList.add('overflow-hidden');
-        }
-        if (mainContent) {
-          mainContent.style.filter = 'blur(2px)';
-        }
+        if (gate) { gate.style.opacity = '1'; gate.style.visibility = 'visible'; gate.style.pointerEvents = 'auto'; }
+        if (envelopeFlap) envelopeFlap.classList.remove('is-open');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
 
     // -------------------------------------------------------------
-    // 5. Photo Carousels (Wedding Gallery & Pre-wedding Gallery)
+    // 7. 3D Coverflow galleries
     // -------------------------------------------------------------
-    function initCarousel(root) {
+    function initCoverflow(rootId) {
+      const root = document.getElementById(rootId);
       if (!root) return;
-      const imgs = root.querySelectorAll('.carousel-img');
-      const dotsWrap = root.parentElement.querySelector('.carousel-dot')?.parentElement;
-      const dots = dotsWrap ? dotsWrap.querySelectorAll('.carousel-dot') : [];
-      const counter = root.querySelector('.carousel-counter');
-      const prevBtn = root.querySelector('.carousel-prev');
-      const nextBtn = root.querySelector('.carousel-next');
+      const wrap = root.parentElement;
+      const items = root.querySelectorAll('.cf-item');
+      const prevBtn = wrap.querySelector('.cf-prev');
+      const nextBtn = wrap.querySelector('.cf-next');
+      const counter = wrap.querySelector('.cf-counter');
+      const n = items.length;
       let idx = 0;
 
       function render() {
-        imgs.forEach((img, i) => {
-          img.classList.toggle('opacity-100', i === idx);
-          img.classList.toggle('opacity-0', i !== idx);
+        items.forEach((item, i) => {
+          let offset = i - idx;
+          if (offset > n / 2) offset -= n;
+          if (offset < -n / 2) offset += n;
+          const abs = Math.abs(offset);
+          const tx = offset * 58;
+          const tz = -abs * 140;
+          const rot = -offset * 32;
+          const scale = Math.max(1 - abs * 0.16, 0.55);
+          item.style.transform = `translateX(${tx}%) translateZ(${tz}px) rotateY(${rot}deg) scale(${scale})`;
+          item.style.opacity = abs > 2 ? '0' : `${1 - abs * 0.3}`;
+          item.style.zIndex = `${100 - abs}`;
+          item.style.pointerEvents = offset === 0 ? 'auto' : 'none';
         });
-        dots.forEach((dot, i) => {
-          dot.classList.toggle('bg-brand-terracotta', i === idx);
-          dot.classList.toggle('bg-brand-gold/30', i !== idx);
-        });
-        if (counter) counter.textContent = `${String(idx + 1).padStart(2, '0')} / ${String(imgs.length).padStart(2, '0')}`;
+        if (counter) counter.textContent = `${String(idx + 1).padStart(2, '0')} / ${String(n).padStart(2, '0')}`;
       }
 
-      if (prevBtn) prevBtn.addEventListener('click', () => { idx = (idx - 1 + imgs.length) % imgs.length; render(); });
-      if (nextBtn) nextBtn.addEventListener('click', () => { idx = (idx + 1) % imgs.length; render(); });
-      dots.forEach((dot, i) => dot.addEventListener('click', () => { idx = i; render(); }));
+      function go(delta) { idx = (idx + delta + n) % n; render(); }
+      if (prevBtn) prevBtn.addEventListener('click', () => go(-1));
+      if (nextBtn) nextBtn.addEventListener('click', () => go(1));
+
+      let startX = null;
+      root.addEventListener('pointerdown', (e) => { startX = e.clientX; });
+      root.addEventListener('pointerup', (e) => {
+        if (startX === null) return;
+        const dx = e.clientX - startX;
+        if (dx > 50) go(-1); else if (dx < -50) go(1);
+        startX = null;
+      });
 
       render();
     }
-    initCarousel(document.getElementById('weddingGallery'));
-    initCarousel(document.getElementById('preweddingGallery'));
+    initCoverflow('weddingGallery');
+    initCoverflow('preweddingGallery');
 
     // -------------------------------------------------------------
-    // 6. Form Controls: Side & Attendance & Guests (RSVP, unchanged)
+    // 8. Form Controls: Side & Attendance & Guests
     // -------------------------------------------------------------
     const sideBtns = document.querySelectorAll('.side-btn');
     const selectedSideInput = document.getElementById('selectedSide');
+    const SIDE_ON = 'side-btn py-2.5 px-3 rounded-xl border border-brand-terracotta/60 bg-gradient-to-r from-brand-terracotta to-brand-gold text-white text-xs font-medium flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer';
+    const SIDE_OFF = 'side-btn py-2.5 px-3 rounded-xl border border-brand-gold/30 bg-white text-brand-earth text-xs font-medium flex items-center justify-center gap-1.5 transition-all cursor-pointer';
     sideBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        sideBtns.forEach(b => {
-          b.className = 'side-btn py-2.5 px-3 rounded-xl border border-pink-200 bg-white text-brand-earth text-xs font-medium flex items-center justify-center gap-1.5 transition-all cursor-pointer';
-        });
-        btn.className = 'side-btn py-2.5 px-3 rounded-xl border border-rose-400 bg-gradient-to-r from-rose-500 to-pink-500 text-white text-xs font-medium flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer';
+        sideBtns.forEach(b => { b.className = SIDE_OFF; });
+        btn.className = SIDE_ON;
         selectedSideInput.value = btn.getAttribute('data-side');
       });
     });
@@ -1399,15 +1247,14 @@ END:VCALENDAR`;
     const attendBtns = document.querySelectorAll('.attend-btn');
     const selectedAttendInput = document.getElementById('selectedAttendance');
     const guestCountSection = document.getElementById('guestCountSection');
+    const ATTEND_ON = 'attend-btn py-2.5 px-3 rounded-xl border border-brand-betel/60 bg-gradient-to-r from-brand-betel to-brand-terracotta text-white text-xs font-medium flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer';
+    const ATTEND_OFF = 'attend-btn py-2.5 px-3 rounded-xl border border-brand-gold/30 bg-white text-brand-earth text-xs font-medium flex items-center justify-center gap-1.5 transition-all cursor-pointer';
     attendBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        attendBtns.forEach(b => {
-          b.className = 'attend-btn py-2.5 px-3 rounded-xl border border-pink-200 bg-white text-brand-earth text-xs font-medium flex items-center justify-center gap-1.5 transition-all cursor-pointer';
-        });
-        btn.className = 'attend-btn py-2.5 px-3 rounded-xl border border-purple-400 bg-gradient-to-r from-purple-500 to-violet-500 text-white text-xs font-medium flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer';
+        attendBtns.forEach(b => { b.className = ATTEND_OFF; });
+        btn.className = ATTEND_ON;
         const attendVal = btn.getAttribute('data-attend');
         selectedAttendInput.value = attendVal;
-
         if (attendVal === 'ไม่สะดวก') {
           guestCountSection.classList.add('opacity-40', 'pointer-events-none');
         } else {
@@ -1418,18 +1265,18 @@ END:VCALENDAR`;
 
     const countBtns = document.querySelectorAll('.count-btn');
     const selectedGuestsInput = document.getElementById('selectedGuests');
+    const COUNT_ON = 'count-btn flex-1 py-2 rounded-xl bg-gradient-to-r from-brand-terracotta to-brand-gold text-white border border-brand-terracotta/60 text-xs font-medium shadow-xs cursor-pointer';
+    const COUNT_OFF = 'count-btn flex-1 py-2 rounded-xl bg-white text-brand-earth border border-brand-gold/30 text-xs font-medium cursor-pointer';
     countBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        countBtns.forEach(b => {
-          b.className = 'count-btn flex-1 py-2 rounded-xl bg-white text-brand-earth border border-pink-200 text-xs font-medium cursor-pointer';
-        });
-        btn.className = 'count-btn flex-1 py-2 rounded-xl bg-gradient-to-r from-rose-500 to-pink-500 text-white border border-rose-400 text-xs font-medium shadow-xs cursor-pointer';
+        countBtns.forEach(b => { b.className = COUNT_OFF; });
+        btn.className = COUNT_ON;
         selectedGuestsInput.value = btn.getAttribute('data-count');
       });
     });
 
     // -------------------------------------------------------------
-    // 7. RSVP Submission to Google Sheets (unchanged)
+    // 9. RSVP Submission to Google Sheets
     // -------------------------------------------------------------
     const rsvpForm = document.getElementById('rsvpForm');
     const submitRsvpBtn = document.getElementById('submitRsvpBtn');
@@ -1440,7 +1287,6 @@ END:VCALENDAR`;
 
     rsvpForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-
       const guestName = document.getElementById('guestName').value.trim();
       const guestPhone = document.getElementById('guestPhone').value.trim() || '-';
       const guestSide = selectedSideInput.value;
@@ -1468,7 +1314,6 @@ END:VCALENDAR`;
         return;
       }
 
-      // UI Loading State
       submitRsvpBtn.disabled = true;
       rsvpBtnIcon.textContent = 'progress_activity';
       rsvpBtnIcon.classList.add('animate-spin');
@@ -1481,9 +1326,7 @@ END:VCALENDAR`;
           await fetch(CONFIG.GOOGLE_SHEETS_SCRIPT_URL, {
             method: 'POST',
             mode: 'no-cors',
-            headers: {
-              'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
           });
         } else {
@@ -1491,7 +1334,6 @@ END:VCALENDAR`;
           await new Promise(r => setTimeout(r, 600));
         }
 
-        // Success Feedback
         rsvpSuccess.classList.remove('hidden');
         rsvpForm.reset();
         selectedSideInput.value = 'ฝ่ายเจ้าสาว (คุณสิริลักษณ์)';
@@ -1499,28 +1341,9 @@ END:VCALENDAR`;
         selectedGuestsInput.value = '1';
         guestCountSection.classList.remove('opacity-40', 'pointer-events-none');
 
-        // Reset toggles visual style
-        sideBtns.forEach((b, idx) => {
-          if (idx === 0) {
-            b.className = 'side-btn py-2.5 px-3 rounded-xl border border-rose-400 bg-gradient-to-r from-rose-500 to-pink-500 text-white text-xs font-medium flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer';
-          } else {
-            b.className = 'side-btn py-2.5 px-3 rounded-xl border border-pink-200 bg-white text-brand-earth text-xs font-medium flex items-center justify-center gap-1.5 transition-all cursor-pointer';
-          }
-        });
-        attendBtns.forEach((b, idx) => {
-          if (idx === 0) {
-            b.className = 'attend-btn py-2.5 px-3 rounded-xl border border-purple-400 bg-gradient-to-r from-purple-500 to-violet-500 text-white text-xs font-medium flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer';
-          } else {
-            b.className = 'attend-btn py-2.5 px-3 rounded-xl border border-pink-200 bg-white text-brand-earth text-xs font-medium flex items-center justify-center gap-1.5 transition-all cursor-pointer';
-          }
-        });
-        countBtns.forEach((b, idx) => {
-          if (idx === 0) {
-            b.className = 'count-btn flex-1 py-2 rounded-xl bg-gradient-to-r from-rose-500 to-pink-500 text-white border border-rose-400 text-xs font-medium shadow-xs cursor-pointer';
-          } else {
-            b.className = 'count-btn flex-1 py-2 rounded-xl bg-white text-brand-earth border border-pink-200 text-xs font-medium cursor-pointer';
-          }
-        });
+        sideBtns.forEach((b, idx) => { b.className = idx === 0 ? SIDE_ON : SIDE_OFF; });
+        attendBtns.forEach((b, idx) => { b.className = idx === 0 ? ATTEND_ON : ATTEND_OFF; });
+        countBtns.forEach((b, idx) => { b.className = idx === 0 ? COUNT_ON : COUNT_OFF; });
 
         rsvpSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       } catch (err) {
@@ -1535,7 +1358,7 @@ END:VCALENDAR`;
     });
 
     // -------------------------------------------------------------
-    // 8. Gift Submission (name + note + slip image) to Google Sheets/Drive
+    // 10. Gift Submission to Google Sheets/Drive
     // -------------------------------------------------------------
     const giftForm = document.getElementById('giftForm');
     const submitGiftBtn = document.getElementById('submitGiftBtn');
@@ -1555,7 +1378,6 @@ END:VCALENDAR`;
 
     giftForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-
       const name = document.getElementById('giftName').value.trim();
       const note = document.getElementById('giftNote').value.trim();
       const slipInput = document.getElementById('giftSlip');
@@ -1575,7 +1397,6 @@ END:VCALENDAR`;
 
       try {
         const slipBase64 = await readFileAsBase64(slipFile);
-
         const payload = {
           action: 'gift',
           name,
@@ -1613,7 +1434,7 @@ END:VCALENDAR`;
     });
 
     // -------------------------------------------------------------
-    // 9. Background Music: คู่ชีวิต - COCKTAIL (YouTube IFrame API)
+    // 11. Background Music: คู่ชีวิต - COCKTAIL (YouTube IFrame API)
     // -------------------------------------------------------------
     let ytPlayer = null;
     let isYtReady = false;
@@ -1637,16 +1458,9 @@ END:VCALENDAR`;
         width: '1',
         videoId: CONFIG.YOUTUBE_VIDEO_ID,
         playerVars: {
-          autoplay: 1,
-          controls: 0,
-          disablekb: 1,
-          fs: 0,
-          start: CONFIG.MUSIC_START_SECONDS || 218,
-          loop: 1,
-          playlist: CONFIG.YOUTUBE_VIDEO_ID,
-          modestbranding: 1,
-          playsinline: 1,
-          rel: 0
+          autoplay: 1, controls: 0, disablekb: 1, fs: 0,
+          start: CONFIG.MUSIC_START_SECONDS || 218, loop: 1,
+          playlist: CONFIG.YOUTUBE_VIDEO_ID, modestbranding: 1, playsinline: 1, rel: 0
         },
         events: {
           onReady: function (event) {
@@ -1655,14 +1469,11 @@ END:VCALENDAR`;
               event.target.setVolume(0);
               event.target.seekTo(CONFIG.MUSIC_START_SECONDS || 218, true);
               playMusic();
-            } catch (err) {
-              console.warn('Autoplay waiting for gesture:', err);
-            }
+            } catch (err) { console.warn('Autoplay waiting for gesture:', err); }
           },
           onStateChange: function (event) {
             if (event.data === YT.PlayerState.PLAYING) {
               setMusicPlayingState(true);
-              // Fallback ensure seek to target start point if browser started from 0:00
               if (!hasSeekedInitial) {
                 hasSeekedInitial = true;
                 const currentTime = typeof event.target.getCurrentTime === 'function' ? event.target.getCurrentTime() : 0;
@@ -1684,21 +1495,15 @@ END:VCALENDAR`;
       if (musicBtn) {
         if (playing) {
           if (musicIcon) musicIcon.classList.add('hidden');
-          if (musicWaves) {
-            musicWaves.classList.remove('hidden');
-            musicWaves.classList.add('flex');
-          }
-          musicBtn.classList.add('bg-gradient-to-r', 'from-rose-500', 'to-purple-500', 'text-white', 'shadow-md');
-          musicBtn.classList.remove('text-rose-500');
+          if (musicWaves) { musicWaves.classList.remove('hidden'); musicWaves.classList.add('flex'); }
+          musicBtn.classList.add('bg-gradient-to-r', 'from-brand-terracotta', 'to-brand-gold', 'text-white', 'shadow-md');
+          musicBtn.classList.remove('text-brand-terracotta');
           musicBtn.setAttribute('title', 'แตะเพื่อหยุดเพลง "คู่ชีวิต"');
         } else {
           if (musicIcon) musicIcon.classList.remove('hidden');
-          if (musicWaves) {
-            musicWaves.classList.add('hidden');
-            musicWaves.classList.remove('flex');
-          }
-          musicBtn.classList.remove('bg-gradient-to-r', 'from-rose-500', 'to-purple-500', 'text-white', 'shadow-md');
-          musicBtn.classList.add('text-rose-500');
+          if (musicWaves) { musicWaves.classList.add('hidden'); musicWaves.classList.remove('flex'); }
+          musicBtn.classList.remove('bg-gradient-to-r', 'from-brand-terracotta', 'to-brand-gold', 'text-white', 'shadow-md');
+          musicBtn.classList.add('text-brand-terracotta');
           musicBtn.setAttribute('title', 'แตะเพื่อเปิดเพลง "คู่ชีวิต - COCKTAIL"');
         }
       }
@@ -1711,23 +1516,15 @@ END:VCALENDAR`;
     function fadeInMusic(durationMs = 2500, targetVol = CONFIG.MUSIC_TARGET_VOLUME || 80) {
       if (!ytPlayer || typeof ytPlayer.setVolume !== 'function') return;
       if (fadeInterval) clearInterval(fadeInterval);
-
       let currentVol = 0;
       ytPlayer.setVolume(currentVol);
       const steps = 25;
       const stepTime = durationMs / steps;
       const volIncrement = targetVol / steps;
-
       fadeInterval = setInterval(() => {
         currentVol += volIncrement;
-        if (currentVol >= targetVol) {
-          currentVol = targetVol;
-          clearInterval(fadeInterval);
-          fadeInterval = null;
-        }
-        if (ytPlayer && typeof ytPlayer.setVolume === 'function') {
-          ytPlayer.setVolume(Math.round(currentVol));
-        }
+        if (currentVol >= targetVol) { currentVol = targetVol; clearInterval(fadeInterval); fadeInterval = null; }
+        if (ytPlayer && typeof ytPlayer.setVolume === 'function') ytPlayer.setVolume(Math.round(currentVol));
       }, stepTime);
     }
 
@@ -1741,44 +1538,28 @@ END:VCALENDAR`;
             fadeInMusic();
           }
           ytPlayer.playVideo();
-        } catch (err) {
-          console.warn('YouTube play error:', err);
-        }
+        } catch (err) { console.warn('YouTube play error:', err); }
       }
     }
 
     function pauseMusic() {
-      if (fadeInterval) {
-        clearInterval(fadeInterval);
-        fadeInterval = null;
-      }
+      if (fadeInterval) { clearInterval(fadeInterval); fadeInterval = null; }
       if (ytPlayer && isYtReady && typeof ytPlayer.pauseVideo === 'function') {
-        try {
-          ytPlayer.pauseVideo();
-        } catch (err) {
-          console.warn('YouTube pause error:', err);
-        }
+        try { ytPlayer.pauseVideo(); } catch (err) { console.warn('YouTube pause error:', err); }
       }
     }
 
-    function toggleMusic() {
-      if (isMusicPlaying) {
-        pauseMusic();
-      } else {
-        playMusic();
-      }
-    }
+    function toggleMusic() { if (isMusicPlaying) { pauseMusic(); } else { playMusic(); } }
 
     function formatTime(seconds) {
       const s = Math.max(0, Math.floor(seconds || 0));
       return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
     }
 
-    // Keep the hero player's seek bar & time label in sync with the YouTube player
     setInterval(() => {
       if (!ytPlayer || !isYtReady || typeof ytPlayer.getCurrentTime !== 'function') return;
       if (!heroMusicSeek || !heroMusicTime) return;
-      if (document.activeElement === heroMusicSeek) return; // don't fight the user while dragging
+      if (document.activeElement === heroMusicSeek) return;
       const current = ytPlayer.getCurrentTime() - (CONFIG.MUSIC_START_SECONDS || 0);
       const duration = ytPlayer.getDuration() - (CONFIG.MUSIC_START_SECONDS || 0);
       if (duration > 0) {
@@ -1798,9 +1579,7 @@ END:VCALENDAR`;
 
     function setupAutoplayGestureFallback() {
       const triggerPlay = () => {
-        if (!isMusicPlaying) {
-          playMusic();
-        }
+        if (!isMusicPlaying) playMusic();
         ['click', 'touchstart', 'scroll', 'pointerdown'].forEach(ev => {
           window.removeEventListener(ev, triggerPlay, true);
           document.removeEventListener(ev, triggerPlay, true);
@@ -1813,12 +1592,8 @@ END:VCALENDAR`;
     }
     setupAutoplayGestureFallback();
 
-    if (musicBtn) {
-      musicBtn.addEventListener('click', toggleMusic);
-    }
-    if (heroMusicToggle) {
-      heroMusicToggle.addEventListener('click', toggleMusic);
-    }
+    if (musicBtn) musicBtn.addEventListener('click', toggleMusic);
+    if (heroMusicToggle) heroMusicToggle.addEventListener('click', toggleMusic);
   </script>
 </body>
 
